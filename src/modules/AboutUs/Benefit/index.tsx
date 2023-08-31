@@ -16,10 +16,15 @@ interface IProps {
 export const Benefit = ({ benefit, num, openedBenefit, setOpenedBenefit }: IProps) => {
 	const accordeon = useRef(null)
 	const { height, open } = useAccordeon(openedBenefit, setOpenedBenefit, benefit.id, accordeon)
+	let deviceIsMobile = false
+
+	if (typeof window !== 'undefined') {
+		deviceIsMobile = isMobile(window.innerWidth)
+	}
 
 	return (
 		<li className="benefit">
-			<button className="benefit__summary" onClick={open} disabled={!isMobile(window.innerWidth)}>
+			<button className="benefit__summary" onClick={open} disabled={!deviceIsMobile}>
 				<p className="benefit__number accent-xl">[{num}]</p>
 				<h3 className="benefit__title accent-xl">{benefit.title}</h3>
 				<ArrowDown className="benefit__icon" />
