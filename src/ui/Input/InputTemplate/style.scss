@@ -47,6 +47,10 @@
 	&:invalid {
 		border-color: $candy;
 		background-color: #fb2b1810;
+
+		&::placeholder {
+			color: #fb2b18b9;
+		}
 	}
 
 	&:focus {
