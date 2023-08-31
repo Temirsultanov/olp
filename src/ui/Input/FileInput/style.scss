@@ -1,0 +1,50 @@
+@import '../../../shared/styles/lib';
+
+.input {
+	&__wrapper {
+		position: relative;
+
+		&-file {
+			& .input {
+				width: 0;
+				height: 0;
+				padding: 0;
+				opacity: 0;
+
+				&__fake {
+					width: 100%;
+					height: auto;
+					padding: vw(13px) vw(11px) vw(12px) vw(36px);
+					display: block;
+					opacity: 1;
+				}
+
+				&__placeholder {
+					color: $grey;
+				}
+
+				&:focus {
+					+ .input__fake {
+						border: 1px solid $graphit;
+					}
+				}
+			}
+		}
+
+		&-empty .input__paperClip path {
+			fill: $grey;
+		}
+	}
+
+	&__paperClip {
+		width: vw(17px);
+		height: vw(20px);
+		position: absolute;
+		left: vw(13px);
+		bottom: vw(13px);
+
+		& path {
+			fill: $graphit;
+		}
+	}
+}

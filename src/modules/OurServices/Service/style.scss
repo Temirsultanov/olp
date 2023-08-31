@@ -1,0 +1,67 @@
+@import '../../../shared/styles/lib';
+
+.service {
+	&__summary {
+		width: 100%;
+		padding: vw(37px) 0px vw(37px);
+		border: none;
+
+		display: flex;
+		align-items: center;
+
+		font-size: inherit;
+		color: inherit;
+		background-color: transparent;
+		cursor: pointer;
+
+		&:hover .service {
+			&__number,
+			&__title,
+			&__icon {
+				opacity: 1;
+			}
+		}
+	}
+
+	&__number {
+		width: vw(50px);
+		opacity: 0.6;
+	}
+
+	&__title {
+		margin-left: vw(300px);
+		opacity: 0.6;
+	}
+
+	&__icon {
+		width: vw(26px);
+		height: auto;
+		margin-left: auto;
+		opacity: 0.6;
+		transition: transform 0.4s cubic-bezier(0.4, 0, 0, 1);
+	}
+
+	&__descriptionWrapper {
+		display: block;
+		overflow: hidden;
+		transition: height 0.3s cubic-bezier(0.4, 0, 0, 1);
+	}
+
+	&__description {
+		width: vw(680px);
+		margin-left: vw(350px);
+		padding-bottom: vw(40px);
+	}
+
+	&-opened .service {
+		&__number,
+		&__title,
+		&__icon {
+			opacity: 1;
+		}
+
+		&__icon {
+			transform: rotate(180deg);
+		}
+	}
+}

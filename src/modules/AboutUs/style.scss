@@ -1,0 +1,55 @@
+@import '../../shared/styles/lib';
+
+.aboutUs {
+	&__title {
+		& h2 {
+			display: flex;
+			width: 100%;
+			overflow: hidden;
+			text-transform: uppercase;
+			color: $grey;
+		}
+
+		& span {
+			padding-left: vw(48px);
+			padding-right: vw(72px);
+
+			position: relative;
+			transform: translateX(vw(-65px));
+			white-space: nowrap;
+
+			&::after {
+				content: '';
+				width: vw(24px);
+				height: vw(24px);
+				border-radius: 50%;
+
+				position: absolute;
+				top: 50%;
+				right: 0;
+				transform: translateY(-50%);
+				background-color: $celestial;
+			}
+		}
+	}
+
+	&__benefits {
+		margin-top: vw(64px);
+
+		& li {
+			margin-top: vw(-34px);
+		}
+		& li:nth-child(1) {
+			color: $white;
+			background-color: $celestial;
+		}
+		& li:nth-child(2) {
+			color: $graphit;
+			background-color: $white;
+		}
+		& li:nth-child(3) {
+			color: $white;
+			background-color: $graphit;
+		}
+	}
+}

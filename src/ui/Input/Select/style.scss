@@ -1,0 +1,45 @@
+@import '../../../shared/styles/lib';
+
+.input {
+	appearance: none;
+
+	&__wrapper {
+		position: relative;
+	}
+
+	&__arrowDown {
+		width: vw(12px);
+		height: vw(6px);
+
+		position: absolute;
+		bottom: vw(20px);
+		right: vw(16px);
+
+		transition: transform 0.2s cubic-bezier(0.4, 0, 0, 1);
+
+		& path {
+			fill: $graphit;
+		}
+	}
+
+	&:focus + .input__arrowDown {
+		transform: rotate(180deg);
+	}
+
+	&-empty {
+		.input {
+			color: $grey;
+
+			&:focus {
+				color: $graphit;
+
+				& + .input__arrowDown path {
+					fill: $graphit;
+				}
+			}
+		}
+		& .input__arrowDown path {
+			fill: $grey;
+		}
+	}
+}

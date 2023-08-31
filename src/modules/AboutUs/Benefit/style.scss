@@ -1,0 +1,50 @@
+@import '../../../shared/styles/lib';
+
+.benefit {
+	padding: vw(60px) vw(30px) vw(64px);
+	border-radius: vw(34px) vw(34px) 0 0;
+	display: flex;
+	align-items: flex-start;
+
+	&__summary {
+		border: none;
+		display: flex;
+
+		font-size: inherit;
+		color: inherit;
+		background-color: transparent;
+	}
+
+	&__number {
+		width: vw(50px);
+		cursor: text;
+		user-select: text;
+	}
+
+	&__title {
+		width: vw(236px);
+		margin-left: vw(300px);
+		text-align: left;
+		cursor: text;
+		user-select: text;
+	}
+
+	&__icon {
+		width: vw(26px);
+		height: auto;
+		margin-left: auto;
+
+		display: none;
+		transition: transform 0.4s cubic-bezier(0.4, 0, 0, 1);
+	}
+
+	&__descriptionWrapper {
+		width: vw(580px);
+		height: auto !important;
+		margin-left: vw(115px);
+
+		display: block;
+		overflow: hidden;
+		transition: height 0.3s cubic-bezier(0.4, 0, 0, 1);
+	}
+}

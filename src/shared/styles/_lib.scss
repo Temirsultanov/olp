@@ -1,0 +1,19 @@
+// Colors
+$white: #f1f1f1;
+$light_grey: #e0e0e0;
+$grey: #878787;
+$coal: #313131;
+$graphit: #2e2e2e;
+$dark: #272727;
+$celestial: #009eff;
+$blue: #0f6cbd;
+$candy: #fb2c18;
+$midnight: #22217c;
+
+// Functions
+@function vw($px, $vw: 1440px) {
+	@return calc($px * 100 * 1vw / $vw);
+}
+
+// Sized
+$header_height: 52px;

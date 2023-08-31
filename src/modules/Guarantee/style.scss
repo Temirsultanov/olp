@@ -1,0 +1,46 @@
+@import '../../shared/styles/lib';
+
+.guarantee {
+	padding: vw(60px) vw(30px) vw(130px);
+	position: relative;
+
+	&__title {
+		color: $grey;
+		text-transform: uppercase;
+
+		& span {
+			display: block;
+		}
+
+		&-black {
+			color: $graphit;
+		}
+	}
+
+	&__button {
+		margin-top: vw(135px);
+	}
+	&__pin {
+		width: vw(50px);
+		height: auto;
+
+		position: absolute;
+		top: vw(290px);
+		right: vw(939px);
+	}
+	&__path {
+		width: vw(580px);
+		height: auto;
+
+		position: absolute;
+		z-index: 1;
+		top: vw(275px);
+		right: vw(394px);
+	}
+	&__box {
+		width: vw(530px);
+		top: vw(125px);
+		right: vw(30px);
+		position: absolute;
+	}
+}

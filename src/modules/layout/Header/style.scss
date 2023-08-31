@@ -1,0 +1,90 @@
+@import '../../../shared/styles/lib';
+
+.header {
+	height: vw($header_height);
+	padding: vw(10px) vw(16px) vw(10px) vw(16px);
+	border-radius: vw(10px);
+
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+
+	color: $white;
+	background-color: $dark;
+
+	&__logoAndMenu,
+	&__socialsAndLanguage {
+		display: flex;
+		align-items: center;
+	}
+
+	&__logoAndMenu {
+		gap: vw(50px);
+	}
+
+	&__logo {
+		margin-top: vw(-5px);
+		width: vw(80px);
+		height: auto;
+	}
+
+	&__menu {
+		margin-top: 2px;
+	}
+
+	&__phoneLink,
+	&__waLink,
+	&__emailLink,
+	&__changeLang {
+		padding: vw(10px);
+	}
+
+	&__waLink,
+	&__emailLink,
+	&__changeLang {
+		width: vw(40px);
+		height: vw(40px);
+
+		display: flex;
+		justify-content: center;
+		align-items: center;
+
+		& svg {
+			width: vw(20px);
+			height: vw(20px);
+		}
+		& path {
+			fill: $white;
+		}
+
+		&:hover path {
+			fill: $celestial;
+		}
+	}
+
+	&__phoneLink {
+		margin-top: 2px;
+		margin-right: vw(6px);
+		&:hover {
+			color: $celestial;
+		}
+	}
+
+	&__waLink {
+		margin-right: vw(-5px);
+	}
+
+	&__emailLink {
+		margin-right: vw(15px);
+	}
+
+	&__orderCall {
+		margin-right: vw(15px);
+	}
+
+	&__changeLang {
+		border: none;
+		cursor: pointer;
+		background-color: transparent;
+	}
+}

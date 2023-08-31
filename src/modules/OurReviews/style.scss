@@ -1,0 +1,26 @@
+@import '../../shared/styles/lib';
+
+.ourReviews {
+	padding: vw(60px) vw(30px);
+	border-radius: vw(34px) vw(34px) 0 0;
+	background-color: #ffffff;
+
+	&__title {
+		display: inline-block;
+		color: $grey;
+		text-transform: uppercase;
+	}
+
+	&__list {
+		margin-top: vw(30px);
+		display: flex;
+		gap: vw(20px);
+
+		&-half {
+			flex: 1;
+			display: flex;
+			flex-direction: column;
+			gap: vw(20px);
+		}
+	}
+}

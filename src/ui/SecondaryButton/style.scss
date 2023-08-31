@@ -1,0 +1,54 @@
+@import '../../shared/styles/lib';
+
+.secondaryButton {
+	padding: vw(7px) vw(12px);
+	border: 1px solid $white;
+	border-radius: vw(8px);
+
+	display: flex;
+	align-items: center;
+	gap: vw(6px);
+
+	color: $dark;
+	background-color: $white;
+	outline-offset: 1px;
+
+	transition: background 0.1s cubic-bezier(0.4, 0, 0, 1), color 0.1s cubic-bezier(0.4, 0, 0, 1),
+		border-color 0.1s cubic-bezier(0.4, 0, 0, 1);
+
+	&__icon {
+		width: vw(20px);
+		height: vw(20px);
+	}
+
+	& path {
+		fill: $coal;
+		transition: fill 0.1s cubic-bezier(0.4, 0, 0, 1);
+	}
+
+	&:hover {
+		cursor: pointer;
+		background-color: $blue;
+		border-color: $blue;
+		color: $white;
+
+		& path {
+			fill: $white;
+		}
+	}
+
+	&:active {
+		color: $white;
+		border-color: $celestial;
+		background-color: $celestial;
+
+		& path {
+			fill: $white;
+		}
+	}
+
+	&:focus-visible {
+		border: 1px solid $dark;
+		outline: 1px solid $white;
+	}
+}

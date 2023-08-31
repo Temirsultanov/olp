@@ -1,0 +1,55 @@
+@import '../../../shared/styles/lib';
+
+.input {
+	width: 100%;
+	margin-top: vw(5px);
+	padding: vw(13px) vw(11px) vw(12px);
+	border-radius: vw(14px);
+	border: 1px solid $white;
+
+	box-shadow: none;
+	outline: none;
+
+	font-family: inherit;
+	font-size: vw(14px);
+	color: $graphit;
+	background-color: $white;
+
+	&::placeholder {
+		color: $grey;
+	}
+
+	&:focus {
+		border-color: $grey;
+	}
+
+	&__label {
+		color: $graphit;
+
+		&-required {
+			&:after {
+				content: '*';
+				position: relative;
+				top: vw(-2px);
+				right: vw(-4px);
+				color: $candy;
+			}
+		}
+	}
+}
+
+.form-afterInvalid .input:not([type='file']) {
+	&:valid {
+		border-color: $celestial;
+		background-color: #009dff20;
+	}
+
+	&:invalid {
+		border-color: $candy;
+		background-color: #fb2b1810;
+	}
+
+	&:focus {
+		border-color: $graphit;
+	}
+}

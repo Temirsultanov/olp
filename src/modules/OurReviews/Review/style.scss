@@ -1,0 +1,28 @@
+@import '../../../shared/styles/lib';
+
+.review {
+	width: 100%;
+	padding: vw(30px);
+	border-radius: vw(22px);
+
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	gap: vw(20px);
+
+	color: $graphit;
+	background-color: $white;
+
+	&__header {
+		display: flex;
+		align-items: center;
+		gap: vw(16px);
+	}
+
+	&__photoWrapper {
+		width: vw(62px);
+		height: vw(62px);
+		border-radius: 50%;
+		overflow: hidden;
+	}
+}

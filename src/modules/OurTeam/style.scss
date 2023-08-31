@@ -1,0 +1,33 @@
+@import '../../shared/styles/lib';
+
+.ourTeam {
+	padding: vw(60px) 0 vw(94px);
+	border-radius: vw(34px) vw(34px) 0 0;
+	background-color: $celestial;
+
+	&__title {
+		margin: 0 vw(30px);
+		display: inline-block;
+
+		color: $white;
+		text-transform: uppercase;
+
+		&-black {
+			color: $graphit;
+		}
+	}
+
+	&__list {
+		width: 100%;
+		margin-top: vw(30px);
+		padding: 0 vw(30px);
+
+		display: flex;
+		justify-content: space-between;
+		gap: vw(20px);
+
+		& li {
+			flex: 1;
+		}
+	}
+}

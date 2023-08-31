@@ -1,0 +1,27 @@
+@import '../../shared/styles/lib';
+
+.button {
+	padding: vw(15px) vw(28px) vw(16px);
+	border: 1px solid $blue;
+	border-radius: vw(14px);
+
+	color: $white;
+	background-color: $blue;
+
+	outline: none;
+	cursor: pointer;
+	transition: color 0.1s cubic-bezier(0.4, 0, 0, 1), background-color 0.1s cubic-bezier(0.4, 0, 0, 1),
+		opacity 0.1s cubic-bezier(0.4, 0, 0, 1);
+
+	&:hover {
+		border-color: $coal;
+		background-color: $coal;
+	}
+	&:active {
+		background-color: $dark;
+	}
+	&:focus-visible {
+		border: 1px solid $white;
+		outline: 2px solid $dark;
+	}
+}

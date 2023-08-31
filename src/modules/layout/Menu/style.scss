@@ -1,0 +1,18 @@
+@import '../../../shared/styles/lib';
+
+.menu {
+	& ul {
+		display: flex;
+	}
+	& li {
+		display: flex;
+		align-items: center;
+	}
+	& a {
+		padding: vw(10px);
+
+		&:hover {
+			color: $celestial;
+		}
+	}
+}

@@ -1,0 +1,128 @@
+@import '../../shared/styles/lib';
+
+.promo {
+	$border-radius: vw(22px);
+	$padding: 30px;
+
+	padding: vw(30px) vw(30px) 0 vw(30px);
+
+	display: flex;
+	gap: vw(20px);
+
+	background-color: $white;
+
+	&__content {
+		flex: 1;
+		padding-top: vw($padding);
+		padding-bottom: vw($padding);
+		border-radius: $border-radius;
+
+		background-color: #fff;
+	}
+
+	&__transports {
+		margin-left: vw($padding);
+	}
+
+	&__title {
+		margin-top: vw(35px);
+		margin-left: vw($padding);
+		margin-right: vw($padding + 10px);
+
+		color: $grey;
+		text-transform: uppercase;
+
+		& span {
+			display: block;
+		}
+
+		&-black {
+			color: $graphit;
+		}
+	}
+
+	&__pattern {
+		margin-top: vw(45px);
+		width: 100%;
+		height: vw(114px);
+
+		background-color: #fcfcfc;
+		background-image: url('../../images/pattern.png');
+		background-repeat: repeat-x;
+		background-size: vw(216px) vw(114px);
+		background-position: vw(-65px) 0;
+	}
+
+	&__footer {
+		margin-top: vw(50px);
+		margin-left: vw($padding);
+		margin-right: vw($padding);
+
+		display: flex;
+		justify-content: space-between;
+		align-items: flex-end;
+	}
+
+	&__description {
+		width: vw(250px);
+	}
+
+	&__services {
+		flex: 1;
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		grid-template-rows: 1fr 1fr;
+		gap: vw(20px);
+
+		& li {
+			padding: vw(16px);
+			border-radius: $border-radius;
+			background-size: cover;
+			background-position: center center;
+
+			&:nth-child(1) {
+				background-color: #a9c2c1;
+				background-image: url('../../images/international.png');
+			}
+			&:nth-child(2) {
+				background-color: #9c9da0;
+				background-position: center vw(-30px);
+				background-image: url('../../images/customs-clearance.png');
+			}
+			&:nth-child(3) {
+				background-color: #3e5360;
+				background-position: center vw(-30px);
+				background-image: url('../../images/bypassing-sanctions.png');
+			}
+			&:nth-child(4) {
+				background-color: #0392e5;
+				background-image: url('../../images/sertification-services.png');
+			}
+
+			& p {
+				padding: vw(6px) vw(10px);
+				border-radius: vw(20px);
+				display: inline;
+				background-color: rgb(240, 240, 240, 0.8);
+			}
+		}
+	}
+}
+
+.transports {
+	display: flex;
+	gap: vw(50px);
+
+	& li {
+		display: flex;
+	}
+
+	& svg {
+		width: vw(30px);
+		height: vw(30px);
+	}
+
+	& path {
+		fill: $grey;
+	}
+}

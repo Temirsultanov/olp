@@ -1,0 +1,22 @@
+@import '../../shared/styles/lib';
+
+.ourServices {
+	padding: vw(60px) vw(30px) vw(94px);
+	border-radius: vw(34px) vw(34px) 0 0;
+
+	color: $white;
+	background-color: $graphit;
+
+	&__title {
+		display: inline-block;
+		text-transform: uppercase;
+	}
+
+	&__list {
+		margin-top: vw(30px);
+
+		& li:not(:last-child) {
+			border-bottom: 1px solid rgb(255, 255, 255, 0.2);
+		}
+	}
+}

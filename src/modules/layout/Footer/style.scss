@@ -1,0 +1,76 @@
+@import '../../../shared/styles/lib';
+
+.footer {
+	padding: vw(30px);
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+	color: $grey;
+	background-color: $dark;
+
+	&__logo {
+		width: vw(130px);
+		height: auto;
+	}
+
+	&__requisites {
+		margin-top: vw(18px);
+		text-transform: uppercase;
+
+		& span {
+			display: block;
+		}
+	}
+
+	&__copyright {
+		align-self: flex-end;
+		text-align: center;
+	}
+
+	& > div:last-of-type {
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		align-items: flex-end;
+	}
+
+	&__socials {
+		display: flex;
+		align-items: center;
+	}
+
+	&__waLink,
+	&__emailLink {
+		width: vw(40px);
+		height: vw(40px);
+		display: flex;
+		justify-content: center;
+		align-items: center;
+
+		& svg {
+			width: vw(20px);
+			height: vw(20px);
+		}
+		& path {
+			fill: $white;
+		}
+
+		&:hover path {
+			fill: $celestial;
+		}
+	}
+
+	&__emailLink {
+		margin-right: vw(15px);
+	}
+
+	&__policy {
+		margin-right: vw(-10px);
+		margin-bottom: vw(-10px);
+		padding: vw(10px);
+		color: $white;
+
+		&:hover {
+			color: $celestial;
+		}
+	}
+}

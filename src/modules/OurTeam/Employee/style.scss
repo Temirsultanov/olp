@@ -1,0 +1,43 @@
+@import '../../../shared/styles/lib';
+
+.employee {
+	padding-bottom: vw(24px);
+	border-radius: vw(22px);
+
+	color: $white;
+	background-color: $graphit;
+
+	&__photoWrapper {
+		height: vw(290px);
+		border-radius: vw(22px);
+		overflow: hidden;
+		background-color: $white;
+		transition: 0.3s cubic-bezier(0.4, 0, 0, 1);
+	}
+
+	&__photo {
+		width: 100%;
+		height: 100%;
+		transform: translateY(vw(20px)) scale(0.9);
+		transition: 0.5s cubic-bezier(0.4, 0, 0, 1);
+	}
+
+	&__name {
+		margin-top: vw(24px);
+		padding: 0 vw(24px);
+	}
+
+	&__role {
+		margin-top: vw(10px);
+		padding: 0 vw(24px);
+	}
+
+	&:hover {
+		& .employee__photoWrapper {
+			background-color: #ffffff;
+		}
+		& .employee__photo {
+			transform: translateY(0px) scale(1);
+		}
+	}
+}
