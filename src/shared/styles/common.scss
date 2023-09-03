@@ -1,0 +1,125 @@
+@import './lib';
+@import './fonts.scss';
+@import './text.scss';
+
+*,
+input,
+button,
+textarea {
+	box-sizing: border-box;
+}
+
+html {
+	scroll-behavior: smooth;
+}
+
+body {
+	margin: 0;
+	font-family: 'Inter', Arial, Helvetica, sans-serif;
+
+	color: $graphit;
+	background-color: $white;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul,
+menu {
+	margin: 0;
+}
+
+ul {
+	padding: 0;
+	list-style: none;
+}
+
+menu {
+	padding: 0;
+}
+
+nav {
+	padding: 0;
+}
+
+a {
+	color: inherit;
+	text-decoration: none;
+}
+
+input,
+button {
+	font-family: inherit;
+	font-size: inherit;
+}
+
+::selection {
+	color: $white;
+	background-color: $midnight;
+}
+
+.underline:hover {
+	text-decoration: underline;
+}
+
+.section-link {
+	scroll-margin-top: vw(110px);
+	user-select: text;
+	cursor: text;
+}
+
+@mixin outlineStyles {
+	position: relative;
+	outline: none;
+
+	&::before,
+	&::after {
+		content: '';
+		outline: 1px solid $white;
+		opacity: 0;
+
+		width: 100%;
+		height: 100%;
+		position: absolute;
+		top: 0;
+		left: 0;
+	}
+
+	&::before {
+		outline-color: $white;
+		outline-offset: 2px;
+	}
+
+	&::after {
+		outline-color: $dark;
+		outline-offset: 1px;
+	}
+
+	&:focus {
+		&::before,
+		&::after {
+			opacity: 1;
+		}
+	}
+
+	&:active {
+		&::before,
+		&::after {
+			opacity: 0;
+		}
+	}
+}
+
+.outline {
+	@include outlineStyles;
+}
+
+.focus-visible-outline {
+	&:focus-visible {
+		@include outlineStyles;
+	}
+}

@@ -20,6 +20,7 @@
 	&__button {
 		margin-top: vw(135px);
 	}
+
 	&__pin {
 		width: vw(50px);
 		height: auto;
@@ -28,6 +29,7 @@
 		top: vw(290px);
 		right: vw(939px);
 	}
+
 	&__path {
 		width: vw(580px);
 		height: auto;
@@ -37,10 +39,15 @@
 		top: vw(275px);
 		right: vw(394px);
 	}
-	&__box {
+
+	&__boxWrapper {
 		width: vw(530px);
 		top: vw(125px);
 		right: vw(30px);
 		position: absolute;
+	}
+
+	&__box {
+		width: 100%;
 	}
 }

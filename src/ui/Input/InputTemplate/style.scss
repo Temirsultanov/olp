@@ -1,32 +1,39 @@
 @import '../../../shared/styles/lib';
 
 .input {
-	width: 100%;
-	margin-top: vw(5px);
-	padding: vw(13px) vw(11px) vw(12px);
-	border-radius: vw(14px);
-	border: 1px solid $white;
-
-	box-shadow: none;
-	outline: none;
-
-	font-family: inherit;
-	font-size: vw(14px);
-	color: $graphit;
-	background-color: $white;
-
-	&::placeholder {
-		color: $grey;
-	}
-
-	&:focus {
-		border-color: $grey;
-	}
-
 	&__label {
 		color: $graphit;
+	}
+	&__item {
+		width: 100%;
+		margin-top: vw(5px);
+		padding: vw(13px) vw(11px) vw(12px);
+		border-radius: vw(14px);
+		border: 1px solid $white;
+		outline: none;
+		box-shadow: none;
 
-		&-required {
+		font-family: inherit;
+		font-size: vw(14px);
+		color: $graphit;
+		background-color: $white;
+
+		transition: background 0.1s cubic-bezier(0.4, 0, 0, 1), border-color 0.1s cubic-bezier(0.4, 0, 0, 1);
+
+		&::placeholder {
+			color: $grey;
+		}
+		&:hover {
+			border-color: $grey;
+			background-color: #ffffff;
+		}
+		&:focus {
+			border-color: $celestial;
+			background-color: #ffffff;
+		}
+	}
+	&-required {
+		& .input__label {
 			&:after {
 				content: '*';
 				position: relative;
@@ -38,22 +45,8 @@
 	}
 }
 
-.form-afterInvalid .input:not([type='file']) {
-	&:valid {
-		border-color: $celestial;
-		background-color: #009dff20;
-	}
-
+.form-invalid .input__item {
 	&:invalid {
 		border-color: $candy;
-		background-color: #fb2b1810;
-
-		&::placeholder {
-			color: #fb2b18b9;
-		}
-	}
-
-	&:focus {
-		border-color: $graphit;
 	}
 }

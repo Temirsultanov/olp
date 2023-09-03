@@ -1,10 +1,14 @@
 @import '../../../shared/styles/lib';
 
 .input {
-	appearance: none;
+	position: relative;
 
-	&__wrapper {
-		position: relative;
+	&__item {
+		appearance: none;
+
+		&:focus + .input__arrowDown {
+			transform: rotate(180deg);
+		}
 	}
 
 	&__arrowDown {
@@ -22,17 +26,11 @@
 		}
 	}
 
-	&:focus + .input__arrowDown {
-		transform: rotate(180deg);
-	}
-
 	&-empty {
-		.input {
+		& .input__item {
 			color: $grey;
-
 			&:focus {
 				color: $graphit;
-
 				& + .input__arrowDown path {
 					fill: $graphit;
 				}

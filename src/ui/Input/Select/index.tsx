@@ -1,18 +1,14 @@
 import React, { useState } from 'react'
-import { InputTemplate } from '../InputTemplate'
 import ArrowDown from '../../../images/icons/arrow-down-small.svg'
+import { InputTemplate, IProps as IInputCommonProps } from '../InputTemplate'
 import './style.scss'
 
-interface IProps {
+interface IProps extends IInputCommonProps {
 	children: React.ReactNode
-	label?: string
-	className?: string
 	name: string
-	id: string
-	required?: boolean
 }
 
-export const SelectInput = ({ className = '', children, label, name, id, required = false }: IProps) => {
+export const SelectInput = ({ children, id, name, required = false, label, className = '' }: IProps) => {
 	const [value, setValue] = useState('')
 	const onSelectChange = function (e: React.ChangeEvent<HTMLSelectElement>) {
 		setValue(e.target.value)
@@ -21,11 +17,17 @@ export const SelectInput = ({ className = '', children, label, name, id, require
 
 	return (
 		<InputTemplate
-			className={className + (value === '' ? ' input-empty' : '')}
 			id={id}
+			required={required}
 			label={label}
-			required={required}>
-			<select name={name} id={id} className="input text-s" required={required} onChange={onSelectChange} value={value}>
+			className={className + (value === '' ? ' input-empty' : '')}>
+			<select
+				onChange={onSelectChange}
+				value={value}
+				id={id}
+				name={name}
+				required={required}
+				className="input__item text-s">
 				{children}
 			</select>
 			<ArrowDown className="input__arrowDown" />

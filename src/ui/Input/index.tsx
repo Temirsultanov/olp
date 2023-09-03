@@ -1,37 +1,33 @@
 import React from 'react'
-import { InputTemplate } from './InputTemplate'
+import { InputTemplate, IProps as IInputCommonProps } from './InputTemplate'
 
-interface IProps {
-	className?: string
-	label?: string
+interface IProps extends IInputCommonProps {
 	name: string
-	id: string
 	placeholder?: string
-	required?: boolean
 	type?: 'text' | 'email' | 'phone' | 'file' | 'tel'
 	autoComplete?: 'on' | 'off'
 }
 
 export const Input = ({
-	className,
-	label,
-	name,
 	id,
+	name,
 	placeholder = '',
 	required = false,
+	label,
 	type = 'text',
-	autoComplete = 'on'
+	autoComplete = 'on',
+	className
 }: IProps) => {
 	return (
-		<InputTemplate className={className} label={label} id={id} required={required}>
+		<InputTemplate id={id} required={required} label={label} className={className}>
 			<input
-				name={name}
 				id={id}
-				className="input text-s"
+				name={name}
 				placeholder={placeholder}
 				required={required}
 				type={type}
 				autoComplete={autoComplete}
+				className="input__item text-s"
 			/>
 		</InputTemplate>
 	)

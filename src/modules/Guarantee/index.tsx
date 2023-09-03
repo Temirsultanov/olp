@@ -20,7 +20,9 @@ export const Guarantee = ({ className }: IProps) => {
 			<Button className="guarantee__button">Заказать консультацию</Button>
 			<Pin className="guarantee__pin" />
 			<Path className="guarantee__path" />
-			<StaticImage className="guarantee__box" src="../../images/box.png" alt="Box with OLP pattern" />
+			<div className="guarantee__boxWrapper">
+				<StaticImage className="guarantee__box" src="../../images/box.png" alt="Box with OLP pattern" />
+			</div>
 		</section>
 	)
 }

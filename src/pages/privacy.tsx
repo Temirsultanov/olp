@@ -1,15 +1,13 @@
 import * as React from 'react'
 import type { HeadFC, PageProps } from 'gatsby'
+import { Layout } from '../modules/Layout'
 
-import { Header } from '../modules/layout/Header'
-import { Footer } from '../modules/layout/Footer'
-
-import '../shared/styles/index.scss'
+import '../shared/styles/common.scss'
+import '../shared/styles/privacy.scss'
 
 const IndexPage: React.FC<PageProps> = () => {
 	return (
-		<>
-			<Header className=" app__header" />
+		<Layout>
 			<main id="policy">
 				<h1 className="heading-l">Политика конфиденциальности</h1>
 				<p className="text-l">
@@ -38,8 +36,7 @@ const IndexPage: React.FC<PageProps> = () => {
 					dignissimos dolor sed.
 				</p>
 			</main>
-			<Footer className=" app__footer" />
-		</>
+		</Layout>
 	)
 }
 

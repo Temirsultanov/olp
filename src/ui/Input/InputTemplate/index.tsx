@@ -1,23 +1,26 @@
 import React from 'react'
 import './style.scss'
 
-interface IProps {
-	children: React.ReactNode
-	required: boolean
+export interface IProps {
 	id: string
+	required?: boolean
 	label?: string
 	className?: string
 }
 
-export const InputTemplate = ({ children, required, id, label, className = '' }: IProps) => {
+interface IInputTemplateProps extends IProps {
+	children: React.ReactNode
+}
+
+export const InputTemplate = ({ children, id, required = false, label, className = '' }: IInputTemplateProps) => {
 	const renderedLabel = (
-		<label className={'input__label accent-s' + (required ? ' input__label-required' : '')} htmlFor={id}>
+		<label htmlFor={id} className={'input__label accent-s'}>
 			{label}
 		</label>
 	)
 
 	return (
-		<div className={'input__wrapper ' + className}>
+		<div className={'input ' + (required ? 'input-required ' : '') + className}>
 			{label ? renderedLabel : null}
 			{children}
 		</div>

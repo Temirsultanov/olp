@@ -16,7 +16,9 @@ export const Form = ({ className }: IProps) => {
 	const [invalid, setInvalid] = useState(false)
 	return (
 		<form
-			className={'contactsForm ' + className + (invalid ? ' form-afterInvalid' : '')}
+			method="POST"
+			action=""
+			className={'contactsForm ' + className + (invalid ? ' form-invalid' : '')}
 			onInvalid={() => setInvalid(true)}>
 			<fieldset name="contacts">
 				<legend className="accent-xl">[01] Контактные данные</legend>
@@ -56,9 +58,9 @@ export const Form = ({ className }: IProps) => {
 				<Button type="submit" className="contactsForm__button">
 					Запросить стоимость
 				</Button>
-				<p className="text-s contactsForm__policy">
+				<p className="text-s contactsForm__privacy">
 					Нажимая кнопку, вы соглашаетесь с&nbsp;
-					<a href="/policy" className="underline outline">
+					<a href="/privacy" className="underline outline">
 						политикой конфиденциальности
 					</a>
 					.

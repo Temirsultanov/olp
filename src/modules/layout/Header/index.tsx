@@ -14,9 +14,10 @@ import './style.scss'
 
 interface IProps {
 	className?: string
+	openCallRequestModal: React.MouseEventHandler
 }
 
-export const Header = ({ className }: IProps) => {
+export const Header = ({ className, openCallRequestModal }: IProps) => {
 	return (
 		<header className={'header' + className}>
 			<div className="header__logoAndMenu">
@@ -37,7 +38,7 @@ export const Header = ({ className }: IProps) => {
 				<a className="header__emailLink link outline" href={CONTACTS.email.link}>
 					<EmailIcon />
 				</a>
-				<SecondaryButton className=" header__orderCall" Icon={PhoneIcon}>
+				<SecondaryButton className=" header__orderCall" Icon={PhoneIcon} clickHandler={openCallRequestModal}>
 					Заказать звонок
 				</SecondaryButton>
 				<button className="header__changeLang outline">

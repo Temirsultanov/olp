@@ -1,7 +1,7 @@
-import * as React from 'react'
+import React from 'react'
 import type { HeadFC, PageProps } from 'gatsby'
 
-import { Header } from '../modules/layout/Header'
+import { Layout } from '../modules/Layout'
 import { Promo } from '../modules/Promo'
 import { AboutUs } from '../modules/AboutUs'
 import { Guarantee } from '../modules/Guarantee'
@@ -10,15 +10,14 @@ import { OurTeam } from '../modules/OurTeam'
 import { OurReviews } from '../modules/OurReviews'
 import { FlexibleApproach } from '../modules/FlexibleApproach'
 import { Contacts } from '../modules/Contacts'
-import { Footer } from '../modules/layout/Footer'
 
+import '../shared/styles/common.scss'
 import '../shared/styles/index.scss'
 
 const IndexPage: React.FC<PageProps> = () => {
 	return (
-		<>
-			<Header className=" app__header" />
-			<main id="index">
+		<Layout>
+			<main id="index" className="index">
 				<Promo className=" index__promo" />
 				<AboutUs className=" index__aboutUs" />
 				<Guarantee className=" index__guarantee" />
@@ -28,8 +27,7 @@ const IndexPage: React.FC<PageProps> = () => {
 				<FlexibleApproach className=" index__flexibleApproach" />
 				<Contacts className=" index__contacts" />
 			</main>
-			<Footer className=" app__footer" />
-		</>
+		</Layout>
 	)
 }
 

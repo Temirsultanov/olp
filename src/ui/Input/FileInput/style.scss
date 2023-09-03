@@ -1,39 +1,37 @@
 @import '../../../shared/styles/lib';
 
 .input {
-	&__wrapper {
-		position: relative;
+	position: relative;
 
-		&-file {
-			& .input {
-				width: 0;
-				height: 0;
-				padding: 0;
-				opacity: 0;
+	&-file {
+		& .input__item {
+			width: 0;
+			height: 0;
+			padding: 0;
+			opacity: 0;
 
-				&__fake {
-					width: 100%;
-					height: auto;
-					padding: vw(13px) vw(11px) vw(12px) vw(36px);
-					display: block;
-					opacity: 1;
-				}
+			&-fake {
+				width: 100%;
+				height: auto;
+				padding: vw(13px) vw(11px) vw(12px) vw(36px);
+				display: block;
+				opacity: 1;
+			}
 
-				&__placeholder {
-					color: $grey;
-				}
+			& .input__placeholder {
+				color: $grey;
+			}
 
-				&:focus {
-					+ .input__fake {
-						border: 1px solid $graphit;
-					}
+			&:focus {
+				+ .input__item-fake {
+					border: 1px solid $graphit;
 				}
 			}
 		}
+	}
 
-		&-empty .input__paperClip path {
-			fill: $grey;
-		}
+	&-empty .input__paperClip path {
+		fill: $grey;
 	}
 
 	&__paperClip {

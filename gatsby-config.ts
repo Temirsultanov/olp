@@ -25,6 +25,12 @@ const config: GatsbyConfig = {
 				name: 'images',
 				path: './src/images/'
 			}
+		},
+		{
+			resolve: 'gatsby-plugin-manifest',
+			options: {
+				icon: 'src/images/favicon.png'
+			}
 		}
 	]
 }

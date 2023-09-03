@@ -1,0 +1,13 @@
+@import '../../shared/styles/lib';
+
+.layout {
+	&__header {
+		width: auto;
+
+		position: fixed;
+		top: vw(20px);
+		left: vw(30px);
+		right: vw(30px);
+		z-index: 5;
+	}
+}

@@ -1,0 +1,15 @@
+@import './lib';
+
+#privacy {
+	padding-left: vw(30px);
+	padding-top: vw(100px);
+	padding-bottom: vw(60px);
+
+	display: flex;
+	flex-direction: column;
+	gap: vw(20px);
+
+	& p {
+		width: vw(600px);
+	}
+}

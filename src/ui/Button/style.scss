@@ -14,11 +14,12 @@
 		opacity 0.1s cubic-bezier(0.4, 0, 0, 1);
 
 	&:hover {
-		border-color: $coal;
-		background-color: $coal;
+		border-color: #115ea3;
+		background-color: #115ea3;
 	}
 	&:active {
-		background-color: $dark;
+		border-color: #0c3b5e;
+		background-color: #0c3b5e;
 	}
 	&:focus-visible {
 		border: 1px solid $white;
