@@ -1,6 +1,6 @@
 import * as React from 'react'
 import type { HeadFC, PageProps } from 'gatsby'
-import { Layout } from '../modules/Layout/index'
+import { Layout } from '../modules/Layout'
 
 import '../shared/styles/common.scss'
 import '../shared/styles/privacy.scss'
