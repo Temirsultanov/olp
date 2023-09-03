@@ -16,15 +16,9 @@ export const FlexibleApproach = ({ className }: IProps) => {
 			<div className="flexibleApproach__content">
 				<h2 className="flexibleApproach__title heading-l">Гибкий подход к клиентам</h2>
 				<p className="flexibleApproach__description accent-l">
-					Работаем с любыми участниками внешне экономической деятельности
+					Работаем с участниками внешне экономической деятельности
 				</p>
 				<ul className="flexibleApproach__features">
-					<li>
-						<div className="flexibleApproach__iconWrapper">
-							<Check />
-						</div>
-						<p className="text-l">Физическими Лицами</p>
-					</li>
 					<li>
 						<div className="flexibleApproach__iconWrapper">
 							<Check />
@@ -36,6 +30,12 @@ export const FlexibleApproach = ({ className }: IProps) => {
 							<Check />
 						</div>
 						<p className="text-l">Индивидуальными Предпринимателями</p>
+					</li>
+					<li>
+						<div className="flexibleApproach__iconWrapper">
+							<Check />
+						</div>
+						<p className="text-l">А так же с Физическими Лицами</p>
 					</li>
 				</ul>
 			</div>

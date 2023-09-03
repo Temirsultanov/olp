@@ -1,5 +1,6 @@
 import React, { useCallback, useState } from 'react'
 import { CallRequestModal } from '../../modules/CallRequestModal'
+import { CallRequestSuccess } from '../../modules/CallRequestSuccess'
 import { Header } from './Header'
 import { Footer } from './Footer'
 import './style.scss'
@@ -10,6 +11,13 @@ interface IProps {
 
 export const Layout = ({ children }: IProps) => {
 	const [callRequestModalOpened, setCallRequestModalOpened] = useState(false)
+	const [callRequestSucessOpened, setCallRequestSuccessOpened] = useState(false)
+
+	const submitRequestModalHandler = useCallback(() => {
+		closeCallRequestModal()
+		openCallRequestSuccess()
+	}, [])
+
 	const openCallRequestModal = useCallback(() => {
 		setCallRequestModalOpened(true)
 	}, [])
@@ -17,10 +25,24 @@ export const Layout = ({ children }: IProps) => {
 	const closeCallRequestModal = useCallback(() => {
 		setCallRequestModalOpened(false)
 	}, [])
+
+	const openCallRequestSuccess = useCallback(() => {
+		setCallRequestSuccessOpened(true)
+	}, [])
+
+	const closeCallRequestSuccess = useCallback(() => {
+		setCallRequestSuccessOpened(false)
+	}, [])
+
 	return (
 		<>
 			<Header className=" layout__header" openCallRequestModal={openCallRequestModal} />
-			<CallRequestModal opened={callRequestModalOpened} close={closeCallRequestModal} />
+			<CallRequestModal
+				opened={callRequestModalOpened}
+				close={closeCallRequestModal}
+				submit={submitRequestModalHandler}
+			/>
+			<CallRequestSuccess opened={callRequestSucessOpened} close={closeCallRequestSuccess} />
 			{children}
 			<Footer className=" layout__footer" />
 		</>

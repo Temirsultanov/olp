@@ -30,6 +30,7 @@ export const AboutUs = ({ className = '' }: IProps) => {
 					<span>О компании</span>
 					<span>О компании</span>
 					<span>О компании</span>
+					<span>О компании</span>
 				</h2>
 			</a>
 			<ul className="aboutUs__benefits">{renderedBenefits}</ul>

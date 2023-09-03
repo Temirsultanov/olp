@@ -1,0 +1,11 @@
+@import '../../shared/styles/lib';
+
+.callRequestSuccess {
+	&__description {
+		margin-top: vw(12px);
+	}
+	&__button {
+		margin-top: vw(30px);
+		width: 100%;
+	}
+}
