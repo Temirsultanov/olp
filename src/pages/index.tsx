@@ -1,7 +1,7 @@
 import React from 'react'
 import type { HeadFC, PageProps } from 'gatsby'
 
-import { Layout } from '../modules/Layout'
+import { Layout } from '../ui/Layout'
 import { Promo } from '../modules/Promo'
 import { AboutUs } from '../modules/AboutUs'
 import { Guarantee } from '../modules/Guarantee'

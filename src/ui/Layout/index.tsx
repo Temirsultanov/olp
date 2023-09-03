@@ -1,5 +1,5 @@
 import React, { useCallback, useState } from 'react'
-import { CallRequestModal } from '../CallRequestModal'
+import { CallRequestModal } from '../../modules/CallRequestModal'
 import { Header } from './Header'
 import { Footer } from './Footer'
 import './style.scss'

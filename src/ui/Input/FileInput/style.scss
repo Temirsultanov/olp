@@ -37,9 +37,12 @@
 	&__paperClip {
 		width: vw(17px);
 		height: vw(20px);
+
 		position: absolute;
 		left: vw(13px);
 		bottom: vw(13px);
+
+		pointer-events: none;
 
 		& path {
 			fill: $graphit;
