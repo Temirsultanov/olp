@@ -2,8 +2,6 @@ import React from 'react'
 import { StaticImage } from 'gatsby-plugin-image'
 import { useTranslation } from 'gatsby-plugin-react-i18next'
 
-import { ConsultationRequestModal } from '../ConsultationRequestModal'
-import { SuccessModal } from '../SuccessModal'
 import { Button } from '../../ui/Button'
 import TruckIcon from '../../images/icons/truck.svg'
 import ShipIcon from '../../images/icons/ship.svg'

@@ -69,9 +69,8 @@ const IndexPage: React.FC<PageProps> = () => {
 
 export default IndexPage
 
-export const Head: HeadFC = () => {
-	const { t } = useTranslation('index')
-	return <title> {t('title')} </title>
+export const Head: HeadFC = ({ pageContext }) => {
+	return <title>OLP</title>
 }
 
 export const query = graphql`
