@@ -5,7 +5,7 @@ interface IProps {
 	className?: string
 	children: React.ReactNode
 	Icon?: JSX.ElementType
-	clickHandler: React.MouseEventHandler
+	clickHandler?: React.MouseEventHandler
 }
 
 export const SecondaryButton = ({ className, children, Icon, clickHandler }: IProps) => {

@@ -7,9 +7,10 @@ import './style.scss'
 
 interface IProps {
 	className?: string
+	openConsultationRequestModal: Function
 }
 
-export const Guarantee = ({ className }: IProps) => {
+export const Guarantee = ({ className, openConsultationRequestModal }: IProps) => {
 	return (
 		<section className={'guarantee' + className}>
 			<h2 className="guarantee__title heading-l">
@@ -17,11 +18,18 @@ export const Guarantee = ({ className }: IProps) => {
 				<span> и своевременную доставку </span>
 				<span className="guarantee__title-black">вашего груза в точку назначения</span>
 			</h2>
-			<Button className="guarantee__button">Заказать консультацию</Button>
+			<Button clickHandler={() => openConsultationRequestModal()} className="guarantee__button">
+				Заказать консультацию
+			</Button>
 			<Pin className="guarantee__pin" />
 			<Path className="guarantee__path" />
 			<div className="guarantee__boxWrapper">
-				<StaticImage className="guarantee__box" src="../../images/box.png" alt="Box with OLP pattern" />
+				<StaticImage
+					placeholder="none"
+					className="guarantee__box"
+					src="../../images/box.png"
+					alt="Box with OLP pattern"
+				/>
 			</div>
 		</section>
 	)

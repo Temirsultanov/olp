@@ -10,7 +10,7 @@ interface IProps {
 	submit: Function
 }
 
-export const CallRequestModal = ({ opened, close, submit }: IProps) => {
+export const ConsultationRequestModal = ({ opened, close, submit }: IProps) => {
 	const [invalid, setInvalid] = useState(false)
 
 	const submitHandler = useCallback((event: React.FormEvent<HTMLFormElement>) => {
@@ -20,32 +20,32 @@ export const CallRequestModal = ({ opened, close, submit }: IProps) => {
 
 	return (
 		<>
-			<ModalTemplate className="callRequestModal" close={close} opened={opened}>
-				<h2 className="callRequestModal__title accent-xl">Заказать звонок</h2>
-				<p className="callRequestModal__description text-m">
-					Закажите обратный звонок, и наш менеджер свяжется с вами, чтобы ответить на все интересующие вас вопросы.
+			<ModalTemplate className="consultationRequestModal" close={close} opened={opened}>
+				<h2 className="consultationRequestModal__title accent-xl">Заказать консультацию</h2>
+				<p className="consultationRequestModal__description text-m">
+					Закажите консультацию, и наш менеджер свяжется с вами, чтобы ответить на все интересующие вас вопросы.
 				</p>
 				<form
 					onInvalid={() => setInvalid(true)}
 					onSubmit={submitHandler}
 					method="POST"
 					action=""
-					className={'callRequestModal__form' + (invalid ? ' form-invalid' : '')}
+					className={'consultationRequestModal__form' + (invalid ? ' form-invalid' : '')}
 					name="callRequest">
-					<Input label="Имя" required={true} id="callRequest-name" name="name" placeholder="Ваше имя" />
+					<Input label="Имя" required={true} id="consultationRequestModal-name" name="name" placeholder="Ваше имя" />
 					<Input
-						className="callRequestModal__phoneInput"
+						className="consultationRequestModal__phoneInput"
 						label="Телефон"
 						required={true}
-						id="callRequest-phone"
+						id="consultationRequestModal-phone"
 						name="phone"
 						type="tel"
 						placeholder="+7 (999) 999-99-99"
 					/>
-					<Button type="submit" className="callRequestModal__button">
-						Заказать звонок
+					<Button type="submit" className="consultationRequestModal__button">
+						Заказать консультацию
 					</Button>
-					<p className="text-s callRequestModal__privacy">
+					<p className="text-s consultationRequestModal__privacy">
 						Нажимая кнопку, вы соглашаетесь с&nbsp;
 						<a href="/privacy" className="outline underline">
 							политикой&nbsp;конфиденциальности

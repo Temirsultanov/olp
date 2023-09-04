@@ -17,7 +17,7 @@ export const OurTeam = ({ className }: IProps) => {
 				edges {
 					node {
 						childImageSharp {
-							gatsbyImageData
+							gatsbyImageData(placeholder: NONE)
 						}
 						relativePath
 					}

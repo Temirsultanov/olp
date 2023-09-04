@@ -9,7 +9,6 @@ const config: GatsbyConfig = {
 	plugins: [
 		'gatsby-plugin-sass',
 		'gatsby-plugin-image',
-		'gatsby-plugin-sharp',
 		'gatsby-transformer-sharp',
 		{
 			resolve: 'gatsby-plugin-react-svg',
@@ -30,6 +29,15 @@ const config: GatsbyConfig = {
 			resolve: 'gatsby-plugin-manifest',
 			options: {
 				icon: 'src/images/favicon.png'
+			}
+		},
+		{
+			resolve: 'gatsby-plugin-sharp',
+			options: {
+				defaults: {
+					placeholder: 'none',
+					backgroundColor: `transparent`
+				}
 			}
 		}
 	]
