@@ -40,11 +40,14 @@
 	}
 
 	&__waLink,
-	&__emailLink,
-	&__changeLang {
+	&__emailLink {
 		width: vw(40px);
 		height: vw(40px);
+	}
 
+	&__waLink,
+	&__emailLink,
+	&__changeLang {
 		display: flex;
 		justify-content: center;
 		align-items: center;
@@ -84,7 +87,17 @@
 
 	&__changeLang {
 		border: none;
+		gap: vw(6px);
 		cursor: pointer;
+		color: $white;
 		background-color: transparent;
+
+		&:hover {
+			color: $celestial;
+		}
+
+		& span {
+			margin-top: vw(2px);
+		}
 	}
 }

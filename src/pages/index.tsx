@@ -17,14 +17,12 @@ import '../shared/styles/common.scss'
 import '../shared/styles/index.scss'
 
 const IndexPage: React.FC<PageProps> = () => {
-	const formRef = useRef<HTMLFormElement | null>(null)
 	const [consultationRequestModalOpened, setConsultationRequestModalOpened] = useState(false)
 	const [successModalOpened, setSuccessModalOpened] = useState(false)
 
-	const submitRequestModalHandler = useCallback((form: HTMLFormElement) => {
+	const submitRequestModalHandler = useCallback(() => {
 		closeConsultationRequestModal()
 		openSuccessModal()
-		formRef.current = form
 	}, [])
 
 	const openConsultationRequestModal = useCallback(() => {
@@ -41,7 +39,6 @@ const IndexPage: React.FC<PageProps> = () => {
 
 	const closeSuccessModal = useCallback(() => {
 		setSuccessModalOpened(false)
-		if (formRef.current) formRef.current.reset()
 	}, [])
 
 	return (

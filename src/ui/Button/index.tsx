@@ -6,11 +6,25 @@ interface IProps {
 	children: React.ReactNode
 	clickHandler?: React.MouseEventHandler<HTMLButtonElement>
 	type?: 'submit' | 'button'
+	unfilled?: boolean
+	active?: boolean
 }
 
-export const Button = ({ className, children, clickHandler, type = 'button' }: IProps) => {
+export const Button = ({
+	className,
+	children,
+	clickHandler,
+	type = 'button',
+	unfilled = false,
+	active = false
+}: IProps) => {
 	return (
-		<button onClick={clickHandler} className={'button accent-m ' + className} type={type}>
+		<button
+			onClick={clickHandler}
+			className={['button accent-m', className, unfilled ? 'button-unfilled' : '', active ? 'button-active' : ''].join(
+				' '
+			)}
+			type={type}>
 			{children}
 		</button>
 	)

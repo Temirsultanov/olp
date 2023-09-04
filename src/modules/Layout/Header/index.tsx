@@ -13,20 +13,21 @@ import { SuccessModal } from '../../SuccessModal'
 
 import { CONTACTS } from '../../../shared/constants'
 import './style.scss'
+import { ChangeLanguageModal } from '../../ChangeLanguageModal'
 
 interface IProps {
 	className?: string
 }
 
 export const Header = ({ className }: IProps) => {
-	const formRef = useRef<HTMLFormElement | null>(null)
+	const currentLanguage = 'RU'
 	const [callRequestModalOpened, setCallRequestModalOpened] = useState(false)
 	const [successModalOpened, setSuccessModalOpened] = useState(false)
+	const [changeLanguageModalOpened, setChangeLanguageModalOpened] = useState(false)
 
-	const submitRequestModalHandler = useCallback((form: HTMLFormElement) => {
+	const submitRequestModalHandler = useCallback(() => {
 		closeCallRequestModal()
 		openSuccessModal()
-		formRef.current = form
 	}, [])
 
 	const openCallRequestModal = useCallback(() => {
@@ -43,7 +44,24 @@ export const Header = ({ className }: IProps) => {
 
 	const closeSuccessModal = useCallback(() => {
 		setSuccessModalOpened(false)
-		if (formRef.current) formRef.current.reset()
+	}, [])
+
+	const openChangeLanguageModal = useCallback(() => {
+		setChangeLanguageModalOpened(true)
+	}, [])
+
+	const closeChangeLanguageModal = useCallback(() => {
+		setChangeLanguageModalOpened(false)
+	}, [])
+
+	const setRussianLanguage = useCallback(() => {
+		console.log('SET RUSSIAN LANGUAGE')
+		setChangeLanguageModalOpened(false)
+	}, [])
+
+	const setEnglishLanguage = useCallback(() => {
+		console.log('SET ENGLISH LANGUAGE')
+		setChangeLanguageModalOpened(false)
 	}, [])
 
 	return (
@@ -61,17 +79,18 @@ export const Header = ({ className }: IProps) => {
 					<a className="header__phoneLink underline outline accent-s" href={CONTACTS.phone.link}>
 						{CONTACTS.phone.text}
 					</a>
-					<a className="header__waLink link outline" href={CONTACTS.whatsapp.link}>
+					<a className="header__waLink outline" href={CONTACTS.whatsapp.link}>
 						<WhatsappIcon />
 					</a>
-					<a className="header__emailLink link outline" href={CONTACTS.email.link}>
+					<a className="header__emailLink outline" href={CONTACTS.email.link}>
 						<EmailIcon />
 					</a>
 					<SecondaryButton className=" header__orderCall" Icon={PhoneIcon} clickHandler={openCallRequestModal}>
 						Заказать звонок
 					</SecondaryButton>
-					<button className="header__changeLang outline">
+					<button className="header__changeLang outline" onClick={() => openChangeLanguageModal()}>
 						<GlobeIcon />
+						<span className="accent-s">{currentLanguage}</span>
 					</button>
 				</div>
 			</header>
@@ -81,6 +100,11 @@ export const Header = ({ className }: IProps) => {
 				submit={submitRequestModalHandler}
 			/>
 			<SuccessModal opened={successModalOpened} close={closeSuccessModal} />
+			<ChangeLanguageModal
+				setRussianLanguage={setRussianLanguage}
+				setEnglishLanguage={setEnglishLanguage}
+				opened={changeLanguageModalOpened}
+				close={closeChangeLanguageModal}></ChangeLanguageModal>
 		</>
 	)
 }

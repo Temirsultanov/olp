@@ -1,0 +1,13 @@
+@import '../../shared/styles/lib';
+
+.changeLanguageModal {
+	&__buttons {
+		margin-top: vw(20px);
+		display: flex;
+		gap: vw(20px);
+
+		& .button {
+			flex: 1;
+		}
+	}
+}

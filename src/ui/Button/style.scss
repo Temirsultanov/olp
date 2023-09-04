@@ -25,4 +25,30 @@
 		border: 1px solid $white;
 		outline: 2px solid $dark;
 	}
+
+	&-unfilled {
+		color: $graphit;
+		border-color: #d1d1d1;
+		background-color: #ffffff;
+
+		&.button-active {
+			border-color: #0f6cbd;
+		}
+
+		&:hover {
+			border-color: $blue;
+			color: $white;
+			background-color: $blue;
+		}
+
+		&:active {
+			border-color: $celestial;
+			background-color: $celestial;
+		}
+
+		&:focus-visible {
+			border: 1px solid $white;
+			outline: 1px solid $dark;
+		}
+	}
 }
