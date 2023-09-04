@@ -1,5 +1,7 @@
-import React, { useState, useRef, useCallback } from 'react'
+import React, { useState, useCallback } from 'react'
+import { graphql } from 'gatsby'
 import type { HeadFC, PageProps } from 'gatsby'
+import { useTranslation } from 'gatsby-plugin-react-i18next'
 
 import { Layout } from '../modules/Layout'
 import { ConsultationRequestModal } from '../modules/ConsultationRequestModal'
@@ -17,6 +19,7 @@ import '../shared/styles/common.scss'
 import '../shared/styles/index.scss'
 
 const IndexPage: React.FC<PageProps> = () => {
+	const { t } = useTranslation('index')
 	const [consultationRequestModalOpened, setConsultationRequestModalOpened] = useState(false)
 	const [successModalOpened, setSuccessModalOpened] = useState(false)
 
@@ -43,6 +46,7 @@ const IndexPage: React.FC<PageProps> = () => {
 
 	return (
 		<Layout>
+			<title>{t('title')}</title>
 			<main id="index" className="index">
 				<Promo className=" index__promo" openConsultationRequestModal={openConsultationRequestModal} />
 				<AboutUs className=" index__aboutUs" />
@@ -65,4 +69,21 @@ const IndexPage: React.FC<PageProps> = () => {
 
 export default IndexPage
 
-export const Head: HeadFC = () => <title>Home Page</title>
+export const Head: HeadFC = () => {
+	const { t } = useTranslation('index')
+	return <title> {t('title')} </title>
+}
+
+export const query = graphql`
+	query {
+		locales: allLocale {
+			edges {
+				node {
+					ns
+					data
+					language
+				}
+			}
+		}
+	}
+`

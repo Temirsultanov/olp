@@ -1,0 +1,12 @@
+{
+	"header": {
+		"menu": {
+			"aboutUs": "About us",
+			"services": "Services",
+			"team": "Team",
+			"reviews": "Reviews",
+			"contacts": "Contacts"
+		},
+		"callRequest": "Request a call"
+	}
+}

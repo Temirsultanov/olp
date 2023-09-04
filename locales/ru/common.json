@@ -1,0 +1,12 @@
+{
+	"header": {
+		"menu": {
+			"aboutUs": "О компании",
+			"services": "Услуги",
+			"team": "Команда",
+			"reviews": "Отзывы",
+			"contacts": "Контакты"
+		},
+		"callRequest": "Заказать звонок"
+	}
+}

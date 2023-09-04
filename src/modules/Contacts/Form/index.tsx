@@ -24,7 +24,7 @@ export const Form = ({ className }: IProps) => {
 				<legend className="accent-xl">[01] Контактные данные</legend>
 				<div className="contactsForm__inputGroup">
 					<Input label="Имя" name="name" id="contactsForm-name" placeholder="Ваше имя" required={true} />
-					<Input label="Фамилия" name="surname" id="contactsForm-surname" placeholder="Фаша фамилия" required={true} />
+					<Input label="Фамилия" name="surname" id="contactsForm-surname" placeholder="Ваша фамилия" required={true} />
 					<Input
 						label="Почта"
 						name="name"

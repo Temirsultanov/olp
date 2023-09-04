@@ -1,7 +1,6 @@
 @import '../../shared/styles/lib';
 
 .modal {
-	max-height: 100vh;
 	width: vw(450px);
 	max-width: 100%;
 	padding: vw(30px);
@@ -12,7 +11,6 @@
 
 	position: relative;
 
-	overflow: auto;
 	background-color: #ffffff;
 	visibility: hidden;
 	transition: visibility 0s 0.3s cubic-bezier(0.4, 0, 0, 1);

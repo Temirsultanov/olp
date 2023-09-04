@@ -1,4 +1,5 @@
-import React, { useState, useCallback, useRef } from 'react'
+import React, { useState, useCallback } from 'react'
+import { useTranslation, useI18next } from 'gatsby-plugin-react-i18next'
 
 import * as Logo from '../../../ui/Logo'
 import WhatsappIcon from '../../../images/icons/wa.svg'
@@ -10,17 +11,23 @@ import { Menu } from '../Menu'
 import { SecondaryButton } from '../../../ui/SecondaryButton'
 import { CallRequestModal } from '../../CallRequestModal'
 import { SuccessModal } from '../../SuccessModal'
+import { ChangeLanguageModal } from '../../ChangeLanguageModal'
 
 import { CONTACTS } from '../../../shared/constants'
 import './style.scss'
-import { ChangeLanguageModal } from '../../ChangeLanguageModal'
 
 interface IProps {
 	className?: string
 }
 
 export const Header = ({ className }: IProps) => {
-	const currentLanguage = 'RU'
+	const { t } = useTranslation('common', { keyPrefix: 'header' })
+	const i18nextContext = useI18next()
+	const currentLanguage = i18nextContext.language.toUpperCase()
+	const content = {
+		callRequest: t('callRequest')
+	}
+
 	const [callRequestModalOpened, setCallRequestModalOpened] = useState(false)
 	const [successModalOpened, setSuccessModalOpened] = useState(false)
 	const [changeLanguageModalOpened, setChangeLanguageModalOpened] = useState(false)
@@ -55,12 +62,12 @@ export const Header = ({ className }: IProps) => {
 	}, [])
 
 	const setRussianLanguage = useCallback(() => {
-		console.log('SET RUSSIAN LANGUAGE')
+		i18nextContext.changeLanguage('ru')
 		setChangeLanguageModalOpened(false)
 	}, [])
 
 	const setEnglishLanguage = useCallback(() => {
-		console.log('SET ENGLISH LANGUAGE')
+		i18nextContext.changeLanguage('en')
 		setChangeLanguageModalOpened(false)
 	}, [])
 
@@ -86,7 +93,7 @@ export const Header = ({ className }: IProps) => {
 						<EmailIcon />
 					</a>
 					<SecondaryButton className=" header__orderCall" Icon={PhoneIcon} clickHandler={openCallRequestModal}>
-						Заказать звонок
+						{content.callRequest}
 					</SecondaryButton>
 					<button className="header__changeLang outline" onClick={() => openChangeLanguageModal()}>
 						<GlobeIcon />

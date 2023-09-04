@@ -1,9 +1,10 @@
 import type { GatsbyConfig } from 'gatsby'
+import { languages } from './languages'
 
 const config: GatsbyConfig = {
 	siteMetadata: {
 		title: 'OLP',
-		siteUrl: `https://olp.su`
+		siteUrl: `http://localhost:8000`
 	},
 	graphqlTypegen: true,
 	plugins: [
@@ -26,6 +27,13 @@ const config: GatsbyConfig = {
 			}
 		},
 		{
+			resolve: `gatsby-source-filesystem`,
+			options: {
+				path: `${__dirname}/locales`,
+				name: `locales`
+			}
+		},
+		{
 			resolve: 'gatsby-plugin-manifest',
 			options: {
 				icon: 'src/images/favicon.png'
@@ -38,6 +46,16 @@ const config: GatsbyConfig = {
 					placeholder: 'none',
 					backgroundColor: `transparent`
 				}
+			}
+		},
+		{
+			resolve: `gatsby-plugin-react-i18next`,
+			options: {
+				localeJsonSourceName: 'locales',
+				languages: languages,
+				siteUrl: `http://localhost:8000`,
+				defaultLanguage: 'ru',
+				generateDefaultLanguagePage: 'ru'
 			}
 		}
 	]
