@@ -4,7 +4,7 @@ import { languages } from './languages'
 const config: GatsbyConfig = {
 	siteMetadata: {
 		title: 'OLP',
-		siteUrl: `http://localhost:8000`
+		siteUrl: `http://olp.gatsbyjs.io`
 	},
 	graphqlTypegen: true,
 	plugins: [
@@ -53,7 +53,7 @@ const config: GatsbyConfig = {
 			options: {
 				localeJsonSourceName: 'locales',
 				languages: languages,
-				siteUrl: `http://localhost:8000`,
+				siteUrl: `http://olp.gatsbyjs.io`,
 				defaultLanguage: 'ru',
 				generateDefaultLanguagePage: 'ru'
 			}
