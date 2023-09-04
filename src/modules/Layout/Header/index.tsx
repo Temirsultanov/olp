@@ -111,7 +111,9 @@ export const Header = ({ className }: IProps) => {
 				setRussianLanguage={setRussianLanguage}
 				setEnglishLanguage={setEnglishLanguage}
 				opened={changeLanguageModalOpened}
-				close={closeChangeLanguageModal}></ChangeLanguageModal>
+				close={closeChangeLanguageModal}
+				currentLanguage={currentLanguage}
+			/>
 		</>
 	)
 }
