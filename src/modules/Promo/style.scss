@@ -170,16 +170,20 @@
 				width: 100%;
 				height: vw(64px, $mvw);
 				border-radius: $border-radius;
+
 				display: flex;
 				align-items: center;
 				gap: vw(20px, $mvw);
+
 				background-color: #ffffff;
 			}
 
 			& div {
 				width: vw(64px, $mvw);
 				height: 100%;
-				border-radius: vw(22px, $mvw);
+				border-radius: $border-radius;
+
+				position: relative;
 				overflow: hidden;
 			}
 
