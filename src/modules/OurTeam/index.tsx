@@ -1,5 +1,7 @@
 import React from 'react'
 import { graphql, useStaticQuery } from 'gatsby'
+import { Swiper, SwiperSlide } from 'swiper/react'
+import 'swiper/css'
 
 import { Employee } from './Employee'
 import { EMPLOYEES } from '../../shared/constants'
@@ -28,7 +30,9 @@ export const OurTeam = ({ className }: IProps) => {
 
 	const photos = getPhotosFromGraphQLResult(allFile)
 	const renderedTeam = EMPLOYEES.map(employee => (
-		<Employee key={employee.id} photo={photos[employee.id]} employee={employee} />
+		<SwiperSlide key={employee.id}>
+			<Employee photo={photos[employee.id]} employee={employee} />
+		</SwiperSlide>
 	))
 
 	return (
@@ -39,7 +43,9 @@ export const OurTeam = ({ className }: IProps) => {
 					<span className="ourTeam__title-black">Optimal Logistic Price</span>
 				</h2>
 			</a>
-			<ul className="ourTeam__list">{renderedTeam}</ul>
+			<Swiper className="ourTeam__list" slidesPerView="auto" breakpoints={{ 769: { slidesPerView: 5 } }}>
+				{renderedTeam}
+			</Swiper>
 		</section>
 	)
 }

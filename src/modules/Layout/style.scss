@@ -3,11 +3,25 @@
 .layout {
 	&__header {
 		width: auto;
-
 		position: fixed;
+		z-index: 5;
+	}
+}
+
+@media (min-width: $desktopStart) {
+	.layout__header {
 		top: vw(20px);
 		left: vw(30px);
 		right: vw(30px);
-		z-index: 5;
+	}
+}
+
+@media (max-width: $mobileEnd) {
+	.layout__header {
+		width: 100%;
+		top: 0;
+	}
+	.layout__footer {
+		margin-top: vw(-34px, $mvw);
 	}
 }

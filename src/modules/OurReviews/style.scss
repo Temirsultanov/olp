@@ -1,8 +1,6 @@
 @import '../../shared/styles/lib';
 
 .ourReviews {
-	padding: vw(60px) vw(30px);
-	border-radius: vw(34px) vw(34px) 0 0;
 	background-color: #ffffff;
 
 	&__title {
@@ -12,15 +10,46 @@
 	}
 
 	&__list {
-		margin-top: vw(30px);
 		display: flex;
-		gap: vw(20px);
 
 		&-half {
 			flex: 1;
 			display: flex;
 			flex-direction: column;
+		}
+	}
+}
+
+@media (min-width: $desktopStart) {
+	.ourReviews {
+		padding: vw(60px) vw(30px);
+		border-radius: vw(34px) vw(34px) 0 0;
+
+		&__list {
+			margin-top: vw(30px);
 			gap: vw(20px);
+
+			&-half {
+				gap: vw(20px);
+			}
+		}
+	}
+}
+
+@media (max-width: $mobileEnd) {
+	.ourReviews {
+		padding: vw(30px, $mvw) vw(16px, $mvw);
+		border-radius: vw(34px, $mvw) vw(34px, $mvw) 0 0;
+		position: relative;
+
+		&__list {
+			margin-top: vw(20px, $mvw);
+			flex-direction: column;
+			gap: vw(20px, $mvw);
+
+			&-half {
+				gap: vw(20px, $mvw);
+			}
 		}
 	}
 }

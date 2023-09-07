@@ -1,10 +1,6 @@
 @import '../../../shared/styles/lib';
 
 .header {
-	height: vw($header_height);
-	padding: vw(10px) vw(16px) vw(10px) vw(16px);
-	border-radius: vw(10px);
-
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
@@ -18,31 +14,12 @@
 		align-items: center;
 	}
 
-	&__logoAndMenu {
-		gap: vw(50px);
-	}
-
 	&__logo {
-		margin-top: vw(-5px);
-		width: vw(80px);
 		height: auto;
 	}
 
-	&__menu {
-		margin-top: 2px;
-	}
-
-	&__phoneLink,
-	&__waLink,
-	&__emailLink,
-	&__changeLang {
-		padding: vw(10px);
-	}
-
-	&__waLink,
-	&__emailLink {
-		width: vw(40px);
-		height: vw(40px);
+	&__desktopNav {
+		display: none;
 	}
 
 	&__waLink,
@@ -52,10 +29,6 @@
 		justify-content: center;
 		align-items: center;
 
-		& svg {
-			width: vw(20px);
-			height: vw(20px);
-		}
 		& path {
 			fill: $white;
 		}
@@ -66,28 +39,13 @@
 	}
 
 	&__phoneLink {
-		margin-top: 2px;
-		margin-right: vw(6px);
 		&:hover {
 			color: $celestial;
 		}
 	}
 
-	&__waLink {
-		margin-right: vw(-5px);
-	}
-
-	&__emailLink {
-		margin-right: vw(15px);
-	}
-
-	&__orderCall {
-		margin-right: vw(15px);
-	}
-
 	&__changeLang {
 		border: none;
-		gap: vw(6px);
 		cursor: pointer;
 		color: $white;
 		background-color: transparent;
@@ -95,9 +53,181 @@
 		&:hover {
 			color: $celestial;
 		}
+	}
 
-		& span {
+	&__burgerButton {
+		display: none;
+	}
+}
+
+.mobileMenu {
+	width: 100%;
+	padding-top: vw(20px, $mvw);
+	padding-bottom: vw(20px, $mvw);
+	border-radius: 0 0 vw(22px, $mvw) vw(22px, $mvw);
+
+	display: none;
+	flex-direction: column;
+	align-items: center;
+
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 4;
+
+	color: $white;
+	background-color: $dark;
+	transform: translateY(-100%);
+	transition: transform 0.3s cubic-bezier(0.4, 0, 0, 1);
+
+	&__socials {
+		display: flex;
+		margin-top: vw(10px, $mvw);
+	}
+
+	&-opened {
+		transform: translateY(vw($header_height + 2px, $mvw));
+	}
+}
+
+@media (min-width: $desktopStart) {
+	.header {
+		height: vw($header_height);
+		padding: vw(10px) vw(16px) vw(10px) vw(16px);
+		border-radius: vw(10px);
+
+		&__logoAndMenu {
+			gap: vw(50px);
+		}
+		&__logo {
+			width: vw(85px);
+		}
+		&__desktopNav {
+			display: block;
+		}
+		&__menu {
 			margin-top: vw(2px);
 		}
+		&__phoneLink,
+		&__waLink,
+		&__emailLink,
+		&__changeLang {
+			padding: vw(10px);
+		}
+		&__waLink,
+		&__emailLink {
+			width: vw(40px);
+			height: vw(40px);
+		}
+		&__waLink,
+		&__emailLink,
+		&__changeLang {
+			& svg {
+				width: vw(20px);
+				height: vw(20px);
+			}
+		}
+		&__phoneLink {
+			margin-top: 2px;
+			margin-right: vw(6px);
+		}
+		&__waLink {
+			margin-right: vw(-5px);
+		}
+		&__emailLink {
+			margin-right: vw(15px);
+		}
+		&__orderCall {
+			margin-right: vw(15px);
+		}
+		&__changeLang {
+			gap: vw(6px);
+			& span {
+				margin-top: vw(2px);
+			}
+		}
+	}
+}
+
+@media (max-width: $mobileEnd) {
+	.header {
+		padding: vw(12px, $mvw) vw(16px, $mvw);
+		justify-content: flex-start;
+
+		&__logo {
+			width: vw(85px, $mvw);
+			margin-right: auto;
+		}
+
+		&__socialsAndLanguage {
+			margin-left: auto;
+
+			& .header__phoneLink,
+			& .header__changeLang,
+			& .header__waLink,
+			& .header__emailLink {
+				display: none;
+			}
+		}
+
+		&__phoneLink,
+		&__waLink,
+		&__emailLink,
+		&__changeLang {
+			padding: vw(10px, $mvw);
+		}
+
+		&__waLink,
+		&__emailLink {
+			width: vw(40px, $mvw);
+			height: vw(40px, $mvw);
+		}
+
+		&__waLink,
+		&__emailLink,
+		&__changeLang {
+			& svg {
+				width: vw(20px, $mvw);
+				height: vw(20px, $mvw);
+			}
+		}
+
+		&__burgerButton {
+			display: flex;
+			margin-left: vw(8px, $mvw);
+		}
+
+		&__changeLang {
+			gap: vw(6px, $mvw);
+			& span {
+				margin-top: vw(2px, $mvw);
+			}
+		}
+
+		&::before,
+		&::after {
+			content: '';
+			width: vw(34px, $mvw);
+			height: vw(34px, $mvw);
+
+			position: absolute;
+			bottom: vw(-34px, $mvw);
+
+			background-image: url('../../../images/corner.svg');
+			background-size: vw(34px, $mvw);
+		}
+
+		&::before {
+			left: 0;
+		}
+
+		&:after {
+			right: 0;
+			transform: rotate(90deg);
+		}
+	}
+
+	.mobileMenu {
+		display: flex;
 	}
 }

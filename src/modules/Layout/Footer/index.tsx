@@ -17,13 +17,6 @@ export const Footer = ({ className }: IProps) => {
 		<footer className={'footer' + className}>
 			<div>
 				<Logo.White className="footer__logo" />
-				<p className="footer__requisites text-s">
-					<span>ООО «ОПТИМАЛ ЛОДЖИСТИК ПРАЙС»</span>
-					<span>ИНН/КПП: 5009099032/772401001</span>
-				</p>
-			</div>
-			<p className="footer__copyright text-s">2023 © Optimal Logistic Price</p>
-			<div>
 				<div className="footer__socials">
 					<a className="footer__waLink outline" href={CONTACTS.whatsapp.link}>
 						<WhatsappIcon />
@@ -33,7 +26,14 @@ export const Footer = ({ className }: IProps) => {
 					</a>
 					<SecondaryButton>Написать в поддержку</SecondaryButton>
 				</div>
-				<a className="footer__policy accent-s outline underline" href="/policy">
+			</div>
+			<div>
+				<p className="footer__requisites text-s">
+					<span>ООО «ОПТИМАЛ ЛОДЖИСТИК ПРАЙС»</span>
+					<span>ИНН/КПП: 5009099032/772401001</span>
+				</p>
+				<p className="footer__copyright text-s">2023 © Optimal Logistic Price</p>
+				<a className="footer__policy accent-s outline underline" href="/privacy">
 					Политика конфиденциальности
 				</a>
 			</div>

@@ -1,16 +1,11 @@
 @import '../../shared/styles/lib';
 
 .guarantee {
-	padding: vw(60px) vw(30px) vw(130px);
 	position: relative;
 
 	&__title {
 		color: $grey;
 		text-transform: uppercase;
-
-		& span {
-			display: block;
-		}
 
 		&-black {
 			color: $graphit;
@@ -22,32 +17,103 @@
 	}
 
 	&__pin {
-		width: vw(50px);
 		height: auto;
-
 		position: absolute;
-		top: vw(290px);
-		right: vw(939px);
 	}
 
 	&__path {
-		width: vw(580px);
 		height: auto;
+		display: none;
 
-		position: absolute;
-		z-index: 1;
-		top: vw(275px);
-		right: vw(394px);
+		&-desktop {
+			position: absolute;
+			z-index: 1;
+		}
 	}
 
 	&__boxWrapper {
-		width: vw(530px);
-		top: vw(125px);
-		right: vw(30px);
 		position: absolute;
 	}
 
 	&__box {
 		width: 100%;
+	}
+}
+
+@media (min-width: $desktopStart) {
+	.guarantee {
+		padding: vw(60px) vw(30px) vw(130px);
+
+		&__title span {
+			display: block;
+		}
+
+		&__button {
+			margin-top: vw(135px);
+		}
+
+		&__pin {
+			width: vw(50px);
+			top: vw(290px);
+			right: vw(939px);
+		}
+
+		&__path {
+			width: vw(580px);
+			top: vw(275px);
+			right: vw(394px);
+
+			&-desktop {
+				display: block;
+			}
+		}
+
+		&__boxWrapper {
+			width: vw(530px);
+			top: vw(125px);
+			right: vw(30px);
+		}
+	}
+}
+
+@media (max-width: $mobileEnd) {
+	.guarantee {
+		padding: vw(30px, $mvw) vw(16px, $mvw) vw(64px, $mvw);
+		border-radius: vw(34px, $mvw) vw(34px, $mvw) 0 0;
+		overflow: hidden;
+		background-color: $white;
+
+		&__title {
+			position: relative;
+			z-index: 1;
+		}
+
+		&__path {
+			width: vw(190px, $mvw);
+			margin-top: vw(80px, $mvw);
+			position: relative;
+			z-index: 1;
+
+			&-mobile {
+				display: block;
+			}
+		}
+
+		&__boxWrapper {
+			width: vw(330px, $mvw);
+			bottom: vw(250px, $mvw);
+			left: vw(105px, $mvw);
+		}
+
+		&__button {
+			width: 100%;
+			margin-top: vw(50px, $mvw);
+		}
+
+		&__pin {
+			width: vw(43px, $mvw);
+			bottom: vw(196px, $mvw);
+			left: vw(158px, $mvw);
+		}
 	}
 }

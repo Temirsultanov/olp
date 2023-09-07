@@ -1,8 +1,6 @@
 @import '../../../shared/styles/lib';
 
 .benefit {
-	padding: vw(60px) vw(30px) vw(64px);
-	border-radius: vw(34px) vw(34px) 0 0;
 	display: flex;
 	align-items: flex-start;
 
@@ -15,36 +13,101 @@
 		background-color: transparent;
 	}
 
-	&__number {
-		width: vw(50px);
-		cursor: text;
-		user-select: text;
-	}
-
 	&__title {
-		width: vw(236px);
-		margin-left: vw(300px);
 		text-align: left;
-		cursor: text;
-		user-select: text;
 	}
 
 	&__icon {
-		width: vw(26px);
 		height: auto;
 		margin-left: auto;
-
-		display: none;
 		transition: transform 0.4s cubic-bezier(0.4, 0, 0, 1);
 	}
 
 	&__descriptionWrapper {
-		width: vw(580px);
-		height: auto !important;
-		margin-left: vw(115px);
-
 		display: block;
 		overflow: hidden;
 		transition: height 0.3s cubic-bezier(0.4, 0, 0, 1);
+	}
+}
+
+@media (min-width: $desktopStart) {
+	.benefit {
+		padding: vw(60px) vw(30px) vw(64px);
+		border-radius: vw(34px) vw(34px) 0 0;
+
+		&__number {
+			width: vw(50px);
+			cursor: text;
+			user-select: text;
+		}
+
+		&__title {
+			width: vw(236px);
+			margin-left: vw(300px);
+			cursor: text;
+			user-select: text;
+		}
+
+		&__icon {
+			width: vw(26px);
+			display: none;
+		}
+
+		&__descriptionWrapper {
+			width: vw(580px);
+			height: auto !important;
+			margin-left: vw(115px);
+		}
+	}
+}
+
+@media (max-width: $mobileEnd) {
+	.benefit {
+		padding-bottom: vw(34px, $mvw);
+		border-radius: vw(34px, $mvw) vw(34px, $mvw) 0 0;
+		flex-direction: column;
+
+		&__summary {
+			width: 100%;
+			align-items: center;
+			padding-top: vw(30px, $mvw);
+			padding-right: vw(25px, $mvw);
+			padding-bottom: vw(30px, $mvw);
+			padding-left: vw(16px, $mvw);
+			cursor: pointer;
+		}
+
+		&__number {
+			width: vw(42px, $mvw);
+		}
+
+		&__title {
+			width: auto;
+			margin-left: vw(25px, $mvw);
+		}
+
+		&__icon {
+			width: vw(14px, $mvw);
+			margin-left: auto;
+			transition: transform 0.3s cubic-bezier(0.4, 0, 0, 1);
+		}
+
+		&__descriptionWrapper {
+			width: auto;
+			transform: translateY(vw(-10px, $mvw));
+		}
+
+		&__description {
+			padding-top: 0;
+			padding-left: vw(16px, $mvw);
+			padding-right: vw(16px, $mvw);
+			padding-bottom: vw(15px, $mvw);
+		}
+
+		&-opened {
+			.benefit__icon {
+				transform: rotate(180deg);
+			}
+		}
 	}
 }

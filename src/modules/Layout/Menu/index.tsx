@@ -5,9 +5,10 @@ import './style.scss'
 
 interface IProps {
 	className?: string
+	clickHandler?: React.MouseEventHandler
 }
 
-export const Menu = ({ className }: IProps) => {
+export const Menu = ({ className, clickHandler }: IProps) => {
 	const { t } = useTranslation('common', { keyPrefix: 'header.menu' })
 	const content = {
 		aboutUs: t('aboutUs'),
@@ -21,27 +22,27 @@ export const Menu = ({ className }: IProps) => {
 		<menu className={'menu accent-s ' + className}>
 			<ul>
 				<li>
-					<a className="outline underline" href="/#about">
+					<a onClick={clickHandler} className="outline underline" href="/#about">
 						{content.aboutUs}
 					</a>
 				</li>
 				<li>
-					<a className="outline underline" href="/#services">
+					<a onClick={clickHandler} className="outline underline" href="/#services">
 						{content.services}
 					</a>
 				</li>
 				<li>
-					<a className="outline underline" href="/#team">
+					<a onClick={clickHandler} className="outline underline" href="/#team">
 						{content.team}
 					</a>
 				</li>
 				<li>
-					<a className="outline underline" href="/#reviews">
+					<a onClick={clickHandler} className="outline underline" href="/#reviews">
 						{content.reviews}
 					</a>
 				</li>
 				<li>
-					<a className="outline underline" href="/#contacts">
+					<a onClick={clickHandler} className="outline underline" href="/#contacts">
 						{content.contacts}
 					</a>
 				</li>

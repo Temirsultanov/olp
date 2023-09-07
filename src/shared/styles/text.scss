@@ -1,71 +1,161 @@
+@import './lib';
+
 .heading-xl {
-	font-size: vw(64px);
 	font-weight: 700;
 	line-height: 1.2;
 }
 
 .heading-l {
-	font-size: vw(38px);
 	font-weight: 700;
 	line-height: 1.2;
 }
 
 .heading-m {
-	font-size: vw(32px);
 	font-weight: 700;
 	line-height: 1.2;
 }
 
 .heading-s {
-	font-size: vw(24px);
 	font-weight: 700;
 	line-height: 1.2;
 }
 
 .text-xl {
-	font-size: vw(20px);
 	font-weight: 400;
 	line-height: 1.4;
 }
 
 .text-l {
-	font-size: vw(18px);
 	font-weight: 400;
 	line-height: 1.4;
 }
 
 .text-m {
-	font-size: vw(16px);
 	font-weight: 400;
 	line-height: 1.4;
 }
 
 .text-s {
-	font-size: vw(14px);
 	font-weight: 400;
 	line-height: 1.4;
 }
 
 .accent-xl {
-	font-size: vw(24px);
 	font-weight: 500;
 	line-height: 1.2;
 }
 
 .accent-l {
-	font-size: vw(20px);
 	font-weight: 500;
 	line-height: 1.2;
 }
 
 .accent-m {
-	font-size: vw(16px);
 	font-weight: 500;
 	line-height: 1.2;
 }
 
 .accent-s {
-	font-size: vw(14px);
 	font-weight: 500;
 	line-height: 1.2;
+}
+
+@media (min-width: $desktopStart) {
+	.heading-xl {
+		font-size: vw(64px);
+	}
+
+	.heading-l {
+		font-size: vw(38px);
+	}
+
+	.heading-m {
+		font-size: vw(32px);
+	}
+
+	.heading-s {
+		font-size: vw(24px);
+	}
+
+	.text-xl {
+		font-size: vw(20px);
+	}
+
+	.text-l {
+		font-size: vw(18px);
+	}
+
+	.text-m {
+		font-size: vw(16px);
+	}
+
+	.text-s {
+		font-size: vw(14px);
+	}
+
+	.accent-xl {
+		font-size: vw(24px);
+	}
+
+	.accent-l {
+		font-size: vw(20px);
+	}
+
+	.accent-m {
+		font-size: vw(16px);
+	}
+
+	.accent-s {
+		font-size: vw(14px);
+	}
+}
+
+@media (max-width: $mobileEnd) {
+	.heading-xl {
+		font-size: vw(32px, $mvw);
+	}
+
+	.heading-l {
+		font-size: vw(28px, $mvw);
+	}
+
+	.heading-m {
+		font-size: vw(24px, $mvw);
+	}
+
+	.heading-s {
+		font-size: vw(20px, $mvw);
+	}
+
+	.text-xl {
+		font-size: vw(20px, $mvw);
+	}
+
+	.text-l {
+		font-size: vw(16px, $mvw);
+	}
+
+	.text-m {
+		font-size: vw(14px, $mvw);
+	}
+
+	.text-s {
+		font-size: vw(12px, $mvw);
+	}
+
+	.accent-xl {
+		font-size: vw(20px, $mvw);
+	}
+
+	.accent-l {
+		font-size: vw(18px, $mvw);
+	}
+
+	.accent-m {
+		font-size: vw(16px, $mvw);
+	}
+
+	.accent-s {
+		font-size: vw(14px, $mvw);
+	}
 }

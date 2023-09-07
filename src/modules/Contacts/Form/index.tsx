@@ -7,6 +7,7 @@ import { FileInput } from '../../../ui/Input/FileInput'
 
 import { SERVICES } from '../../../shared/constants'
 import './style.scss'
+import { isMobile } from '../../../shared/helpers'
 
 interface IProps {
 	className?: string
@@ -14,6 +15,14 @@ interface IProps {
 
 export const Form = ({ className }: IProps) => {
 	const [invalid, setInvalid] = useState(false)
+	const content = {
+		fileInputLabel: 'Сопроводительная документация (.PDF, .JPEG, .ZIP, .RAR)'
+	}
+
+	if (typeof window !== 'undefined') {
+		content.fileInputLabel = isMobile(window.innerWidth) ? 'Сопроводительная документация' : content.fileInputLabel
+	}
+
 	return (
 		<form
 			method="POST"
@@ -47,7 +56,7 @@ export const Form = ({ className }: IProps) => {
 				</SelectInput>
 				<FileInput
 					className="contactsForm__document"
-					label="Сопроводительная документация (.PDF, .JPEG, .ZIP, .RAR)"
+					label={content.fileInputLabel}
 					name="file"
 					accept=".pdf, .jpeg, .jpg, .zip, .rar"
 					id="contactsForm-file"

@@ -1,34 +1,15 @@
 @import '../../shared/styles/lib';
 
 .promo {
-	$border-radius: vw(22px);
-	$padding: 30px;
-
-	padding: vw(30px) vw(30px) 0 vw(30px);
-
 	display: flex;
-	gap: vw(20px);
-
 	background-color: $white;
 
 	&__content {
 		flex: 1;
-		padding-top: vw($padding);
-		padding-bottom: vw($padding);
-		border-radius: $border-radius;
-
 		background-color: #fff;
 	}
 
-	&__transports {
-		margin-left: vw($padding);
-	}
-
 	&__title {
-		margin-top: vw(35px);
-		margin-left: vw($padding);
-		margin-right: vw($padding + 10px);
-
 		color: $grey;
 		text-transform: uppercase;
 
@@ -42,87 +23,177 @@
 	}
 
 	&__pattern {
-		margin-top: vw(45px);
 		width: 100%;
-		height: vw(114px);
 
 		background-color: #fcfcfc;
 		background-image: url('../../images/pattern.png');
 		background-repeat: repeat-x;
-		background-size: vw(216px) vw(114px);
-		background-position: vw(-65px) 0;
-	}
-
-	&__footer {
-		margin-top: vw(50px);
-		margin-left: vw($padding);
-		margin-right: vw($padding);
-
-		display: flex;
-		justify-content: space-between;
-		align-items: flex-end;
-	}
-
-	&__description {
-		width: vw(250px);
 	}
 
 	&__services {
 		flex: 1;
 		display: grid;
-		grid-template-columns: 1fr 1fr;
-		grid-template-rows: 1fr 1fr;
-		gap: vw(20px);
-
-		& li {
-			padding: vw(16px);
-			border-radius: $border-radius;
-			background-size: cover;
-			background-position: center center;
-
-			&:nth-child(1) {
-				background-color: #a9c2c1;
-				background-image: url('../../images/international.webp');
-			}
-			&:nth-child(2) {
-				background-color: #9c9da0;
-				background-position: center vw(-30px);
-				background-image: url('../../images/customs-clearance.webp');
-			}
-			&:nth-child(3) {
-				background-color: #3e5360;
-				background-position: center vw(-30px);
-				background-image: url('../../images/bypassing-sanctions.webp');
-			}
-			&:nth-child(4) {
-				background-color: #0392e5;
-				background-image: url('../../images/sertification-services.webp');
-			}
-
-			& p {
-				padding: vw(6px) vw(10px);
-				border-radius: vw(20px);
-				display: inline;
-				background-color: rgb(240, 240, 240, 0.8);
-			}
-		}
 	}
 }
 
 .transports {
 	display: flex;
-	gap: vw(50px);
 
 	& li {
 		display: flex;
 	}
 
-	& svg {
-		width: vw(30px);
-		height: vw(30px);
-	}
-
 	& path {
 		fill: $grey;
+	}
+}
+
+@media (min-width: $desktopStart) {
+	.promo {
+		$border-radius: 22px;
+		$padding: 30px;
+		padding: vw(30px) vw(30px) 0 vw(30px);
+		gap: vw(20px);
+
+		&__content {
+			padding-top: vw($padding);
+			padding-bottom: vw($padding);
+			border-radius: vw($border-radius);
+			position: relative;
+		}
+		&__transports {
+			margin-left: vw($padding);
+		}
+		&__title {
+			margin-top: vw(35px);
+			margin-left: vw($padding);
+			margin-right: vw($padding + 10px);
+		}
+		&__pattern {
+			margin-top: vw(45px);
+			height: vw(114px);
+			background-size: vw(216px) vw(114px);
+			background-position: vw(-65px) 0;
+		}
+		&__description {
+			max-width: vw(250px);
+			position: absolute;
+			bottom: vw($padding);
+			right: vw($padding);
+		}
+		&__button {
+			margin-top: vw(75px);
+			margin-left: vw($padding);
+		}
+		&__services {
+			grid-template-columns: 1fr 1fr;
+			grid-template-rows: 1fr 1fr;
+			gap: vw(20px);
+
+			& li {
+				border-radius: vw($border-radius);
+				padding: vw(16px);
+				position: relative;
+				overflow: hidden;
+			}
+			& div {
+				width: 100%;
+				height: 100%;
+				position: absolute;
+				top: 0;
+				left: 0;
+				z-index: 0;
+			}
+			& p {
+				padding: vw(6px) vw(10px);
+				border-radius: vw(20px);
+
+				display: inline;
+				position: relative;
+				z-index: 1;
+
+				background-color: rgb(240, 240, 240, 0.8);
+			}
+		}
+	}
+
+	.transports {
+		gap: vw(50px);
+
+		& svg {
+			width: vw(30px);
+			height: vw(30px);
+		}
+	}
+}
+
+@media (max-width: $mobileEnd) {
+	.promo {
+		$border-radius: vw(22px, $mvw);
+		flex-direction: column;
+		gap: vw(20px, $mvw);
+
+		&__content {
+			padding-top: vw(40px, $mvw);
+			padding-bottom: vw(30px, $mvw);
+			border-radius: $border-radius;
+		}
+		&__transports {
+			margin-left: vw(16px, $mvw);
+			margin-right: vw(16px, $mvw);
+		}
+		&__title {
+			margin-top: vw(40px, $mvw);
+			margin-left: vw(16px, $mvw);
+			margin-right: vw(16px, $mvw);
+		}
+		&__pattern {
+			margin-top: vw(30px, $mvw);
+			height: vw(82px, $mvw);
+			background-size: vw(164px, $mvw) vw(82px, $mvw);
+			background-position: vw(-65px, $mvw) 0;
+		}
+		&__description {
+			margin: vw(16px, $mvw) vw(16px, $mvw) 0px;
+		}
+		&__button {
+			margin: vw(30px, $mvw) vw(16px, $mvw) 0;
+			width: calc(100% - vw(32px, $mvw));
+		}
+		&__services {
+			grid-template-columns: 1fr;
+			grid-template-rows: 1fr 1fr 1fr 1fr;
+			margin: 0 vw(16px, $mvw);
+			gap: vw(16px, $mvw);
+
+			& li {
+				width: 100%;
+				height: vw(64px, $mvw);
+				border-radius: $border-radius;
+				display: flex;
+				align-items: center;
+				gap: vw(20px, $mvw);
+				background-color: #ffffff;
+			}
+
+			& div {
+				width: vw(64px, $mvw);
+				height: 100%;
+				border-radius: vw(22px, $mvw);
+			}
+
+			& p {
+				font-size: vw(14px, $mvw);
+			}
+		}
+	}
+
+	.transports {
+		justify-content: space-between;
+
+		& svg {
+			width: vw(32px, $mvw);
+			height: vw(32px, $mvw);
+		}
 	}
 }

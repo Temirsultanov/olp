@@ -10,12 +10,12 @@ interface IProps {
 
 export const Employee = ({ employee, photo }: IProps) => {
 	return (
-		<li className="employee">
+		<div className="employee">
 			<div className="employee__photoWrapper">
 				<GatsbyImage className="employee__photo" image={photo} alt={'Photo of ' + employee.name} />
 			</div>
 			<h3 className="employee__name accent-xl">{employee.name}</h3>
 			<p className="employee__role text-l">{employee.role}</p>
-		</li>
+		</div>
 	)
 }

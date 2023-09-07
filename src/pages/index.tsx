@@ -24,33 +24,20 @@ const IndexPage: React.FC<PageProps> = () => {
 	const [successModalOpened, setSuccessModalOpened] = useState(false)
 
 	const submitRequestModalHandler = useCallback(() => {
-		closeConsultationRequestModal()
-		openSuccessModal()
-	}, [])
-
-	const openConsultationRequestModal = useCallback(() => {
-		setConsultationRequestModalOpened(true)
-	}, [])
-
-	const closeConsultationRequestModal = useCallback(() => {
 		setConsultationRequestModalOpened(false)
-	}, [])
-
-	const openSuccessModal = useCallback(() => {
 		setSuccessModalOpened(true)
-	}, [])
-
-	const closeSuccessModal = useCallback(() => {
-		setSuccessModalOpened(false)
 	}, [])
 
 	return (
 		<Layout>
 			<title>{t('title')}</title>
 			<main id="index" className="index">
-				<Promo className=" index__promo" openConsultationRequestModal={openConsultationRequestModal} />
+				<Promo className=" index__promo" openConsultationRequestModal={() => setConsultationRequestModalOpened(true)} />
 				<AboutUs className=" index__aboutUs" />
-				<Guarantee className=" index__guarantee" openConsultationRequestModal={openConsultationRequestModal} />
+				<Guarantee
+					className=" index__guarantee"
+					openConsultationRequestModal={() => setConsultationRequestModalOpened(true)}
+				/>
 				<OurServices className=" index__ourServices" />
 				<OurTeam className=" index__ourTeam" />
 				<OurReviews className=" index__ourReviews" />
@@ -59,17 +46,17 @@ const IndexPage: React.FC<PageProps> = () => {
 			</main>
 			<ConsultationRequestModal
 				opened={consultationRequestModalOpened}
-				close={closeConsultationRequestModal}
+				close={() => setConsultationRequestModalOpened(false)}
 				submit={submitRequestModalHandler}
 			/>
-			<SuccessModal opened={successModalOpened} close={closeSuccessModal} />
+			<SuccessModal opened={successModalOpened} close={() => setSuccessModalOpened(false)} />
 		</Layout>
 	)
 }
 
 export default IndexPage
 
-export const Head: HeadFC = ({ pageContext }) => {
+export const Head: HeadFC = () => {
 	return <title>OLP</title>
 }
 

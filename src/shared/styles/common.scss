@@ -123,3 +123,15 @@ button {
 		@include outlineStyles;
 	}
 }
+
+@media (min-width: $desktopStart) {
+	.section-link {
+		scroll-margin-top: vw(110px);
+	}
+}
+
+@media (max-width: $mobileEnd) {
+	.section-link {
+		scroll-margin-top: vw(82px, $mvw);
+	}
+}

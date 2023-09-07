@@ -2,13 +2,10 @@
 
 .review {
 	width: 100%;
-	padding: vw(30px);
-	border-radius: vw(22px);
 
 	display: flex;
 	flex-direction: column;
 	justify-content: flex-start;
-	gap: vw(20px);
 
 	color: $graphit;
 	background-color: $white;
@@ -16,13 +13,44 @@
 	&__header {
 		display: flex;
 		align-items: center;
-		gap: vw(16px);
 	}
 
 	&__photoWrapper {
-		width: vw(62px);
-		height: vw(62px);
 		border-radius: 50%;
 		overflow: hidden;
+	}
+}
+
+@media (min-width: $desktopStart) {
+	.review {
+		padding: vw(30px);
+		border-radius: vw(22px);
+		gap: vw(20px);
+
+		&__header {
+			gap: vw(16px);
+		}
+
+		&__photoWrapper {
+			width: vw(62px);
+			height: vw(62px);
+		}
+	}
+}
+
+@media (max-width: $mobileEnd) {
+	.review {
+		padding: vw(20px, $mvw) vw(16px, $mvw);
+		border-radius: vw(22px, $mvw);
+		gap: vw(14px, $mvw);
+
+		&__header {
+			gap: vw(16px, $mvw);
+		}
+
+		&__photoWrapper {
+			width: vw(44px, $mvw);
+			height: vw(44px, $mvw);
+		}
 	}
 }

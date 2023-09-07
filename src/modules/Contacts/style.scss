@@ -1,16 +1,13 @@
 @import '../../shared/styles/lib';
 
 .contacts {
-	padding: vw(60px) vw(30px);
-	border-radius: vw(34px) vw(34px) 0 0;
-
-	display: flex;
-	justify-content: space-between;
+	display: grid;
 
 	color: $white;
 	background-color: $graphit;
 
 	&__title {
+		grid-area: title;
 		text-transform: uppercase;
 
 		& h2 {
@@ -24,39 +21,105 @@
 	}
 
 	&__subtitle {
-		margin-top: vw(30px);
 		color: $grey;
 	}
 
 	&__list {
-		margin-top: vw(12px);
-		margin-left: vw(-8px);
+		grid-area: contacts;
+	}
+
+	&__list ul {
 		display: flex;
 		flex-direction: column;
 
 		& a {
-			padding: vw(8px);
 			display: inline-flex;
-
 			align-items: center;
-			gap: vw(12px);
-		}
 
-		& a:hover {
-			color: $celestial;
+			&:hover {
+				color: $celestial;
 
-			& path {
-				fill: $celestial;
+				& path {
+					fill: $celestial;
+				}
 			}
 		}
 
 		& svg {
-			width: vw(20px);
 			height: auto;
 		}
 
 		& path {
 			fill: $white;
+		}
+	}
+
+	&__form {
+		grid-area: form;
+	}
+}
+
+@media (min-width: $desktopStart) {
+	.contacts {
+		padding: vw(60px) vw(30px);
+		border-radius: vw(34px) vw(34px) 0 0;
+
+		grid-template-areas: 'title form' 'contacts form';
+		grid-template-rows: auto 1fr;
+		justify-content: space-between;
+
+		&__subtitle {
+			margin-top: vw(30px);
+		}
+
+		&__list ul {
+			margin-top: vw(12px);
+			margin-left: vw(-8px);
+
+			& a {
+				padding: vw(8px);
+				gap: vw(12px);
+			}
+
+			& svg {
+				width: vw(20px);
+			}
+		}
+	}
+}
+
+@media (max-width: $mobileEnd) {
+	.contacts {
+		padding: vw(30px, $mvw) vw(16px, $mvw);
+		border-radius: vw(34px, $mvw);
+		grid-template-areas: 'title' 'form' 'contacts';
+		position: relative;
+
+		&__subtitle {
+			margin-top: vw(30px, $mvw);
+		}
+
+		&__title h2 {
+			display: block;
+			font-size: vw(28px, 390px);
+		}
+
+		&__list ul {
+			margin-top: vw(12px, $mvw);
+			margin-left: vw(-8px, $mvw);
+
+			& a {
+				padding: vw(8px, $mvw);
+				gap: vw(12px, $mvw);
+			}
+
+			& svg {
+				width: vw(24px, $mvw);
+			}
+		}
+
+		&__form {
+			margin-top: vw(20px, $mvw);
 		}
 	}
 }

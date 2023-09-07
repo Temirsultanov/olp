@@ -1,12 +1,9 @@
 @import '../../shared/styles/lib';
 
 .ourTeam {
-	padding: vw(60px) 0 vw(94px);
-	border-radius: vw(34px) vw(34px) 0 0;
 	background-color: $celestial;
 
 	&__title {
-		margin: 0 vw(30px);
 		display: inline-block;
 
 		color: $white;
@@ -19,15 +16,68 @@
 
 	&__list {
 		width: 100%;
-		margin-top: vw(30px);
-		padding: 0 vw(30px);
 
 		display: flex;
 		justify-content: space-between;
-		gap: vw(20px);
 
 		& li {
 			flex: 1;
+		}
+	}
+}
+
+@media (min-width: $desktopStart) {
+	.ourTeam {
+		padding: vw(60px) 0 vw(94px);
+		border-radius: vw(34px) vw(34px) 0 0;
+
+		&__title {
+			margin: 0 vw(30px);
+		}
+
+		&__list {
+			margin-top: vw(30px);
+			padding: 0 vw(30px);
+			gap: vw(20px);
+		}
+
+		& .swiper-wrapper {
+			width: 100%;
+		}
+		& .swiper-slide {
+			height: auto;
+			flex: 1;
+
+			&:not(:last-child) {
+				margin-right: vw(20px);
+			}
+		}
+	}
+}
+
+@media (max-width: $mobileEnd) {
+	.ourTeam {
+		padding: vw(30px, $mvw) 0 vw(64px, $mvw);
+		border-radius: vw(34px, $mvw) vw(34px, $mvw) 0 0;
+		position: relative;
+
+		&__title {
+			margin: 0 vw(16px, $mvw);
+		}
+
+		&__list {
+			margin-top: vw(20px, $mvw);
+			padding: 0 vw(16px, $mvw);
+			gap: vw(20px, $mvw);
+		}
+
+		& .swiper-slide {
+			width: vw(195px, $mvw);
+			height: auto;
+
+			&:not(:last-child) {
+				margin-right: vw(20px, $mvw);
+			}
 		}
 	}
 }

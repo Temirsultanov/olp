@@ -1,14 +1,12 @@
 @import '../../shared/styles/lib';
 
 .button {
-	padding: vw(15px) vw(28px) vw(16px);
 	border: 1px solid $blue;
-	border-radius: vw(14px);
+	outline: none;
 
 	color: $white;
 	background-color: $blue;
 
-	outline: none;
 	cursor: pointer;
 	transition: color 0.1s cubic-bezier(0.4, 0, 0, 1), background-color 0.1s cubic-bezier(0.4, 0, 0, 1),
 		opacity 0.1s cubic-bezier(0.4, 0, 0, 1);
@@ -50,5 +48,19 @@
 			border: 1px solid $white;
 			outline: 1px solid $dark;
 		}
+	}
+}
+
+@media (min-width: $desktopStart) {
+	.button {
+		padding: vw(15px) vw(28px) vw(16px);
+		border-radius: vw(14px);
+	}
+}
+
+@media (max-width: $mobileEnd) {
+	.button {
+		padding: vw(15px, $mvw) vw(26px, $mvw) vw(16px, $mvw);
+		border-radius: vw(14px, $mvw);
 	}
 }

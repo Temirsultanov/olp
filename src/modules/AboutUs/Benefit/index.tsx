@@ -23,7 +23,7 @@ export const Benefit = ({ benefit, num, openedBenefit, setOpenedBenefit }: IProp
 	}
 
 	return (
-		<li className="benefit">
+		<li className={'benefit' + (openedBenefit === benefit.id ? ' benefit-opened' : '')}>
 			<button className="benefit__summary" onClick={open} disabled={!deviceIsMobile}>
 				<p className="benefit__number accent-xl">[{num}]</p>
 				<h3 className="benefit__title accent-xl">{benefit.title}</h3>

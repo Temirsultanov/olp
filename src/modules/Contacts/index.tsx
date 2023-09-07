@@ -34,17 +34,17 @@ export const Contacts = ({ className }: IProps) => {
 
 	return (
 		<section className={'contacts' + className}>
-			<div className="contacts__content">
-				<a id="contacts" href="#contacts" className="contacts__title section-link focus-visible-outline">
-					<h2 className="heading-l">
-						<span className="contacts__title-grey">Запросите стоимость</span>
-						<span>за 1 клик</span>
-					</h2>
-				</a>
+			<a id="contacts" href="#contacts" className="contacts__title section-link focus-visible-outline">
+				<h2 className="heading-l">
+					<span className="contacts__title-grey">Запросите стоимость</span>
+					<span> за 1 клик</span>
+				</h2>
+			</a>
+			<Form className="contacts__form" />
+			<div className="contacts__list">
 				<h3 className="contacts__subtitle accent-xl">Контакты</h3>
 				<ul className="contacts__list">{renderedContacts}</ul>
 			</div>
-			<Form className="contacts__form" />
 		</section>
 	)
 }

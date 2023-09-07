@@ -9,12 +9,48 @@ import GlobeIcon from '../../../images/icons/globe.svg'
 
 import { Menu } from '../Menu'
 import { SecondaryButton } from '../../../ui/SecondaryButton'
+import { BurgerButton } from '../../../ui/BurgerButton'
 import { CallRequestModal } from '../../CallRequestModal'
 import { SuccessModal } from '../../SuccessModal'
 import { ChangeLanguageModal } from '../../ChangeLanguageModal'
 
 import { CONTACTS } from '../../../shared/constants'
 import './style.scss'
+
+interface IMobileMenuProps {
+	currentLanguage: string
+	mobileMenuOpened: boolean
+	setChangeLanguageModalOpened: Function
+	setMobileMenuOpened: Function
+}
+
+const MobileMenu = ({
+	currentLanguage,
+	mobileMenuOpened,
+	setMobileMenuOpened,
+	setChangeLanguageModalOpened
+}: IMobileMenuProps) => {
+	return (
+		<div className={'mobileMenu ' + (mobileMenuOpened ? 'mobileMenu-opened' : '')}>
+			<Menu clickHandler={() => setMobileMenuOpened(false)} />
+			<div className="mobileMenu__socials">
+				<a className="header__waLink outline" href={CONTACTS.whatsapp.link}>
+					<WhatsappIcon />
+				</a>
+				<a className="header__emailLink outline" href={CONTACTS.email.link}>
+					<EmailIcon />
+				</a>
+			</div>
+			<a className="header__phoneLink underline outline accent-s" href={CONTACTS.phone.link}>
+				{CONTACTS.phone.text}
+			</a>
+			<button className="header__changeLang outline" onClick={() => setChangeLanguageModalOpened(true)}>
+				<GlobeIcon />
+				<span className="accent-s">{currentLanguage}</span>
+			</button>
+		</div>
+	)
+}
 
 interface IProps {
 	className?: string
@@ -28,37 +64,14 @@ export const Header = ({ className }: IProps) => {
 		callRequest: t('callRequest')
 	}
 
+	const [mobileMenuOpened, setMobileMenuOpened] = useState(false)
 	const [callRequestModalOpened, setCallRequestModalOpened] = useState(false)
 	const [successModalOpened, setSuccessModalOpened] = useState(false)
 	const [changeLanguageModalOpened, setChangeLanguageModalOpened] = useState(false)
 
 	const submitRequestModalHandler = useCallback(() => {
-		closeCallRequestModal()
-		openSuccessModal()
-	}, [])
-
-	const openCallRequestModal = useCallback(() => {
-		setCallRequestModalOpened(true)
-	}, [])
-
-	const closeCallRequestModal = useCallback(() => {
 		setCallRequestModalOpened(false)
-	}, [])
-
-	const openSuccessModal = useCallback(() => {
 		setSuccessModalOpened(true)
-	}, [])
-
-	const closeSuccessModal = useCallback(() => {
-		setSuccessModalOpened(false)
-	}, [])
-
-	const openChangeLanguageModal = useCallback(() => {
-		setChangeLanguageModalOpened(true)
-	}, [])
-
-	const closeChangeLanguageModal = useCallback(() => {
-		setChangeLanguageModalOpened(false)
 	}, [])
 
 	const setRussianLanguage = useCallback(() => {
@@ -78,8 +91,8 @@ export const Header = ({ className }: IProps) => {
 					<a href="/" className="outline">
 						<Logo.Colorful className="header__logo" />
 					</a>
-					<nav>
-						<Menu className="header__menu" />
+					<nav className="header__desktopNav">
+						<Menu className="header__menu" clickHandler={() => setMobileMenuOpened(false)} />
 					</nav>
 				</div>
 				<div className="header__socialsAndLanguage">
@@ -92,26 +105,40 @@ export const Header = ({ className }: IProps) => {
 					<a className="header__emailLink outline" href={CONTACTS.email.link}>
 						<EmailIcon />
 					</a>
-					<SecondaryButton className=" header__orderCall" Icon={PhoneIcon} clickHandler={openCallRequestModal}>
+					<SecondaryButton
+						className="header__orderCall"
+						Icon={PhoneIcon}
+						clickHandler={() => setCallRequestModalOpened(true)}>
 						{content.callRequest}
 					</SecondaryButton>
-					<button className="header__changeLang outline" onClick={() => openChangeLanguageModal()}>
+					<button className="header__changeLang outline" onClick={() => setChangeLanguageModalOpened(true)}>
 						<GlobeIcon />
 						<span className="accent-s">{currentLanguage}</span>
 					</button>
 				</div>
+				<BurgerButton
+					clickHandler={() => setMobileMenuOpened(prevValue => !prevValue)}
+					className="header__burgerButton"
+					cross={mobileMenuOpened}
+				/>
 			</header>
+			<MobileMenu
+				mobileMenuOpened={mobileMenuOpened}
+				currentLanguage={currentLanguage}
+				setChangeLanguageModalOpened={setChangeLanguageModalOpened}
+				setMobileMenuOpened={setMobileMenuOpened}
+			/>
 			<CallRequestModal
 				opened={callRequestModalOpened}
-				close={closeCallRequestModal}
+				close={() => setCallRequestModalOpened(false)}
 				submit={submitRequestModalHandler}
 			/>
-			<SuccessModal opened={successModalOpened} close={closeSuccessModal} />
+			<SuccessModal opened={successModalOpened} close={() => setSuccessModalOpened(false)} />
 			<ChangeLanguageModal
 				setRussianLanguage={setRussianLanguage}
 				setEnglishLanguage={setEnglishLanguage}
 				opened={changeLanguageModalOpened}
-				close={closeChangeLanguageModal}
+				close={() => setChangeLanguageModalOpened(false)}
 				currentLanguage={currentLanguage}
 			/>
 		</>

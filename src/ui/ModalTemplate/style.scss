@@ -1,10 +1,7 @@
 @import '../../shared/styles/lib';
 
 .modal {
-	width: vw(450px);
 	max-width: 100%;
-	padding: vw(30px);
-	border-radius: vw(22px);
 
 	display: flex;
 	flex-direction: column;
@@ -16,7 +13,6 @@
 	transition: visibility 0s 0.3s cubic-bezier(0.4, 0, 0, 1);
 
 	& .modal__closeButton {
-		padding: 10px;
 		border: none;
 		outline: none;
 
@@ -25,16 +21,9 @@
 		align-items: center;
 
 		position: absolute;
-		top: vw(23px);
-		right: vw(23px);
 
 		background-color: transparent;
 		cursor: pointer;
-
-		& svg {
-			width: vw(15px);
-			height: vw(15px);
-		}
 
 		& path {
 			fill: $graphit;
@@ -49,4 +38,42 @@
 .backdrop-opened .modal {
 	transition: visibility 0s cubic-bezier(0.4, 0, 0, 1);
 	visibility: visible;
+}
+
+@media (min-width: $desktopStart) {
+	.modal {
+		width: vw(450px);
+		padding: vw(30px);
+		border-radius: vw(22px);
+
+		& .modal__closeButton {
+			padding: vw(10px);
+			top: vw(23px);
+			right: vw(23px);
+
+			& svg {
+				width: vw(15px);
+				height: vw(15px);
+			}
+		}
+	}
+}
+
+@media (max-width: $mobileEnd) {
+	.modal {
+		width: calc(100% - vw(32px, $mvw));
+		padding: vw(25px, $mvw) vw(16px, $mvw) vw(20px, $mvw);
+		border-radius: vw(22px, $mvw);
+
+		& .modal__closeButton {
+			padding: vw(7px, $mvw);
+			top: vw(20px, $mvw);
+			right: vw(16px, $mvw);
+
+			& svg {
+				width: vw(15px, $mvw);
+				height: vw(15px, $mvw);
+			}
+		}
+	}
 }

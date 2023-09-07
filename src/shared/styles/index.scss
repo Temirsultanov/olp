@@ -1,18 +1,45 @@
 @import './lib';
 
-.index {
-	padding-top: vw($header_height + 20px);
+@media (min-width: $desktopStart) {
+	.index {
+		padding-top: vw($header_height + 20px);
 
-	&__aboutUs {
-		margin-top: vw(60px);
+		&__aboutUs {
+			margin-top: vw(60px);
+		}
+		&__ourTeam {
+			margin-top: vw(-34px);
+		}
+		&__ourReviews {
+			margin-top: vw(-34px);
+		}
+		&__contacts {
+			margin-top: vw(-34px);
+		}
 	}
-	&__ourTeam {
-		margin-top: vw(-34px);
-	}
-	&__ourReviews {
-		margin-top: vw(-34px);
-	}
-	&__contacts {
-		margin-top: vw(-34px);
+}
+
+@media (max-width: $mobileEnd) {
+	.index {
+		padding-top: vw($header_height + 2px, $mvw);
+
+		&__aboutUs {
+			margin-top: vw(30px, $mvw);
+		}
+		&__guarantee {
+			margin-top: vw(-34px, $mvw);
+		}
+		&__ourServices {
+			margin-top: vw(-34px, $mvw);
+		}
+		&__ourTeam {
+			margin-top: vw(-34px, $mvw);
+		}
+		&__ourReviews {
+			margin-top: vw(-34px, $mvw);
+		}
+		&__contacts {
+			margin-top: vw(-34px, $mvw);
+		}
 	}
 }

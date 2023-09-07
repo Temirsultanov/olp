@@ -10,10 +10,16 @@ $blue: #0f6cbd;
 $candy: #fb2c18;
 $midnight: #22217c;
 
+// Sizes
+$header_height: 52px;
+$desktopViewportWidth: 1440px;
+$mvw: 385px;
+
 // Functions
-@function vw($px, $vw: 1440px) {
+@function vw($px, $vw: $desktopViewportWidth) {
 	@return calc($px * 100 * 1vw / $vw);
 }
 
-// Sized
-$header_height: 52px;
+// Breakpoints
+$mobileEnd: 768px;
+$desktopStart: 769px;

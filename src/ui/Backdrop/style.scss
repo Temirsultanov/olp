@@ -4,9 +4,6 @@
 	width: 100%;
 	height: 100%;
 
-	padding-top: vw(20px);
-	padding-bottom: vw(20px);
-
 	overscroll-behavior: contain;
 	overflow-y: auto;
 
@@ -33,5 +30,19 @@
 
 	& .modal {
 		margin: auto;
+	}
+}
+
+@media (min-width: $desktopStart) {
+	.backdrop {
+		padding-top: vw(20px);
+		padding-bottom: vw(20px);
+	}
+}
+
+@media (max-width: $mobileEnd) {
+	.backdrop {
+		padding-top: vw(20px, $mvw);
+		padding-bottom: vw(20px, $mvw);
 	}
 }

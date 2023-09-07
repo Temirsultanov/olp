@@ -1,9 +1,6 @@
 @import '../../shared/styles/lib';
 
 .ourServices {
-	padding: vw(60px) vw(30px) vw(94px);
-	border-radius: vw(34px) vw(34px) 0 0;
-
 	color: $white;
 	background-color: $graphit;
 
@@ -12,11 +9,39 @@
 		text-transform: uppercase;
 	}
 
-	&__list {
-		margin-top: vw(30px);
+	&__list li:not(:last-child) {
+		border-bottom: 1px solid rgb(255, 255, 255, 0.2);
+	}
+}
 
-		& li:not(:last-child) {
-			border-bottom: 1px solid rgb(255, 255, 255, 0.2);
+@media (min-width: $desktopStart) {
+	.ourServices {
+		padding: vw(60px) vw(30px) vw(94px);
+		border-radius: vw(34px) vw(34px) 0 0;
+
+		&__list {
+			margin-top: vw(30px);
+		}
+	}
+}
+
+@media (max-width: $mobileEnd) {
+	.ourServices {
+		padding: vw(30px, $mvw) 0 vw(64px, $mvw);
+		border-radius: vw(34px, $mvw) vw(34px, $mvw) 0 0;
+		position: relative;
+
+		&__title {
+			padding-left: vw(16px, $mvw);
+			padding-right: vw(16px, $mvw);
+
+			& h2 {
+				font-size: vw(27px, $mvw);
+			}
+		}
+
+		&__list {
+			margin-top: vw(20px, $mvw);
 		}
 	}
 }

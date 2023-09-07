@@ -9,6 +9,9 @@ interface IProps {
 
 export const OurServices = ({ className }: IProps) => {
 	const [openedService, setOpenedService] = useState<number | null>(null)
+	const content = {
+		title: 'Наши услуги для\u00A0вашего бизнеса'
+	}
 
 	const renderedServices = SERVICES.map((service, index) => {
 		const num = String(index + 1).padStart(2, '0')
@@ -26,7 +29,7 @@ export const OurServices = ({ className }: IProps) => {
 	return (
 		<section className={'ourServices' + className}>
 			<a id="services" href="#services" className="ourServices__title section-link focus-visible-outline">
-				<h2 className="heading-l">Наши услуги для вашего бизнеса</h2>
+				<h2 className="heading-l">{content.title}</h2>
 			</a>
 			<ul className="ourServices__list">{renderedServices}</ul>
 		</section>

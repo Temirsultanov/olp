@@ -1,6 +1,6 @@
 import React from 'react'
-import { StaticImage } from 'gatsby-plugin-image'
 import { useTranslation } from 'gatsby-plugin-react-i18next'
+import { StaticImage } from 'gatsby-plugin-image'
 
 import { Button } from '../../ui/Button'
 import TruckIcon from '../../images/icons/truck.svg'
@@ -62,25 +62,35 @@ export const Promo = ({ className, openConsultationRequestModal }: IProps) => {
 						<span>{content.title2}</span>
 						<span className="promo__title-black">{content.title3}</span>
 					</h1>
+					<p className="promo__description text-l">{content.description}</p>
 					<div className="promo__pattern"></div>
-					<footer className="promo__footer">
-						<Button clickHandler={() => openConsultationRequestModal()} className="promo__button">
-							{content.requestConsultation}
-						</Button>
-						<p className="promo__description text-l">{content.description}</p>
-					</footer>
+					<Button clickHandler={() => openConsultationRequestModal()} className="promo__button">
+						{content.requestConsultation}
+					</Button>
 				</div>
 				<ul className="promo__services">
 					<li>
+						<div>
+							<StaticImage src="../../images/international.webp" alt={content.internationalTransportation} />
+						</div>
 						<p className="text-s">{content.internationalTransportation}</p>
 					</li>
 					<li>
+						<div>
+							<StaticImage src="../../images/customs-clearance.webp" alt={content.internationalTransportation} />
+						</div>
 						<p className="text-s">{content.customsClearance}</p>
 					</li>
 					<li>
+						<div>
+							<StaticImage src="../../images/bypassing-sanctions.webp" alt={content.internationalTransportation} />
+						</div>
 						<p className="text-s">{content.sanctionsCircumvention}</p>
 					</li>
 					<li>
+						<div>
+							<StaticImage src="../../images/sertification-services.webp" alt={content.internationalTransportation} />
+						</div>
 						<p className="text-s">{content.sertificationServices}</p>
 					</li>
 				</ul>

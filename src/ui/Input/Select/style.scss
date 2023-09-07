@@ -12,13 +12,7 @@
 	}
 
 	&__arrowDown {
-		width: vw(12px);
-		height: vw(6px);
-
 		position: absolute;
-		bottom: vw(20px);
-		right: vw(16px);
-
 		pointer-events: none;
 		transition: transform 0.2s cubic-bezier(0.4, 0, 0, 1);
 
@@ -40,5 +34,25 @@
 		& .input__arrowDown path {
 			fill: $grey;
 		}
+	}
+}
+
+@media (min-width: $desktopStart) {
+	.input__arrowDown {
+		width: vw(12px);
+		height: vw(6px);
+
+		bottom: vw(20px);
+		right: vw(16px);
+	}
+}
+
+@media (max-width: $mobileEnd) {
+	.input__arrowDown {
+		width: vw(12px, $mvw);
+		height: vw(6px, $mvw);
+
+		bottom: vw(20px, $mvw);
+		right: vw(16px, $mvw);
 	}
 }

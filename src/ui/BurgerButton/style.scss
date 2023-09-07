@@ -1,0 +1,62 @@
+@import '../../shared/styles/lib';
+
+.burgerButton {
+	width: vw(30px, $mvw);
+	height: vw(30px, $mvw);
+	padding: 0;
+	border: none;
+
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	position: relative;
+	cursor: pointer;
+	background-color: transparent;
+
+	&__line,
+	&:before,
+	&:after {
+		width: vw(16px, $mvw);
+		height: vw(2px, $mvw);
+		border-radius: 5px;
+		display: block;
+		background-color: $white;
+	}
+
+	&__line {
+		transition: opacity 0.2s cubic-bezier(0.4, 0, 0, 1);
+	}
+
+	&::after,
+	&::before {
+		content: '';
+		position: absolute;
+		transform-origin: 50% 50%;
+		transition: transform 0.2s cubic-bezier(0.4, 0, 0, 1);
+	}
+
+	&::before {
+		top: vw(9px, $mvw);
+	}
+
+	&::after {
+		bottom: vw(9px, $mvw);
+	}
+
+	&-cross {
+		& .burgerButton__line {
+			opacity: 0;
+		}
+		&::before {
+			transform: translateY(vw(5px, $mvw)) rotate(45deg);
+		}
+		&::after {
+			transform: translateY(vw(-5px, $mvw)) rotate(-45deg);
+		}
+	}
+
+	&:focus-visible {
+		outline: 1px solid $white;
+	}
+}

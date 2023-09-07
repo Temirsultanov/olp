@@ -11,9 +11,6 @@
 		}
 
 		& span {
-			padding-left: vw(48px);
-			padding-right: vw(72px);
-
 			animation: aboutUs__title 5s 0s linear infinite;
 			transform: translateX(-12%);
 
@@ -22,8 +19,6 @@
 
 			&::after {
 				content: '';
-				width: vw(24px);
-				height: vw(24px);
 				border-radius: 50%;
 
 				position: absolute;
@@ -36,11 +31,6 @@
 	}
 
 	&__benefits {
-		margin-top: vw(64px);
-
-		& li {
-			margin-top: vw(-34px);
-		}
 		& li:nth-child(1) {
 			color: $white;
 			background-color: $celestial;
@@ -48,6 +38,10 @@
 		& li:nth-child(2) {
 			color: $graphit;
 			background-color: $white;
+
+			& path {
+				fill: $graphit;
+			}
 		}
 		& li:nth-child(3) {
 			color: $white;
@@ -62,5 +56,51 @@
 	}
 	100% {
 		transform: translateX(-112%);
+	}
+}
+
+@media (min-width: $desktopStart) {
+	.aboutUs {
+		&__title {
+			& span {
+				padding-left: vw(48px);
+				padding-right: vw(72px);
+
+				&:after {
+					width: vw(24px);
+					height: vw(24px);
+				}
+			}
+		}
+		&__benefits {
+			margin-top: vw(64px);
+
+			& li {
+				margin-top: vw(-34px);
+			}
+		}
+	}
+}
+
+@media (max-width: $mobileEnd) {
+	.aboutUs {
+		&__title {
+			& span {
+				padding-left: vw(20px, $mvw);
+				padding-right: vw(32px, $mvw);
+
+				&:after {
+					width: vw(12px, $mvw);
+					height: vw(12px, $mvw);
+				}
+			}
+		}
+		&__benefits {
+			margin-top: vw(54px, $mvw);
+
+			& li {
+				margin-top: vw(-34px, $mvw);
+			}
+		}
 	}
 }

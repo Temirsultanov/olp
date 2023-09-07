@@ -1,10 +1,6 @@
 @import '../../../shared/styles/lib';
 
 .contactsForm {
-	width: vw(680px);
-	padding: vw(30px);
-	border-radius: vw(22px);
-
 	color: $graphit;
 	background-color: #ffffff;
 
@@ -13,33 +9,16 @@
 		border: none;
 	}
 
-	& legend {
-		margin-bottom: vw(16px);
-	}
-
 	&__inputGroup {
 		display: flex;
-		gap: vw(20px);
-	}
-
-	&__additional {
-		margin-top: vw(30px);
-	}
-
-	&__document {
-		margin-top: vw(20px);
 	}
 
 	&__footer {
-		margin-top: vw(40px);
-
 		display: flex;
 		align-items: center;
-		gap: vw(24px);
 	}
 
 	&__privacy {
-		width: vw(250px);
 		color: $grey;
 
 		a {
@@ -48,6 +27,80 @@
 			&:hover {
 				color: $celestial;
 			}
+		}
+	}
+}
+
+@media (min-width: $desktopStart) {
+	.contactsForm {
+		width: vw(680px);
+		padding: vw(30px);
+		border-radius: vw(22px);
+
+		& legend {
+			margin-bottom: vw(16px);
+		}
+
+		&__inputGroup {
+			gap: vw(20px);
+		}
+
+		&__additional {
+			margin-top: vw(30px);
+		}
+
+		&__document {
+			margin-top: vw(20px);
+		}
+
+		&__footer {
+			margin-top: vw(40px);
+			gap: vw(24px);
+		}
+
+		&__privacy {
+			width: vw(250px);
+		}
+	}
+}
+
+@media (max-width: $mobileEnd) {
+	.contactsForm {
+		padding: vw(20px, $mvw) vw(16px, $mvw);
+		border-radius: vw(22px, $mvw);
+
+		& legend {
+			margin-bottom: vw(14px, $mvw);
+		}
+
+		&__inputGroup {
+			flex-direction: column;
+			gap: vw(20px, $mvw);
+		}
+
+		&__additional {
+			margin-top: vw(30px, $mvw);
+		}
+
+		&__document {
+			margin-top: vw(20px, $mvw);
+
+			&-format {
+				display: none;
+			}
+		}
+
+		&__footer {
+			margin-top: vw(30px, $mvw);
+			flex-direction: column;
+			align-items: stretch;
+			gap: vw(20px, $mvw);
+		}
+
+		&__privacy {
+			width: vw(210px, $mvw);
+			align-self: center;
+			text-align: center;
 		}
 	}
 }

@@ -1,19 +1,15 @@
 @import '../../../shared/styles/lib';
 
 .footer {
-	padding: vw(30px);
 	display: grid;
-	grid-template-columns: 1fr 1fr 1fr;
 	color: $grey;
 	background-color: $dark;
 
 	&__logo {
-		width: vw(130px);
 		height: auto;
 	}
 
 	&__requisites {
-		margin-top: vw(18px);
 		text-transform: uppercase;
 
 		& span {
@@ -21,16 +17,8 @@
 		}
 	}
 
-	&__copyright {
-		align-self: flex-end;
-		text-align: center;
-	}
-
 	& > div:last-of-type {
 		display: flex;
-		flex-direction: column;
-		justify-content: space-between;
-		align-items: flex-end;
 	}
 
 	&__socials {
@@ -40,16 +28,10 @@
 
 	&__waLink,
 	&__emailLink {
-		width: vw(40px);
-		height: vw(40px);
 		display: flex;
 		justify-content: center;
 		align-items: center;
 
-		& svg {
-			width: vw(20px);
-			height: vw(20px);
-		}
 		& path {
 			fill: $white;
 		}
@@ -59,18 +41,111 @@
 		}
 	}
 
-	&__emailLink {
-		margin-right: vw(15px);
-	}
-
 	&__policy {
-		margin-right: vw(-10px);
-		margin-bottom: vw(-10px);
-		padding: vw(10px);
 		color: $white;
 
 		&:hover {
 			color: $celestial;
+		}
+	}
+}
+
+@media (min-width: $desktopStart) {
+	.footer {
+		padding: vw(30px);
+		grid-template-columns: 1fr;
+		gap: vw(18px);
+
+		&__logo {
+			width: vw(130px);
+		}
+
+		&__copyright {
+			align-self: flex-end;
+			text-align: center;
+		}
+
+		& > div:first-of-type {
+			display: flex;
+			justify-content: space-between;
+			align-items: flex-start;
+		}
+
+		& > div:last-of-type {
+			justify-content: space-between;
+			align-items: flex-end;
+		}
+
+		&__waLink,
+		&__emailLink {
+			width: vw(40px);
+			height: vw(40px);
+
+			& svg {
+				width: vw(20px);
+				height: vw(20px);
+			}
+		}
+
+		&__emailLink {
+			margin-right: vw(15px);
+		}
+
+		&__policy {
+			margin-right: vw(-10px);
+			margin-bottom: vw(-10px);
+			padding: vw(10px);
+		}
+	}
+}
+
+@media (max-width: $mobileEnd) {
+	.footer {
+		padding: vw(64px, $mvw) vw(16px, $mvw) vw(30px, $mvw);
+		grid-template-columns: 1fr;
+
+		&__logo {
+			width: vw(130px, $mvw);
+		}
+
+		&__socials {
+			margin-top: vw(20px, $mvw);
+
+			& .secondaryButton {
+				order: -1;
+			}
+		}
+
+		& > div:last-of-type {
+			flex-direction: column-reverse;
+			align-items: flex-start;
+		}
+
+		&__waLink,
+		&__emailLink {
+			width: vw(32px, $mvw);
+			height: vw(32px, $mvw);
+
+			& svg {
+				width: vw(20px, $mvw);
+				height: vw(20px, $mvw);
+			}
+		}
+
+		&__waLink {
+			margin-left: vw(10px, $mvw);
+		}
+
+		&__copyright {
+			margin-top: vw(10px, $mvw);
+			order: -1;
+		}
+
+		&__policy {
+			margin-top: vw(10px, $mvw);
+			margin-left: vw(-10px, $mvw);
+			margin-bottom: vw(10px, $mvw);
+			padding: vw(10px, $mvw);
 		}
 	}
 }

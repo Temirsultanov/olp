@@ -3,7 +3,6 @@
 .service {
 	&__summary {
 		width: 100%;
-		padding: vw(37px) 0px vw(37px);
 		border: none;
 
 		display: flex;
@@ -24,33 +23,24 @@
 	}
 
 	&__number {
-		width: vw(50px);
 		opacity: 0.6;
 	}
 
 	&__title {
-		margin-left: vw(300px);
 		opacity: 0.6;
 	}
 
 	&__icon {
-		width: vw(26px);
 		height: auto;
 		margin-left: auto;
 		opacity: 0.6;
-		transition: transform 0.4s cubic-bezier(0.4, 0, 0, 1);
+		transition: transform 0.3s cubic-bezier(0.4, 0, 0, 1);
 	}
 
 	&__descriptionWrapper {
 		display: block;
 		overflow: hidden;
 		transition: height 0.3s cubic-bezier(0.4, 0, 0, 1);
-	}
-
-	&__description {
-		width: vw(680px);
-		margin-left: vw(350px);
-		padding-bottom: vw(40px);
 	}
 
 	&-opened .service {
@@ -62,6 +52,51 @@
 
 		&__icon {
 			transform: rotate(180deg);
+		}
+	}
+}
+
+@media (min-width: $desktopStart) {
+	.service {
+		&__summary {
+			padding: vw(37px) 0px vw(37px);
+		}
+		&__number {
+			width: vw(50px);
+		}
+		&__title {
+			margin-left: vw(300px);
+		}
+		&__icon {
+			width: vw(26px);
+		}
+		&__description {
+			width: vw(680px);
+			margin-left: vw(350px);
+			padding-bottom: vw(40px);
+		}
+	}
+}
+
+@media (max-width: $mobileEnd) {
+	.service {
+		&__summary {
+			padding: vw(25px, $mvw) vw(25px, $mvw) vw(25px, $mvw) vw(16px, $mvw);
+		}
+		& .service__title {
+			text-align: left;
+			font-size: vw(18px, $mvw);
+		}
+		&__number {
+			display: none;
+		}
+		&__icon {
+			width: vw(14px, $mvw);
+		}
+		&__description {
+			padding-left: vw(16px, $mvw);
+			padding-right: vw(16px, $mvw);
+			padding-bottom: vw(20px, $mvw);
 		}
 	}
 }
