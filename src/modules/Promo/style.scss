@@ -136,7 +136,7 @@
 		&__content {
 			padding-top: vw(40px, $mvw);
 			padding-bottom: vw(30px, $mvw);
-			border-radius: $border-radius;
+			border-radius: vw(34px, $mvw) vw(34px, $mvw) $border-radius $border-radius;
 		}
 		&__transports {
 			margin-left: vw(16px, $mvw);
@@ -180,6 +180,7 @@
 				width: vw(64px, $mvw);
 				height: 100%;
 				border-radius: vw(22px, $mvw);
+				overflow: hidden;
 			}
 
 			& p {
