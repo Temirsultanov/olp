@@ -70,7 +70,7 @@ export const Promo = ({ className, openConsultationRequestModal }: IProps) => {
 				</div>
 				<ul className="promo__services">
 					<li>
-						<div>
+						<div className="promo__serviceImageWrapper">
 							<StaticImage
 								className="promo__serviceImage"
 								src="../../images/international.webp"
@@ -80,7 +80,7 @@ export const Promo = ({ className, openConsultationRequestModal }: IProps) => {
 						<p className="text-s">{content.internationalTransportation}</p>
 					</li>
 					<li>
-						<div>
+						<div className="promo__serviceImageWrapper">
 							<StaticImage
 								className="promo__serviceImage"
 								src="../../images/customs-clearance.webp"
@@ -90,7 +90,7 @@ export const Promo = ({ className, openConsultationRequestModal }: IProps) => {
 						<p className="text-s">{content.customsClearance}</p>
 					</li>
 					<li>
-						<div>
+						<div className="promo__serviceImageWrapper">
 							<StaticImage
 								className="promo__serviceImage"
 								src="../../images/bypassing-sanctions.webp"
@@ -100,7 +100,7 @@ export const Promo = ({ className, openConsultationRequestModal }: IProps) => {
 						<p className="text-s">{content.sanctionsCircumvention}</p>
 					</li>
 					<li>
-						<div>
+						<div className="promo__serviceImageWrapper">
 							<StaticImage
 								className="promo__serviceImage"
 								src="../../images/sertification-services.webp"
