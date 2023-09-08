@@ -20,7 +20,7 @@
 @media (max-width: $mobileEnd) {
 	.changeLanguageModal__buttons {
 		margin-top: vw(20px, $mvw);
-		gap: vw(20px, $mvw);
+		gap: vw(12px, $mvw);
 
 		& .button {
 			padding-left: 0;
