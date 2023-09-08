@@ -1,15 +1,157 @@
 @import './lib';
 
-#privacy {
-	padding-left: vw(30px);
-	padding-top: vw(100px);
-	padding-bottom: vw(60px);
-
+.privacy__content {
 	display: flex;
 	flex-direction: column;
-	gap: vw(20px);
+	background-color: #ffffff;
+
+	& h1 {
+		color: $grey;
+		text-transform: uppercase;
+	}
+
+	& h3 + ol {
+		list-style: disc !important;
+	}
 
 	& p {
-		width: vw(600px);
+		font-weight: normal;
+		line-height: 1.4;
+	}
+
+	& > ol {
+		display: flex;
+		flex-direction: column;
+		list-style: decimal-leading-zero;
+		font-weight: 700;
+
+		& > li > ol {
+			padding: 0;
+			display: flex;
+			flex-direction: column;
+			list-style: none;
+
+			& > li {
+				font-weight: normal;
+
+				& > ul {
+					display: flex;
+					flex-direction: column;
+					list-style: '— ';
+				}
+			}
+		}
+	}
+}
+
+@media (min-width: $desktopStart) {
+	#privacy {
+		padding-top: vw($header_height + 50px);
+		padding-bottom: vw(30px);
+	}
+
+	.privacy__content {
+		padding: vw(60px) vw(30px);
+		border-radius: vw(34px);
+		gap: vw(30px);
+
+		& h1 {
+			font-size: vw(42px);
+		}
+
+		& h2 {
+			font-size: vw(24px);
+			margin-bottom: vw(20px);
+			max-width: vw(600px);
+		}
+
+		& h3 {
+			font-size: vw(20px);
+			margin-bottom: vw(10px);
+
+			& + ol {
+				list-style: disc !important;
+				padding-left: vw(20px) !important;
+			}
+		}
+
+		& p {
+			width: vw(800px);
+			font-size: vw(16px);
+		}
+
+		& > ol {
+			padding-left: vw(50px);
+			gap: vw(35px);
+			font-size: vw(24px);
+
+			& > li > ol {
+				margin-top: vw(30px);
+				gap: vw(25px);
+
+				& > li > ul {
+					margin-top: vw(15px);
+					padding-left: vw(22px);
+					gap: vw(10px);
+					font-size: vw(16px);
+				}
+			}
+		}
+	}
+}
+
+@media (max-width: $mobileEnd) {
+	#privacy {
+		padding-top: vw($header_height, $mvw);
+		position: relative;
+	}
+	.privacy__content {
+		padding: vw(30px, $mvw) vw(16px, $mvw);
+		border-radius: vw(34px, $mvw);
+
+		& h1 {
+			font-size: 24px;
+		}
+
+		& h2 {
+			font-size: 22px;
+			margin-bottom: 20px;
+		}
+
+		& h3 {
+			font-size: 18px;
+			margin-bottom: 10px;
+
+			& + ol {
+				list-style: disc !important;
+				padding-left: 20px !important;
+			}
+		}
+
+		& p {
+			font-size: 16px;
+		}
+
+		& > ol {
+			padding-left: 40px;
+			gap: 35px;
+			font-size: 24px;
+
+			& > li {
+				font-size: 20px;
+			}
+
+			& > li > ol {
+				margin-top: 30px;
+				gap: 25px;
+
+				& > li > ul {
+					margin-top: 15px;
+					padding-left: 22px;
+					gap: 10px;
+					font-size: 16px;
+				}
+			}
+		}
 	}
 }
