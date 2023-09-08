@@ -1,26 +1,46 @@
 import React, { useState } from 'react'
+import { useTranslation } from 'gatsby-plugin-react-i18next'
 
 import { Button } from '../../../ui/Button'
 import { Input } from '../../../ui/Input'
 import { SelectInput } from '../../../ui/Input/Select'
 import { FileInput } from '../../../ui/Input/FileInput'
 
-import { SERVICES } from '../../../shared/constants'
-import './style.scss'
+import { Service as ServiceType } from '../../../shared/types'
 import { isMobile } from '../../../shared/helpers'
+import './style.scss'
 
 interface IProps {
 	className?: string
 }
 
 export const Form = ({ className }: IProps) => {
-	const [invalid, setInvalid] = useState(false)
+	const { t } = useTranslation('index')
 	const content = {
-		fileInputLabel: 'Сопроводительная документация (.PDF, .JPEG, .ZIP, .RAR)'
+		contactData: t('contacts.form.contactData'),
+		nameInputLabel: t('contacts.form.nameInputLabel'),
+		nameInputPlaceholder: t('contacts.form.nameInputPlaceholder'),
+		surnameInputLabel: t('contacts.form.surnameInputLabel'),
+		surnameInputPlaceholder: t('contacts.form.surnameInputPlaceholder'),
+		emailInputLabel: t('contacts.form.emailInputLabel'),
+		emailInputPlaceholder: t('contacts.form.emailInputPlaceholder'),
+		additionalInformation: t('contacts.form.additionalInformation'),
+		selectInputLabel: t('contacts.form.selectInputLabel'),
+		selectInputPlaceholder: t('contacts.form.selectInputPlaceholder'),
+		fileInputLabel: t('contacts.form.fileInputLabel'),
+		fileInputLabelMobile: t('contacts.form.fileInputLabelMobile'),
+		fileInputPlaceholder: t('contacts.form.fileInputPlaceholder'),
+		priceRequest: t('contacts.form.priceRequest'),
+		privacyBegin: t('contacts.form.privacyBegin'),
+		privacyLink: t('contacts.form.privacyLink'),
+		privacyEnd: t('contacts.form.privacyEnd')
 	}
 
+	const SERVICES: ServiceType[] = t('ourServices.services', { returnObjects: true })
+
+	const [invalid, setInvalid] = useState(false)
 	if (typeof window !== 'undefined') {
-		content.fileInputLabel = isMobile(window.innerWidth) ? 'Сопроводительная документация' : content.fileInputLabel
+		content.fileInputLabel = isMobile(window.innerWidth) ? content.fileInputLabelMobile : content.fileInputLabel
 	}
 
 	return (
@@ -30,24 +50,36 @@ export const Form = ({ className }: IProps) => {
 			className={'contactsForm ' + className + (invalid ? ' form-invalid' : '')}
 			onInvalid={() => setInvalid(true)}>
 			<fieldset name="contacts">
-				<legend className="accent-xl">[01] Контактные данные</legend>
+				<legend className="accent-xl">{content.contactData}</legend>
 				<div className="contactsForm__inputGroup">
-					<Input label="Имя" name="name" id="contactsForm-name" placeholder="Ваше имя" required={true} />
-					<Input label="Фамилия" name="surname" id="contactsForm-surname" placeholder="Ваша фамилия" required={true} />
 					<Input
-						label="Почта"
+						label={content.nameInputLabel}
+						name="name"
+						id="contactsForm-name"
+						placeholder={content.nameInputPlaceholder}
+						required={true}
+					/>
+					<Input
+						label={content.surnameInputLabel}
+						name="surname"
+						id="contactsForm-surname"
+						placeholder={content.surnameInputPlaceholder}
+						required={true}
+					/>
+					<Input
+						label={content.emailInputLabel}
 						name="name"
 						id="contactsForm-email"
-						placeholder="Ваш почтовый ящик"
+						placeholder={content.emailInputPlaceholder}
 						required={true}
 						type="email"
 					/>
 				</div>
 			</fieldset>
 			<fieldset name="additional" className="contactsForm__additional">
-				<legend className="accent-xl">[02] Дополнительная информация</legend>
-				<SelectInput label="Выберите услугу" name="service" id="contactsForm-service" required={true}>
-					<option value="">Выбрать</option>
+				<legend className="accent-xl">{content.additionalInformation}</legend>
+				<SelectInput label={content.selectInputLabel} name="service" id="contactsForm-service" required={true}>
+					<option value="">{content.selectInputPlaceholder}</option>
 					{SERVICES.map(service => (
 						<option key={service.id} value={service.title}>
 							{service.title}
@@ -60,19 +92,19 @@ export const Form = ({ className }: IProps) => {
 					name="file"
 					accept=".pdf, .jpeg, .jpg, .zip, .rar"
 					id="contactsForm-file"
-					placeholder="Прикрепить файл..."
+					placeholder={content.fileInputPlaceholder}
 				/>
 			</fieldset>
 			<div className="contactsForm__footer">
 				<Button type="submit" className="contactsForm__button">
-					Запросить стоимость
+					{content.priceRequest}
 				</Button>
 				<p className="text-s contactsForm__privacy">
-					Нажимая кнопку, вы соглашаетесь с&nbsp;
+					{content.privacyBegin}
 					<a href="/privacy" className="underline outline">
-						политикой конфиденциальности
+						{content.privacyLink}
 					</a>
-					.
+					{content.privacyEnd}
 				</p>
 			</div>
 		</form>

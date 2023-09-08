@@ -1,4 +1,5 @@
 import React from 'react'
+import { useTranslation } from 'gatsby-plugin-react-i18next'
 import { ModalTemplate } from '../../ui/ModalTemplate'
 import { Button } from '../../ui/Button'
 
@@ -10,13 +11,20 @@ interface IProps {
 }
 
 export const SuccessModal = ({ opened, close }: IProps) => {
+	const { t } = useTranslation('common', { keyPrefix: 'successModal' })
+	const content = {
+		title: t('title'),
+		description: t('description'),
+		close: t('close')
+	}
+
 	return (
 		<>
 			<ModalTemplate className="successModal" close={close} opened={opened}>
-				<h2 className="successModal__title accent-xl">Спасибо, данные успешно отправлены</h2>
-				<p className="successModal__description text-m">В ближайшее время с вами свяжется наш менеджер.</p>
+				<h2 className="successModal__title accent-xl">{content.title}</h2>
+				<p className="successModal__description text-m">{content.description}</p>
 				<Button className="successModal__button" clickHandler={() => close()}>
-					Закрыть
+					{content.close}
 				</Button>
 			</ModalTemplate>
 		</>

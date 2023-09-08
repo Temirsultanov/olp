@@ -1,11 +1,12 @@
 import React from 'react'
+import { useTranslation } from 'gatsby-plugin-react-i18next'
 
 import * as Logo from '../../../ui/Logo'
 import WhatsappIcon from '../../../images/icons/wa.svg'
 import EmailIcon from '../../../images/icons/email.svg'
 import { SecondaryButton } from '../../../ui/SecondaryButton'
+import { Contacts as ContactsType } from '../../../shared/types'
 
-import { CONTACTS } from '../../../shared/constants'
 import './style.scss'
 
 interface IProps {
@@ -13,6 +14,18 @@ interface IProps {
 }
 
 export const Footer = ({ className }: IProps) => {
+	const { t } = useTranslation('common', { keyPrefix: 'footer' })
+	const content = {
+		support: t('support'),
+		requisites: t('requisites'),
+		companyName: t('companyName'),
+		copyright: t('copyright'),
+		privacy: t('privacy')
+	}
+
+	const { t: translateContacts } = useTranslation('common')
+	const CONTACTS: ContactsType = translateContacts('contacts', { returnObjects: true })
+
 	return (
 		<footer className={'footer' + className}>
 			<div>
@@ -24,17 +37,17 @@ export const Footer = ({ className }: IProps) => {
 					<a className="footer__emailLink outline" href={CONTACTS.email.link}>
 						<EmailIcon />
 					</a>
-					<SecondaryButton>Написать в поддержку</SecondaryButton>
+					<SecondaryButton>{content.support}</SecondaryButton>
 				</div>
 			</div>
 			<div>
 				<p className="footer__requisites text-s">
-					<span>ООО «ОПТИМАЛ ЛОДЖИСТИК ПРАЙС»</span>
-					<span>ИНН/КПП: 5009099032/772401001</span>
+					<span>{content.companyName}</span>
+					<span>{content.requisites}</span>
 				</p>
-				<p className="footer__copyright text-s">2023 © Optimal Logistic Price</p>
+				<p className="footer__copyright text-s">{content.copyright}</p>
 				<a className="footer__policy accent-s outline underline" href="/privacy">
-					Политика конфиденциальности
+					{content.privacy}
 				</a>
 			</div>
 		</footer>

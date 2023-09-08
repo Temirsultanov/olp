@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
+import { useTranslation } from 'gatsby-plugin-react-i18next'
 import { Benefit } from './Benefit'
-import { BENEFITS } from '../../shared/constants'
+import { Benefit as BenefitType } from '../../shared/types'
 import './style.scss'
 
 interface IProps {
@@ -8,8 +9,14 @@ interface IProps {
 }
 
 export const AboutUs = ({ className = '' }: IProps) => {
-	const [openedBenefit, setOpenedBenefit] = useState<number | null>(null)
+	const { t } = useTranslation('index', { keyPrefix: 'aboutUs' })
+	const content = {
+		title: t('title')
+	}
 
+	const BENEFITS: BenefitType[] = t('benefits', { returnObjects: true })
+
+	const [openedBenefit, setOpenedBenefit] = useState<number | null>(null)
 	const renderedBenefits = BENEFITS.map((benefit, index) => {
 		const num = String(index + 1).padStart(2, '0')
 		return (
@@ -27,10 +34,10 @@ export const AboutUs = ({ className = '' }: IProps) => {
 		<section className={'aboutUs' + className}>
 			<a className="aboutUs__title section-link focus-visible-outline" id="about" href="#about">
 				<h2 className="heading-xl">
-					<span>О компании</span>
-					<span>О компании</span>
-					<span>О компании</span>
-					<span>О компании</span>
+					<span>{content.title}</span>
+					<span>{content.title}</span>
+					<span>{content.title}</span>
+					<span>{content.title}</span>
 				</h2>
 			</a>
 			<ul className="aboutUs__benefits">{renderedBenefits}</ul>

@@ -1,5 +1,7 @@
 import React, { useState } from 'react'
-import { SERVICES } from '../../shared/constants'
+import { useTranslation } from 'gatsby-plugin-react-i18next'
+
+import { Service as ServiceType } from '../../shared/types'
 import { Service } from './Service'
 import './style.scss'
 
@@ -8,11 +10,14 @@ interface IProps {
 }
 
 export const OurServices = ({ className }: IProps) => {
-	const [openedService, setOpenedService] = useState<number | null>(null)
+	const { t } = useTranslation('index', { keyPrefix: 'ourServices' })
 	const content = {
-		title: 'Наши услуги для\u00A0вашего бизнеса'
+		title: t('title')
 	}
 
+	const SERVICES: ServiceType[] = t('services', { returnObjects: true })
+	const [openedService, setOpenedService] = useState<number | null>(null)
+	console.log(SERVICES)
 	const renderedServices = SERVICES.map((service, index) => {
 		const num = String(index + 1).padStart(2, '0')
 		return (

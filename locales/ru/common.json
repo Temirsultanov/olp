@@ -8,5 +8,49 @@
 			"contacts": "Контакты"
 		},
 		"callRequest": "Заказать звонок"
+	},
+	"changeLanguageModal": {
+		"title": "Сменить язык"
+	},
+	"callRequestModal": {
+		"title": "Заказать звонок",
+		"description": "Закажите обратный звонок, и наш менеджер свяжется с вами, чтобы ответить на все интересующие вас вопросы.",
+		"nameInputLabel": "Имя",
+		"nameInputPlaceholder": "Ваше имя",
+		"phoneInputLabel": "Телефон",
+		"phoneInputPlaceholder": "+7 (999) 999-99-99",
+		"privacyBegin": "Нажимая кнопку, вы соглашаетесь с\u00A0",
+		"privacyLink": "политикой конфиденциальности",
+		"privacyEnd": "."
+	},
+	"successModal": {
+		"title": "Спасибо, данные успешно отправлены",
+		"description": "В ближайшее время с вами свяжется наш менеджер.",
+		"close": "Закрыть"
+	},
+	"footer": {
+		"support": "Написать в поддержку",
+		"requisites": "ИНН/КПП: 5009099032/772401001",
+		"companyName": "ООО «ОПТИМАЛ ЛОДЖИСТИК ПРАЙС»",
+		"copyright": "2023 © Optimal Logistic Price",
+		"privacy": "Политика конфиденциальности"
+	},
+	"contacts": {
+		"phone": {
+			"text": "+7 (495)-136-80-65",
+			"link": "tel:+74951368065"
+		},
+		"email": {
+			"text": "info@olp.su",
+			"link": "mailto:info@olp.su"
+		},
+		"address": {
+			"text": "г. Москва, Шипиловская ул. 28 А",
+			"link": "https://google.com"
+		},
+		"whatsapp": {
+			"text": "+7 (495)-136-80-65",
+			"link": "https://wa.me/+74951368065"
+		}
 	}
 }

@@ -1,7 +1,9 @@
 import React from 'react'
 import { useStaticQuery, graphql } from 'gatsby'
+import { useTranslation } from 'gatsby-plugin-react-i18next'
+
 import { Review } from './Review'
-import { REVIEWS } from '../../shared/constants'
+import { Review as ReviewType } from '../../shared/types'
 import './style.scss'
 import { getPhotosFromGraphQLResult } from '../../shared/helpers'
 
@@ -25,6 +27,13 @@ export const OurReviews = ({ className }: IProps) => {
 		}
 	`)
 
+	const { t } = useTranslation('index', { keyPrefix: 'ourReviews' })
+	const content = {
+		title: t('title')
+	}
+
+	const REVIEWS: ReviewType[] = t('reviews', { returnObjects: true })
+
 	const photos = getPhotosFromGraphQLResult(allFile)
 	const middleIndex = Math.ceil(REVIEWS.length / 2)
 
@@ -39,7 +48,7 @@ export const OurReviews = ({ className }: IProps) => {
 	return (
 		<section className={'ourReviews' + className}>
 			<a href="#reviews" id="reviews" className="ourReviews__title section-link focus-visible-outline">
-				<h2 className="heading-l">Отзывы клиентов</h2>
+				<h2 className="heading-l">{content.title}</h2>
 			</a>
 			<div className="ourReviews__list">
 				<div className="ourReviews__list-half">{firstReviews}</div>

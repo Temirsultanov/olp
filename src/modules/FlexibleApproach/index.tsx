@@ -1,5 +1,7 @@
 import React from 'react'
 import { StaticImage } from 'gatsby-plugin-image'
+import { useTranslation } from 'gatsby-plugin-react-i18next'
+
 import Check from '../../images/icons/check.svg'
 import './style.scss'
 
@@ -8,16 +10,18 @@ interface IProps {
 }
 
 export const FlexibleApproach = ({ className }: IProps) => {
+	const { t } = useTranslation('index', { keyPrefix: 'flexibleApproach' })
 	const content = {
-		title: 'Гибкий подход к\u00A0клиентам',
-		description: 'Работаем с участниками внешне экономической деятельности',
-		members: ['Юридическими Лицами', 'Индивидуальными Предпринимателями', 'А так же с Физическими Лицами']
+		title: t('title'),
+		description: t('description'),
+		members: t('members', { returnObjects: true }) as string[],
+		imageAlt: t('imageAlt')
 	}
 
 	return (
 		<section className={'flexibleApproach' + className}>
 			<div className="flexibleApproach__photoWrapper">
-				<StaticImage className="flexibleApproach__photo" src="../../images/courier.png" alt="Courier" />
+				<StaticImage className="flexibleApproach__photo" src="../../images/courier.png" alt={content.imageAlt} />
 			</div>
 			<div className="flexibleApproach__content">
 				<h2 className="flexibleApproach__title heading-l">{content.title}</h2>

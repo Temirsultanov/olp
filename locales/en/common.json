@@ -1,12 +1,56 @@
 {
 	"header": {
 		"menu": {
-			"aboutUs": "About us",
+			"aboutUs": "About Company",
 			"services": "Services",
 			"team": "Team",
 			"reviews": "Reviews",
 			"contacts": "Contacts"
 		},
 		"callRequest": "Request a call"
+	},
+	"changeLanguageModal": {
+		"title": "Change language"
+	},
+	"callRequestModal": {
+		"title": "Request a call",
+		"description": "Request a call back and our manager will contact you to answer all your questions.",
+		"nameInputLabel": "Name",
+		"nameInputPlaceholder": "Your name",
+		"phoneInputLabel": "Phone",
+		"phoneInputPlaceholder": "+7 (999) 999-99-99",
+		"privacyBegin": "By clicking the button, you agree to\u00A0the\u00A0",
+		"privacyLink": "privacy policy",
+		"privacyEnd": "."
+	},
+	"successModal": {
+		"title": "Thank you, data sent successfully",
+		"description": "Our manager will contact you shortly.",
+		"close": "Close"
+	},
+	"footer": {
+		"support": "Write to support",
+		"requisites": "ИНН/КПП: 5009099032/772401001",
+		"companyName": "ООО «ОПТИМАЛ ЛОДЖИСТИК ПРАЙС»",
+		"copyright": "2023 © Optimal Logistic Price",
+		"privacy": "Privacy Policy"
+	},
+	"contacts": {
+		"phone": {
+			"text": "+7 (495)-136-80-65",
+			"link": "tel:+74951368065"
+		},
+		"email": {
+			"text": "info@olp.su",
+			"link": "mailto:info@olp.su"
+		},
+		"address": {
+			"text": "Moscow, Shipilovskaya st. 28 A",
+			"link": "https://google.com"
+		},
+		"whatsapp": {
+			"text": "+7 (495)-136-80-65",
+			"link": "https://wa.me/+74951368065"
+		}
 	}
 }

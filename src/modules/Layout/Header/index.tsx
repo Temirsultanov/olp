@@ -13,8 +13,8 @@ import { BurgerButton } from '../../../ui/BurgerButton'
 import { CallRequestModal } from '../../CallRequestModal'
 import { SuccessModal } from '../../SuccessModal'
 import { ChangeLanguageModal } from '../../ChangeLanguageModal'
+import { Contacts as ContactsType } from '../../../shared/types'
 
-import { CONTACTS } from '../../../shared/constants'
 import './style.scss'
 
 interface IMobileMenuProps {
@@ -30,6 +30,9 @@ const MobileMenu = ({
 	setMobileMenuOpened,
 	setChangeLanguageModalOpened
 }: IMobileMenuProps) => {
+	const { t: translateContacts } = useTranslation('common')
+	const CONTACTS: ContactsType = translateContacts('contacts', { returnObjects: true })
+
 	return (
 		<div className={'mobileMenu ' + (mobileMenuOpened ? 'mobileMenu-opened' : '')}>
 			<Menu clickHandler={() => setMobileMenuOpened(false)} />
@@ -58,11 +61,15 @@ interface IProps {
 
 export const Header = ({ className }: IProps) => {
 	const { t } = useTranslation('common', { keyPrefix: 'header' })
-	const i18nextContext = useI18next()
-	const currentLanguage = i18nextContext.language.toUpperCase()
 	const content = {
 		callRequest: t('callRequest')
 	}
+
+	const { t: translateContacts } = useTranslation('common')
+	const CONTACTS: ContactsType = translateContacts('contacts', { returnObjects: true })
+
+	const i18nextContext = useI18next()
+	const currentLanguage = i18nextContext.language.toUpperCase()
 
 	const [mobileMenuOpened, setMobileMenuOpened] = useState(false)
 	const [callRequestModalOpened, setCallRequestModalOpened] = useState(false)

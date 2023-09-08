@@ -1,4 +1,5 @@
 import React from 'react'
+import { useTranslation } from 'gatsby-plugin-react-i18next'
 import { ModalTemplate } from '../../ui/ModalTemplate'
 import { Button } from '../../ui/Button'
 import './style.scss'
@@ -18,9 +19,14 @@ export const ChangeLanguageModal = ({
 	setEnglishLanguage,
 	currentLanguage
 }: IProps) => {
+	const { t } = useTranslation('common', { keyPrefix: 'changeLanguageModal' })
+	const content = {
+		title: t('title')
+	}
+
 	return (
 		<ModalTemplate className="changeLanguageModal" close={close} opened={opened}>
-			<h2 className="changeLanguageModal__title accent-xl">Сменить язык</h2>
+			<h2 className="changeLanguageModal__title accent-xl">{content.title}</h2>
 			<div className="changeLanguageModal__buttons">
 				<Button unfilled={true} active={currentLanguage === 'RU'} clickHandler={setRussianLanguage}>
 					(RU) Русский

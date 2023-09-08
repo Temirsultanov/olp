@@ -1,10 +1,11 @@
 import React from 'react'
+import { useTranslation } from 'gatsby-plugin-react-i18next'
 import { graphql, useStaticQuery } from 'gatsby'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import 'swiper/css'
 
 import { Employee } from './Employee'
-import { EMPLOYEES } from '../../shared/constants'
+import { Employee as EmployeeType } from '../../shared/types'
 import { getPhotosFromGraphQLResult } from '../../shared/helpers'
 import './style.scss'
 
@@ -28,6 +29,14 @@ export const OurTeam = ({ className }: IProps) => {
 		}
 	`)
 
+	const { t } = useTranslation('index', { keyPrefix: 'ourTeam' })
+	const content = {
+		title1: t('title1'),
+		title2: t('title2')
+	}
+
+	const EMPLOYEES: EmployeeType[] = t('employees', { returnObjects: true })
+
 	const photos = getPhotosFromGraphQLResult(allFile)
 	const renderedTeam = EMPLOYEES.map(employee => (
 		<SwiperSlide key={employee.id}>
@@ -39,8 +48,7 @@ export const OurTeam = ({ className }: IProps) => {
 		<section className={'ourTeam' + className}>
 			<a id="team" href="#team" className="ourTeam__title section-link focus-visible-outline">
 				<h2 className="heading-l">
-					<span>Команда </span>
-					<span className="ourTeam__title-black">Optimal Logistic Price</span>
+					<span>{content.title1}</span> <span className="ourTeam__title-black">{content.title2}</span>
 				</h2>
 			</a>
 			<Swiper className="ourTeam__list" slidesPerView="auto" breakpoints={{ 769: { slidesPerView: 5 } }}>

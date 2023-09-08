@@ -1,16 +1,190 @@
 {
 	"title": "OLP",
 	"promo": {
-		"title1": "Transport with us",
+		"title1": "Transport with us,",
 		"title2": "to become",
 		"title3": "global leaders",
 
-		"requestConsultation": "Request a consultation",
-		"description": "We will help organize international transportation despite sanctions",
+		"description": "We will help you organize international transportation regardless of sanctions",
+		"requestConsultation": "Order a consultation",
 
-		"internationalTransportation": "international cargo transportation",
-		"customsClearance": "customs clearance",
-		"sanctionsCircumvention": "legal circumvention of sanctions",
-		"sertificationServices": "sertification services"
+		"internationalTransportation": "International cargo transportation",
+		"customsClearance": "Customs clearance",
+		"sanctionsCircumvention": "Legal circumvention of sanctions",
+		"sertificationServices": "Certification services"
+	},
+	"aboutUs": {
+		"title": "About company",
+		"benefits": [
+			{
+				"id": 1,
+				"title": "Unique service",
+				"description": "High-quality service with an individual approach: a personal manager 24/7, a loyal business partner and friend."
+			},
+			{
+				"id": 2,
+				"title": "Reliability",
+				"description": "We guarantee non-disclosure of commercial information and high-quality cargo safety."
+			},
+			{
+				"id": 3,
+				"title": "History of the company",
+				"description": "OLP LLC is a specialized company established in 2015 to provide high-quality services in the field of international cargo transportation, customs clearance and certification. We are proud of our reliable and professional contractors. Together with our partners, we successfully solve and implement many tasks and projects for the delivery and customs clearance of goods to Russia from different countries and using various modes of transport."
+			}
+		]
+	},
+	"guarantee": {
+		"title1": "We guarantee reliable and timely ",
+		"title2": "delivery of your cargo",
+		"title3": "to its destination",
+		"consultationRequest": "Order a consultation",
+		"boxImageAlt": "Box with OLP pattern"
+	},
+	"ourServices": {
+		"title": "Our services for your business",
+		"services": [
+			{
+				"id": 1,
+				"title": "International cargo transportation",
+				"description": "OLP provides customs clearance services for imports and exports throughout the Russian Federation. The extensive experience of our employees and well-established connections allow us to provide a range of services in a short time."
+			},
+			{
+				"id": 2,
+				"title": "Customs clearance",
+				"description": "OLP provides customs clearance services for imports and exports throughout the Russian Federation. The extensive experience of our employees and well-established connections allow us to provide a range of services in a short time."
+			},
+			{
+				"id": 3,
+				"title": "Certification services",
+				"description": "OLP provides customs clearance services for imports and exports throughout the Russian Federation. The extensive experience of our employees and well-established connections allow us to provide a range of services in a short time."
+			},
+			{
+				"id": 4,
+				"title": "Legal circumvention of sanctions",
+				"description": "OLP provides customs clearance services for imports and exports throughout the Russian Federation. The extensive experience of our employees and well-established connections allow us to provide a range of services in a short time."
+			},
+			{
+				"id": 5,
+				"title": "Financial logistics",
+				"description": "OLP provides customs clearance services for imports and exports throughout the Russian Federation. The extensive experience of our employees and well-established connections allow us to provide a range of services in a short time."
+			},
+			{
+				"id": 6,
+				"title": "Import/Export of Personal Items",
+				"description": "OLP provides customs clearance services for imports and exports throughout the Russian Federation. The extensive experience of our employees and well-established connections allow us to provide a range of services in a short time."
+			}
+		]
+	},
+	"ourTeam": {
+		"title1": "Team of",
+		"title2": "Optimal Logistic Price",
+		"employee": {
+			"photoAlt": "Photo of"
+		},
+		"employees": [
+			{
+				"id": 1,
+				"name": "Liudmila",
+				"role": "Head of Customer Relations Department",
+				"photoSrc": "team/1"
+			},
+			{
+				"id": 2,
+				"name": "Victor",
+				"role": "Head of Logistics Department",
+				"photoSrc": "team/2"
+			},
+			{
+				"id": 3,
+				"name": "Angelina",
+				"role": "Head of Customs Department",
+				"photoSrc": "team/3"
+			},
+			{
+				"id": 4,
+				"name": "Maksim",
+				"role": "Client Manager",
+				"photoSrc": "team/4"
+			},
+			{
+				"id": 5,
+				"name": "Natalya",
+				"role": "Chief Accountant",
+				"photoSrc": "team/5"
+			}
+		]
+	},
+	"ourReviews": {
+		"title": "Customer Reviews",
+		"review": {
+			"photoAlt": "Photo of"
+		},
+		"reviews": [
+			{
+				"id": 1,
+				"name": "Elena",
+				"text": "I am very pleased with the work of the transport company! All my goods are delivered on time, without delays. The company's employees are always polite and ready to help. Great service at a reasonable price!",
+				"photoSrc": "reviews/1"
+			},
+			{
+				"id": 2,
+				"name": "Maksim",
+				"text": "I have never encountered such an efficient and reliable transport company! They are so organized that all my shipments arrive faster than expected. You can always contact drivers and couriers with questions or requests, and they respond promptly!",
+				"photoSrc": "reviews/2"
+			},
+			{
+				"id": 3,
+				"name": "Mihail",
+				"text": "Cooperation with this transport company is one of the best decisions for my business! Cargo always arrives safe and sound, and deliveries occur within strictly specified time frames. Professional and responsible staff!",
+				"photoSrc": "reviews/3"
+			},
+			{
+				"id": 4,
+				"name": "Андрей",
+				"text": "The employees do an excellent job, you can feel the professionalism! Delivery of my goods is always carried out in the shortest possible time. Thanks for the great service! I will contact you again!",
+				"photoSrc": "reviews/4"
+			}
+		]
+	},
+	"flexibleApproach": {
+		"title": "Flexible approach to clients",
+		"description": "We work with participants in foreign economic activity",
+		"members": ["Legal Entities", "Individual Entrepreneurs", "And also with individuals"],
+		"imageAlt": "Courier"
+	},
+	"contacts": {
+		"title1": "Request cost",
+		"title2": "per 1 click",
+		"subtitle": "Contacts",
+		"form": {
+			"contactData": "[01] Contact details",
+			"nameInputLabel": "Name",
+			"nameInputPlaceholder": "Your name",
+			"surnameInputLabel": "Surname",
+			"surnameInputPlaceholder": "Your surname",
+			"emailInputLabel": "Email",
+			"emailInputPlaceholder": "Your mailbox",
+			"additionalInformation": "[02] Additional Information",
+			"selectInputLabel": "Select a service",
+			"selectInputPlaceholder": "Select",
+			"fileInputLabel": "Supporting documentation (.PDF, .JPEG, .ZIP, .RAR)",
+			"fileInputLabelMobile": "Supporting documentation",
+			"fileInputPlaceholder": "Attach file...",
+			"priceRequest": "Request a cost",
+			"privacyBegin": "By clicking the button, you agree to\u00A0the",
+			"privacyLink": " privacy policy",
+			"privacyEnd": "."
+		}
+	},
+	"consultationRequestModal": {
+		"title": "Order a consultation",
+		"description": "Order a consultation and our manager will contact you to answer all your questions.",
+		"nameInputLabel": "Name",
+		"nameInputPlaceholder": "Your name",
+		"phoneInputLabel": "Phone",
+		"phoneInputPlaceholder": "+7 (999) 999-99-99",
+		"privacyBegin": "By clicking the button, you agree to\u00A0the",
+		"privacyLink": " privacy policy",
+		"privacyEnd": "."
 	}
 }
