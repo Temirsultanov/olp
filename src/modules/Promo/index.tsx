@@ -71,25 +71,41 @@ export const Promo = ({ className, openConsultationRequestModal }: IProps) => {
 				<ul className="promo__services">
 					<li>
 						<div>
-							<StaticImage src="../../images/international.webp" alt={content.internationalTransportation} />
+							<StaticImage
+								className="promo__serviceImage"
+								src="../../images/international.webp"
+								alt={content.internationalTransportation}
+							/>
 						</div>
 						<p className="text-s">{content.internationalTransportation}</p>
 					</li>
 					<li>
 						<div>
-							<StaticImage src="../../images/customs-clearance.webp" alt={content.customsClearance} />
+							<StaticImage
+								className="promo__serviceImage"
+								src="../../images/customs-clearance.webp"
+								alt={content.customsClearance}
+							/>
 						</div>
 						<p className="text-s">{content.customsClearance}</p>
 					</li>
 					<li>
 						<div>
-							<StaticImage src="../../images/bypassing-sanctions.webp" alt={content.sanctionsCircumvention} />
+							<StaticImage
+								className="promo__serviceImage"
+								src="../../images/bypassing-sanctions.webp"
+								alt={content.sanctionsCircumvention}
+							/>
 						</div>
 						<p className="text-s">{content.sanctionsCircumvention}</p>
 					</li>
 					<li>
 						<div>
-							<StaticImage src="../../images/sertification-services.webp" alt={content.sertificationServices} />
+							<StaticImage
+								className="promo__serviceImage"
+								src="../../images/sertification-services.webp"
+								alt={content.sertificationServices}
+							/>
 						</div>
 						<p className="text-s">{content.sertificationServices}</p>
 					</li>
