@@ -2,12 +2,29 @@
 
 .changeLanguageModal {
 	&__buttons {
-		margin-top: vw(20px);
 		display: flex;
-		gap: vw(20px);
 
 		& .button {
 			flex: 1;
+		}
+	}
+}
+
+@media (min-width: $desktopStart) {
+	.changeLanguageModal__buttons {
+		margin-top: vw(20px);
+		gap: vw(20px);
+	}
+}
+
+@media (max-width: $mobileEnd) {
+	.changeLanguageModal__buttons {
+		margin-top: vw(20px, $mvw);
+		gap: vw(20px, $mvw);
+
+		& .button {
+			padding-left: 0;
+			padding-right: 0;
 		}
 	}
 }

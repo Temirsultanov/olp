@@ -77,19 +77,19 @@ export const Promo = ({ className, openConsultationRequestModal }: IProps) => {
 					</li>
 					<li>
 						<div>
-							<StaticImage src="../../images/customs-clearance.webp" alt={content.internationalTransportation} />
+							<StaticImage src="../../images/customs-clearance.webp" alt={content.customsClearance} />
 						</div>
 						<p className="text-s">{content.customsClearance}</p>
 					</li>
 					<li>
 						<div>
-							<StaticImage src="../../images/bypassing-sanctions.webp" alt={content.internationalTransportation} />
+							<StaticImage src="../../images/bypassing-sanctions.webp" alt={content.sanctionsCircumvention} />
 						</div>
 						<p className="text-s">{content.sanctionsCircumvention}</p>
 					</li>
 					<li>
 						<div>
-							<StaticImage src="../../images/sertification-services.webp" alt={content.internationalTransportation} />
+							<StaticImage src="../../images/sertification-services.webp" alt={content.sertificationServices} />
 						</div>
 						<p className="text-s">{content.sertificationServices}</p>
 					</li>

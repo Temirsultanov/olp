@@ -1,11 +1,27 @@
 @import '../../shared/styles/lib';
 
-.successModal {
-	&__description {
-		margin-top: vw(12px);
+.successModal__button {
+	width: 100%;
+}
+
+@media (min-width: $desktopStart) {
+	.successModal {
+		&__description {
+			margin-top: vw(12px);
+		}
+		&__button {
+			margin-top: vw(30px);
+		}
 	}
-	&__button {
-		margin-top: vw(30px);
-		width: 100%;
+}
+
+@media (max-width: $mobileEnd) {
+	.successModal {
+		&__description {
+			margin-top: vw(12px, $mvw);
+		}
+		&__button {
+			margin-top: vw(30px, $mvw);
+		}
 	}
 }
