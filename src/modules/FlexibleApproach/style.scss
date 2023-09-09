@@ -115,9 +115,9 @@
 				width: calc(100% - vw(92px, $mvw));
 
 				position: absolute;
-				left: vw(48px, $mvw);
-				right: vw(48px, $mvw);
-				bottom: vw(48px, $mvw);
+				left: calc(13% + 1px);
+				right: calc(13% + 1px);
+				bottom: calc(14% + 1px);
 			}
 		}
 
@@ -127,8 +127,8 @@
 		}
 
 		&__content {
-			margin-top: calc(-100% + 22px);
-			padding: calc(100% - 22px + vw(32px, $mvw)) vw(16px, $mvw) vw(64px, $mvw);
+			margin-top: calc(-100% + 25px);
+			padding: calc(100% - 25px + vw(32px, $mvw)) vw(16px, $mvw) vw(64px, $mvw);
 			border-radius: vw(400px, $mvw) vw(400px, $mvw) 0 0;
 			background-color: $celestial;
 		}
