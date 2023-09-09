@@ -125,8 +125,8 @@
 		}
 
 		&__content {
-			margin-top: vw(-354px, $mvw);
-			padding: vw(384px, $mvw) vw(16px, $mvw) vw(64px, $mvw);
+			margin-top: calc(-100% + 22px);
+			padding: calc(100% - 22px + vw(32px, $mvw)) vw(16px, $mvw) vw(64px, $mvw);
 			border-radius: vw(400px, $mvw) vw(400px, $mvw) 0 0;
 			background-color: $celestial;
 		}
