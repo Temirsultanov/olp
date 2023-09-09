@@ -112,6 +112,8 @@
 			position: relative;
 
 			& > div {
+				width: calc(100% - vw(92px, $mvw));
+
 				position: absolute;
 				left: vw(48px, $mvw);
 				right: vw(48px, $mvw);
