@@ -20,7 +20,12 @@ export const Review = ({ review, photo }: IProps) => {
 		<div className="review">
 			<header className="review__header">
 				<div className="review__photoWrapper">
-					<GatsbyImage className="review__photo" image={photo} alt={content.photoAlt + ' ' + review.name} />
+					<GatsbyImage
+						className="review__photo"
+						imgStyle={{ borderRadius: '50%' }}
+						image={photo}
+						alt={content.photoAlt + ' ' + review.name}
+					/>
 				</div>
 				<h3 className="review__name accent-xl">{review.name}</h3>
 			</header>
