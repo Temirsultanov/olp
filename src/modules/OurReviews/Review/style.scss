@@ -17,6 +17,12 @@
 
 	&__photoWrapper {
 		border-radius: 50%;
+		position: relative;
+		overflow: hidden;
+	}
+
+	&__photo {
+		border-radius: 50%;
 		overflow: hidden;
 	}
 }
