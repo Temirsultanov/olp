@@ -8,6 +8,7 @@ interface IProps {
 	type?: 'submit' | 'button'
 	unfilled?: boolean
 	active?: boolean
+	disabled?: boolean
 }
 
 export const Button = ({
@@ -16,7 +17,8 @@ export const Button = ({
 	clickHandler,
 	type = 'button',
 	unfilled = false,
-	active = false
+	active = false,
+	disabled = false
 }: IProps) => {
 	return (
 		<button
@@ -24,6 +26,7 @@ export const Button = ({
 			className={['button accent-m', className, unfilled ? 'button-unfilled' : '', active ? 'button-active' : ''].join(
 				' '
 			)}
+			disabled={disabled}
 			type={type}>
 			{children}
 		</button>

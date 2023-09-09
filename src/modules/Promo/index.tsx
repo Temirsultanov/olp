@@ -75,6 +75,8 @@ export const Promo = ({ className, openConsultationRequestModal }: IProps) => {
 								className="promo__serviceImage"
 								src="../../images/international.webp"
 								alt={content.internationalTransportation}
+								placeholder="dominantColor"
+								backgroundColor="#809FA1"
 							/>
 						</div>
 						<p className="text-s">{content.internationalTransportation}</p>
@@ -85,6 +87,8 @@ export const Promo = ({ className, openConsultationRequestModal }: IProps) => {
 								className="promo__serviceImage"
 								src="../../images/customs-clearance.webp"
 								alt={content.customsClearance}
+								placeholder="dominantColor"
+								backgroundColor="#979A9D"
 							/>
 						</div>
 						<p className="text-s">{content.customsClearance}</p>
@@ -95,6 +99,8 @@ export const Promo = ({ className, openConsultationRequestModal }: IProps) => {
 								className="promo__serviceImage"
 								src="../../images/bypassing-sanctions.webp"
 								alt={content.sanctionsCircumvention}
+								placeholder="dominantColor"
+								backgroundColor="#405462"
 							/>
 						</div>
 						<p className="text-s">{content.sanctionsCircumvention}</p>
@@ -105,6 +111,8 @@ export const Promo = ({ className, openConsultationRequestModal }: IProps) => {
 								className="promo__serviceImage"
 								src="../../images/sertification-services.webp"
 								alt={content.sertificationServices}
+								placeholder="dominantColor"
+								backgroundColor="#0DB2EE"
 							/>
 						</div>
 						<p className="text-s">{content.sertificationServices}</p>

@@ -1,5 +1,5 @@
 import React from 'react'
-import { useTranslation } from 'gatsby-plugin-react-i18next'
+import { useTranslation, Link } from 'gatsby-plugin-react-i18next'
 import { graphql, useStaticQuery } from 'gatsby'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import 'swiper/css'
@@ -46,11 +46,11 @@ export const OurTeam = ({ className }: IProps) => {
 
 	return (
 		<section className={'ourTeam' + className}>
-			<a id="team" href="#team" className="ourTeam__title section-link focus-visible-outline">
+			<Link id="team" to="/#team" className="ourTeam__title section-link focus-visible-outline">
 				<h2 className="heading-l">
 					<span>{content.title1}</span> <span className="ourTeam__title-black">{content.title2}</span>
 				</h2>
-			</a>
+			</Link>
 			<Swiper className="ourTeam__list" slidesPerView="auto" breakpoints={{ 769: { slidesPerView: 5 } }}>
 				{renderedTeam}
 			</Swiper>

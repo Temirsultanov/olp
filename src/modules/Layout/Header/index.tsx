@@ -1,5 +1,5 @@
 import React, { useState, useCallback } from 'react'
-import { useTranslation, useI18next } from 'gatsby-plugin-react-i18next'
+import { useTranslation, useI18next, Link } from 'gatsby-plugin-react-i18next'
 
 import * as Logo from '../../../ui/Logo'
 import WhatsappIcon from '../../../images/icons/wa.svg'
@@ -16,6 +16,7 @@ import { ChangeLanguageModal } from '../../ChangeLanguageModal'
 import { Contacts as ContactsType } from '../../../shared/types'
 
 import './style.scss'
+import { requestCall } from '../../../shared/api'
 
 interface IMobileMenuProps {
 	currentLanguage: string
@@ -37,14 +38,14 @@ const MobileMenu = ({
 		<div className={'mobileMenu ' + (mobileMenuOpened ? 'mobileMenu-opened' : '')}>
 			<Menu clickHandler={() => setMobileMenuOpened(false)} />
 			<div className="mobileMenu__socials">
-				<a className="header__waLink outline" href={CONTACTS.whatsapp.link}>
+				<a target="_blank" className="header__waLink outline" href={CONTACTS.whatsapp.link}>
 					<WhatsappIcon />
 				</a>
-				<a className="header__emailLink outline" href={CONTACTS.email.link}>
+				<a target="_blank" className="header__emailLink outline" href={CONTACTS.email.link}>
 					<EmailIcon />
 				</a>
 			</div>
-			<a className="header__phoneLink underline outline accent-s" href={CONTACTS.phone.link}>
+			<a target="_blank" className="header__phoneLink underline outline accent-s" href={CONTACTS.phone.link}>
 				{CONTACTS.phone.text}
 			</a>
 			<button className="header__changeLang outline" onClick={() => setChangeLanguageModalOpened(true)}>
@@ -76,9 +77,10 @@ export const Header = ({ className }: IProps) => {
 	const [successModalOpened, setSuccessModalOpened] = useState(false)
 	const [changeLanguageModalOpened, setChangeLanguageModalOpened] = useState(false)
 
-	const submitRequestModalHandler = useCallback(() => {
+	const submitRequestModalHandler = useCallback((formData: FormData) => {
 		setCallRequestModalOpened(false)
 		setSuccessModalOpened(true)
+		requestCall(formData)
 	}, [])
 
 	const setRussianLanguage = useCallback(() => {
@@ -95,21 +97,21 @@ export const Header = ({ className }: IProps) => {
 		<>
 			<header className={'header' + className}>
 				<div className="header__logoAndMenu">
-					<a href="/" className="outline">
+					<Link to="/" className="outline">
 						<Logo.Colorful className="header__logo" />
-					</a>
+					</Link>
 					<nav className="header__desktopNav">
 						<Menu className="header__menu" clickHandler={() => setMobileMenuOpened(false)} />
 					</nav>
 				</div>
 				<div className="header__socialsAndLanguage">
-					<a className="header__phoneLink underline outline accent-s" href={CONTACTS.phone.link}>
+					<a target="_blank" className="header__phoneLink underline outline accent-s" href={CONTACTS.phone.link}>
 						{CONTACTS.phone.text}
 					</a>
-					<a className="header__waLink outline" href={CONTACTS.whatsapp.link}>
+					<a target="_blank" className="header__waLink outline" href={CONTACTS.whatsapp.link}>
 						<WhatsappIcon />
 					</a>
-					<a className="header__emailLink outline" href={CONTACTS.email.link}>
+					<a target="_blank" className="header__emailLink outline" href={CONTACTS.email.link}>
 						<EmailIcon />
 					</a>
 					<SecondaryButton

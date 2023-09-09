@@ -29,6 +29,12 @@
 			}
 		}
 	}
+
+	&__button:disabled {
+		background-color: #0fbd20;
+		border: 1px solid #0fbd20;
+		cursor: not-allowed;
+	}
 }
 
 @media (min-width: $desktopStart) {
@@ -58,8 +64,12 @@
 			gap: vw(24px);
 		}
 
+		&__button {
+			flex-shrink: 0;
+		}
+
 		&__privacy {
-			width: vw(250px);
+			max-width: vw(250px);
 		}
 	}
 }
@@ -95,6 +105,11 @@
 			flex-direction: column;
 			align-items: stretch;
 			gap: vw(20px, $mvw);
+		}
+
+		&__button {
+			padding-left: vw(20px, $mvw);
+			padding-right: vw(20px, $mvw);
 		}
 
 		&__privacy {

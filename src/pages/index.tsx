@@ -15,6 +15,7 @@ import { OurReviews } from '../modules/OurReviews'
 import { FlexibleApproach } from '../modules/FlexibleApproach'
 import { Contacts } from '../modules/Contacts'
 
+import { requestConsultation } from '../shared/api'
 import '../shared/styles/common.scss'
 import '../shared/styles/index.scss'
 
@@ -23,9 +24,10 @@ const IndexPage: React.FC<PageProps> = () => {
 	const [consultationRequestModalOpened, setConsultationRequestModalOpened] = useState(false)
 	const [successModalOpened, setSuccessModalOpened] = useState(false)
 
-	const submitRequestModalHandler = useCallback(() => {
+	const submitRequestModalHandler = useCallback((formData: FormData) => {
 		setConsultationRequestModalOpened(false)
 		setSuccessModalOpened(true)
+		requestConsultation(formData)
 	}, [])
 
 	return (

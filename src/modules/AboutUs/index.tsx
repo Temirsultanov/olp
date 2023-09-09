@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { useTranslation } from 'gatsby-plugin-react-i18next'
+import { useTranslation, Link } from 'gatsby-plugin-react-i18next'
 import { Benefit } from './Benefit'
 import { Benefit as BenefitType } from '../../shared/types'
 import './style.scss'
@@ -32,14 +32,14 @@ export const AboutUs = ({ className = '' }: IProps) => {
 
 	return (
 		<section className={'aboutUs' + className}>
-			<a className="aboutUs__title section-link focus-visible-outline" id="about" href="#about">
+			<Link className="aboutUs__title section-link focus-visible-outline" id="about" to="/#about">
 				<h2 className="heading-xl">
 					<span>{content.title}</span>
 					<span>{content.title}</span>
 					<span>{content.title}</span>
 					<span>{content.title}</span>
 				</h2>
-			</a>
+			</Link>
 			<ul className="aboutUs__benefits">{renderedBenefits}</ul>
 		</section>
 	)

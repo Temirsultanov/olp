@@ -24,6 +24,16 @@
 			&:focus + .input__item-fake {
 				border: 1px solid $graphit;
 			}
+			&:disabled + .input__item-fake {
+				color: $graphit;
+				background-color: $white;
+				border-color: $white;
+				opacity: 0.7;
+
+				& + .input__paperClip {
+					opacity: 0.7;
+				}
+			}
 		}
 	}
 

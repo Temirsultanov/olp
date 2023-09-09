@@ -27,6 +27,12 @@
 			border-color: $celestial;
 			background-color: #ffffff;
 		}
+		&:disabled {
+			opacity: 0.7;
+			color: $graphit;
+			background-color: $white;
+			border-color: $white;
+		}
 	}
 	&-required .input__label:after {
 		content: '*';

@@ -31,10 +31,10 @@ export const Footer = ({ className }: IProps) => {
 			<div>
 				<Logo.White className="footer__logo" />
 				<div className="footer__socials">
-					<a className="footer__waLink outline" href={CONTACTS.whatsapp.link}>
+					<a target="_blank" className="footer__waLink outline" href={CONTACTS.whatsapp.link}>
 						<WhatsappIcon />
 					</a>
-					<a className="footer__emailLink outline" href={CONTACTS.email.link}>
+					<a target="_blank" className="footer__emailLink outline" href={CONTACTS.email.link}>
 						<EmailIcon />
 					</a>
 					<SecondaryButton>{content.support}</SecondaryButton>
@@ -46,7 +46,7 @@ export const Footer = ({ className }: IProps) => {
 					<span>{content.requisites}</span>
 				</p>
 				<p className="footer__copyright text-s">{content.copyright}</p>
-				<a className="footer__policy accent-s outline underline" href="/privacy">
+				<a target="_blank" className="footer__policy accent-s outline underline" href="/privacy">
 					{content.privacy}
 				</a>
 			</div>

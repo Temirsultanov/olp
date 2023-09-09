@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { useTranslation } from 'gatsby-plugin-react-i18next'
+import { useTranslation, Link } from 'gatsby-plugin-react-i18next'
 
 import './style.scss'
 
@@ -22,29 +22,29 @@ export const Menu = ({ className, clickHandler }: IProps) => {
 		<menu className={'menu accent-s ' + className}>
 			<ul>
 				<li>
-					<a onClick={clickHandler} className="outline underline" href="/#about">
+					<Link to="/#about" onClick={clickHandler} className="outline underline">
 						{content.aboutUs}
-					</a>
+					</Link>
 				</li>
 				<li>
-					<a onClick={clickHandler} className="outline underline" href="/#services">
+					<Link to="/#services" onClick={clickHandler} className="outline underline">
 						{content.services}
-					</a>
+					</Link>
 				</li>
 				<li>
-					<a onClick={clickHandler} className="outline underline" href="/#team">
+					<Link to="/#team" onClick={clickHandler} className="outline underline">
 						{content.team}
-					</a>
+					</Link>
 				</li>
 				<li>
-					<a onClick={clickHandler} className="outline underline" href="/#reviews">
+					<Link to="/#reviews" onClick={clickHandler} className="outline underline">
 						{content.reviews}
-					</a>
+					</Link>
 				</li>
 				<li>
-					<a onClick={clickHandler} className="outline underline" href="/#contacts">
+					<Link to="/#contacts" onClick={clickHandler} className="outline underline">
 						{content.contacts}
-					</a>
+					</Link>
 				</li>
 			</ul>
 		</menu>

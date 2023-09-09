@@ -8,6 +8,7 @@ import { FileInput } from '../../../ui/Input/FileInput'
 
 import { Service as ServiceType } from '../../../shared/types'
 import { isMobile } from '../../../shared/helpers'
+import { requestCost } from '../../../shared/api'
 import './style.scss'
 
 interface IProps {
@@ -16,6 +17,7 @@ interface IProps {
 
 export const Form = ({ className }: IProps) => {
 	const { t } = useTranslation('index')
+	const SERVICES: ServiceType[] = t('ourServices.services', { returnObjects: true })
 	const content = {
 		contactData: t('contacts.form.contactData'),
 		nameInputLabel: t('contacts.form.nameInputLabel'),
@@ -31,16 +33,24 @@ export const Form = ({ className }: IProps) => {
 		fileInputLabelMobile: t('contacts.form.fileInputLabelMobile'),
 		fileInputPlaceholder: t('contacts.form.fileInputPlaceholder'),
 		priceRequest: t('contacts.form.priceRequest'),
+		successSubmit: t('contacts.form.successSubmit'),
 		privacyBegin: t('contacts.form.privacyBegin'),
 		privacyLink: t('contacts.form.privacyLink'),
 		privacyEnd: t('contacts.form.privacyEnd')
 	}
 
-	const SERVICES: ServiceType[] = t('ourServices.services', { returnObjects: true })
-
+	const [submitted, setSubmitted] = useState(false)
 	const [invalid, setInvalid] = useState(false)
+	const [buttonText, setButtonText] = useState(content.priceRequest)
 	if (typeof window !== 'undefined') {
 		content.fileInputLabel = isMobile(window.innerWidth) ? content.fileInputLabelMobile : content.fileInputLabel
+	}
+
+	const submitHandler = (event: React.FormEvent<HTMLFormElement>) => {
+		event.preventDefault()
+		requestCost(new FormData(event.currentTarget))
+		setSubmitted(true)
+		setButtonText(content.successSubmit)
 	}
 
 	return (
@@ -48,8 +58,9 @@ export const Form = ({ className }: IProps) => {
 			method="POST"
 			action=""
 			className={'contactsForm ' + className + (invalid ? ' form-invalid' : '')}
-			onInvalid={() => setInvalid(true)}>
-			<fieldset name="contacts">
+			onInvalid={() => setInvalid(true)}
+			onSubmit={submitHandler}>
+			<fieldset name="contacts" disabled={submitted}>
 				<legend className="accent-xl">{content.contactData}</legend>
 				<div className="contactsForm__inputGroup">
 					<Input
@@ -76,7 +87,7 @@ export const Form = ({ className }: IProps) => {
 					/>
 				</div>
 			</fieldset>
-			<fieldset name="additional" className="contactsForm__additional">
+			<fieldset name="additional" className="contactsForm__additional" disabled={submitted}>
 				<legend className="accent-xl">{content.additionalInformation}</legend>
 				<SelectInput label={content.selectInputLabel} name="service" id="contactsForm-service" required={true}>
 					<option value="">{content.selectInputPlaceholder}</option>
@@ -96,12 +107,12 @@ export const Form = ({ className }: IProps) => {
 				/>
 			</fieldset>
 			<div className="contactsForm__footer">
-				<Button type="submit" className="contactsForm__button">
-					{content.priceRequest}
+				<Button type="submit" disabled={submitted} className={'contactsForm__button'}>
+					{buttonText}
 				</Button>
 				<p className="text-s contactsForm__privacy">
 					{content.privacyBegin}
-					<a href="/privacy" className="underline outline">
+					<a target="_blank" href="/privacy" className="underline outline">
 						{content.privacyLink}
 					</a>
 					{content.privacyEnd}

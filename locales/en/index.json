@@ -41,7 +41,7 @@
 		"boxImageAlt": "Box with OLP pattern"
 	},
 	"ourServices": {
-		"title": "Our services for your business",
+		"title": "Our services for\u00A0your\u00A0business",
 		"services": [
 			{
 				"id": 1,
@@ -147,14 +147,14 @@
 		]
 	},
 	"flexibleApproach": {
-		"title": "Flexible approach to clients",
+		"title": "Flexible approach to\u00A0clients",
 		"description": "We work with participants in foreign economic activity",
 		"members": ["Legal Entities", "Individual Entrepreneurs", "And also with individuals"],
 		"imageAlt": "Courier"
 	},
 	"contacts": {
 		"title1": "Request cost",
-		"title2": "per 1 click",
+		"title2": "per\u00A01\u00A0click",
 		"subtitle": "Contacts",
 		"form": {
 			"contactData": "[01] Contact details",
@@ -171,6 +171,7 @@
 			"fileInputLabelMobile": "Supporting documentation",
 			"fileInputPlaceholder": "Attach file...",
 			"priceRequest": "Request a cost",
+			"successSubmit": "Success! Request has been sent",
 			"privacyBegin": "By clicking the button, you agree to\u00A0the",
 			"privacyLink": " privacy policy",
 			"privacyEnd": "."

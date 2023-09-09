@@ -6,6 +6,9 @@
 
 @media (min-width: $desktopStart) {
 	.successModal {
+		&__title {
+			padding-right: vw(30px);
+		}
 		&__description {
 			margin-top: vw(12px);
 		}
@@ -17,6 +20,9 @@
 
 @media (max-width: $mobileEnd) {
 	.successModal {
+		&__title {
+			padding-right: vw(30px, $mvw);
+		}
 		&__description {
 			margin-top: vw(12px, $mvw);
 		}

@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { useTranslation } from 'gatsby-plugin-react-i18next'
+import { useTranslation, Link } from 'gatsby-plugin-react-i18next'
 
 import { Service as ServiceType } from '../../shared/types'
 import { Service } from './Service'
@@ -17,7 +17,6 @@ export const OurServices = ({ className }: IProps) => {
 
 	const SERVICES: ServiceType[] = t('services', { returnObjects: true })
 	const [openedService, setOpenedService] = useState<number | null>(null)
-	console.log(SERVICES)
 	const renderedServices = SERVICES.map((service, index) => {
 		const num = String(index + 1).padStart(2, '0')
 		return (
@@ -33,9 +32,9 @@ export const OurServices = ({ className }: IProps) => {
 
 	return (
 		<section className={'ourServices' + className}>
-			<a id="services" href="#services" className="ourServices__title section-link focus-visible-outline">
+			<Link id="services" to="/#services" className="ourServices__title section-link focus-visible-outline">
 				<h2 className="heading-l">{content.title}</h2>
-			</a>
+			</Link>
 			<ul className="ourServices__list">{renderedServices}</ul>
 		</section>
 	)

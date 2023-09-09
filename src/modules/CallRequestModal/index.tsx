@@ -31,7 +31,7 @@ export const CallRequestModal = ({ opened, close, submit }: IProps) => {
 	const submitHandler = useCallback((event: React.FormEvent<HTMLFormElement>) => {
 		event.preventDefault()
 		resetForm()
-		submit()
+		submit(new FormData(event.currentTarget))
 	}, [])
 
 	const resetForm = () => {
@@ -80,7 +80,7 @@ export const CallRequestModal = ({ opened, close, submit }: IProps) => {
 					</Button>
 					<p className="text-s callRequestModal__privacy">
 						{content.privacyBegin}
-						<a href="/privacy" className="outline underline">
+						<a target="_blank" href="/privacy" className="outline underline">
 							{content.privacyLink}
 						</a>
 						{content.privacyEnd}

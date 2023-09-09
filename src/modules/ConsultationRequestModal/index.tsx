@@ -1,5 +1,5 @@
 import React, { useCallback, useState, useRef } from 'react'
-import { useTranslation } from 'gatsby-plugin-react-i18next'
+import { useTranslation, Link } from 'gatsby-plugin-react-i18next'
 import { ModalTemplate, MODAL_CLOSING_TIME } from '../../ui/ModalTemplate'
 import { Input } from '../../ui/Input'
 import { Button } from '../../ui/Button'
@@ -31,7 +31,7 @@ export const ConsultationRequestModal = ({ opened, close, submit }: IProps) => {
 	const submitHandler = useCallback((event: React.FormEvent<HTMLFormElement>) => {
 		event.preventDefault()
 		resetForm()
-		submit()
+		submit(new FormData(event.currentTarget))
 	}, [])
 
 	const resetForm = () => {
@@ -83,7 +83,7 @@ export const ConsultationRequestModal = ({ opened, close, submit }: IProps) => {
 					</Button>
 					<p className="text-s consultationRequestModal__privacy">
 						{content.privacyBegin}
-						<a href="/privacy" className="outline underline">
+						<a target="_blank" href="/privacy" className="outline underline">
 							{content.privacyLink}
 						</a>
 						{content.privacyEnd}

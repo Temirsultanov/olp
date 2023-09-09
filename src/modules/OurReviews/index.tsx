@@ -1,6 +1,6 @@
 import React from 'react'
 import { useStaticQuery, graphql } from 'gatsby'
-import { useTranslation } from 'gatsby-plugin-react-i18next'
+import { useTranslation, Link } from 'gatsby-plugin-react-i18next'
 
 import { Review } from './Review'
 import { Review as ReviewType } from '../../shared/types'
@@ -47,9 +47,9 @@ export const OurReviews = ({ className }: IProps) => {
 
 	return (
 		<section className={'ourReviews' + className}>
-			<a href="#reviews" id="reviews" className="ourReviews__title section-link focus-visible-outline">
+			<Link to="/#reviews" id="reviews" className="ourReviews__title section-link focus-visible-outline">
 				<h2 className="heading-l">{content.title}</h2>
-			</a>
+			</Link>
 			<div className="ourReviews__list">
 				<div className="ourReviews__list-half">{firstReviews}</div>
 				<div className="ourReviews__list-half">{secondReviews}</div>
