@@ -110,13 +110,18 @@
 			margin-left: vw(16px, $mvw);
 			padding-top: calc(100% - vw(32px, $mvw));
 			position: relative;
+
+			& > div {
+				position: absolute;
+				left: vw(48px, $mvw);
+				right: vw(48px, $mvw);
+				bottom: vw(48px, $mvw);
+			}
 		}
 
 		&__photo {
-			position: absolute;
-			left: vw(48px, $mvw);
-			right: vw(48px, $mvw);
-			bottom: vw(48px, $mvw);
+			width: 100%;
+			height: 100%;
 		}
 
 		&__content {

@@ -21,7 +21,9 @@ export const FlexibleApproach = ({ className }: IProps) => {
 	return (
 		<section className={'flexibleApproach' + className}>
 			<div className="flexibleApproach__photoWrapper">
-				<StaticImage className="flexibleApproach__photo" src="../../images/courier.png" alt={content.imageAlt} />
+				<div>
+					<StaticImage className="flexibleApproach__photo" src="../../images/courier.png" alt={content.imageAlt} />
+				</div>
 			</div>
 			<div className="flexibleApproach__content">
 				<h2 className="flexibleApproach__title heading-l">{content.title}</h2>
