@@ -116,6 +116,8 @@
 	},
 	"ourReviews": {
 		"title": "Отзывы клиентов",
+		"show": "Показать все отзывы",
+		"hide": "Скрыть",
 		"review": {
 			"photoAlt": "Photo of"
 		},

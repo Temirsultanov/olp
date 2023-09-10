@@ -97,7 +97,7 @@ export const Header = ({ className }: IProps) => {
 		<>
 			<header className={'header' + className}>
 				<div className="header__logoAndMenu">
-					<Link to="/" className="outline">
+					<Link onClick={() => setMobileMenuOpened(false)} to="/" className="outline">
 						<Logo.Colorful className="header__logo" />
 					</Link>
 					<nav className="header__desktopNav">
