@@ -10,7 +10,7 @@ export type Contacts = {
 }
 
 export type Service = {
-	id: number
+	id: string
 	title: string
 	description: string
 }

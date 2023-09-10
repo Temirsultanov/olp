@@ -11,7 +11,7 @@
 		"internationalTransportation": "International cargo transportation",
 		"customsClearance": "Customs clearance",
 		"sanctionsCircumvention": "Legal circumvention of sanctions",
-		"sertificationServices": "Certification services"
+		"certificationServices": "Certification services"
 	},
 	"aboutUs": {
 		"title": "About company",
@@ -44,32 +44,32 @@
 		"title": "Our services for\u00A0your\u00A0business",
 		"services": [
 			{
-				"id": 1,
+				"id": "international-transportation",
 				"title": "International cargo transportation",
 				"description": "OLP provides customs clearance services for imports and exports throughout the Russian Federation. The extensive experience of our employees and well-established connections allow us to provide a range of services in a short time."
 			},
 			{
-				"id": 2,
+				"id": "custom-clearance",
 				"title": "Customs clearance",
 				"description": "OLP provides customs clearance services for imports and exports throughout the Russian Federation. The extensive experience of our employees and well-established connections allow us to provide a range of services in a short time."
 			},
 			{
-				"id": 3,
+				"id": "certification-services",
 				"title": "Certification services",
 				"description": "OLP provides customs clearance services for imports and exports throughout the Russian Federation. The extensive experience of our employees and well-established connections allow us to provide a range of services in a short time."
 			},
 			{
-				"id": 4,
+				"id": "sanctions-circumvention",
 				"title": "Legal circumvention of sanctions",
 				"description": "OLP provides customs clearance services for imports and exports throughout the Russian Federation. The extensive experience of our employees and well-established connections allow us to provide a range of services in a short time."
 			},
 			{
-				"id": 5,
+				"id": "financial-logistics",
 				"title": "Financial logistics",
 				"description": "OLP provides customs clearance services for imports and exports throughout the Russian Federation. The extensive experience of our employees and well-established connections allow us to provide a range of services in a short time."
 			},
 			{
-				"id": 6,
+				"id": "import-export",
 				"title": "Import/Export of Personal Items",
 				"description": "OLP provides customs clearance services for imports and exports throughout the Russian Federation. The extensive experience of our employees and well-established connections allow us to provide a range of services in a short time."
 			}

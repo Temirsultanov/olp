@@ -7,16 +7,17 @@ import './style.scss'
 
 interface IProps {
 	className?: string
+	openedService: string | number | null
+	setOpenedService: React.Dispatch<React.SetStateAction<string | number | null>>
 }
 
-export const OurServices = ({ className }: IProps) => {
+export const OurServices = ({ className, openedService, setOpenedService }: IProps) => {
 	const { t } = useTranslation('index', { keyPrefix: 'ourServices' })
 	const content = {
 		title: t('title')
 	}
 
 	const SERVICES: ServiceType[] = t('services', { returnObjects: true })
-	const [openedService, setOpenedService] = useState<number | null>(null)
 	const renderedServices = SERVICES.map((service, index) => {
 		const num = String(index + 1).padStart(2, '0')
 		return (

@@ -1,9 +1,9 @@
 import { useState, useEffect } from 'react'
 
 export const useAccordeon = (
-	opened: number | null,
-	setOpened: React.Dispatch<React.SetStateAction<number | null>>,
-	id: number | null,
+	opened: string | number | null,
+	setOpened: React.Dispatch<React.SetStateAction<string | number | null>>,
+	id: string | number | null,
 	accordeon: React.RefObject<HTMLElement>
 ) => {
 	const [height, setHeight] = useState('auto')

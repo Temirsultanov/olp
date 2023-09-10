@@ -7,8 +7,8 @@ import './style.scss'
 interface IProps {
 	service: ServiceType
 	num: string
-	openedService: number | null
-	setOpenedService: React.Dispatch<React.SetStateAction<number | null>>
+	openedService: number | string | null
+	setOpenedService: React.Dispatch<React.SetStateAction<string | number | null>>
 }
 
 export const Service = ({ service, num, openedService, setOpenedService }: IProps) => {
@@ -17,7 +17,7 @@ export const Service = ({ service, num, openedService, setOpenedService }: IProp
 
 	return (
 		<li>
-			<div className={'service ' + (openedService === service.id ? 'service-opened' : '')}>
+			<div id={service.id} className={'service section-link ' + (openedService === service.id ? 'service-opened' : '')}>
 				<button className="service__summary focus-visible-outline" onClick={open}>
 					<p className="service__number accent-xl">[{num}]</p>
 					<h3 className="service__title accent-xl">{service.title}</h3>

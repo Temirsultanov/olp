@@ -23,6 +23,7 @@ const IndexPage: React.FC<PageProps> = () => {
 	const { t } = useTranslation('index')
 	const [consultationRequestModalOpened, setConsultationRequestModalOpened] = useState(false)
 	const [successModalOpened, setSuccessModalOpened] = useState(false)
+	const [openedService, setOpenedService] = useState<string | number | null>(null)
 
 	const submitRequestModalHandler = useCallback((formData: FormData) => {
 		setConsultationRequestModalOpened(false)
@@ -34,13 +35,21 @@ const IndexPage: React.FC<PageProps> = () => {
 		<Layout>
 			<title>{t('title')}</title>
 			<main id="index" className="index">
-				<Promo className=" index__promo" openConsultationRequestModal={() => setConsultationRequestModalOpened(true)} />
+				<Promo
+					setOpenedService={setOpenedService}
+					className=" index__promo"
+					openConsultationRequestModal={() => setConsultationRequestModalOpened(true)}
+				/>
 				<AboutUs className=" index__aboutUs" />
 				<Guarantee
 					className=" index__guarantee"
 					openConsultationRequestModal={() => setConsultationRequestModalOpened(true)}
 				/>
-				<OurServices className=" index__ourServices" />
+				<OurServices
+					openedService={openedService}
+					setOpenedService={setOpenedService}
+					className=" index__ourServices"
+				/>
 				<OurTeam className=" index__ourTeam" />
 				<OurReviews className=" index__ourReviews" />
 				<FlexibleApproach className=" index__flexibleApproach" />
