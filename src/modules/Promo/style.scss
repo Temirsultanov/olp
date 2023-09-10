@@ -95,6 +95,28 @@
 				padding: vw(16px);
 				position: relative;
 				overflow: hidden;
+				& p {
+					transition: background-color 0.1s;
+				}
+				& .gatsby-image-wrapper {
+					transition: 0.3s;
+				}
+
+				& a:hover {
+					& p {
+						background-color: #ffffff;
+					}
+					& .gatsby-image-wrapper {
+						transform: scale(1.05);
+					}
+				}
+
+				& a:active {
+					& .gatsby-image-wrapper {
+						transition: 0.1s;
+						transform: scale(1);
+					}
+				}
 			}
 			& div {
 				width: 100%;
@@ -177,11 +199,14 @@
 				height: vw(64px, $mvw);
 				border-radius: $border-radius;
 
-				display: flex;
-				align-items: center;
-				gap: vw(20px, $mvw);
-
 				background-color: #ffffff;
+
+				& a {
+					display: flex;
+					height: 100%;
+					align-items: center;
+					gap: vw(20px, $mvw);
+				}
 			}
 
 			& p {

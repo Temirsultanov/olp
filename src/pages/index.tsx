@@ -1,4 +1,4 @@
-import React, { useState, useCallback } from 'react'
+import React, { useState, useCallback, useRef, useEffect } from 'react'
 import { graphql } from 'gatsby'
 import type { HeadFC, PageProps } from 'gatsby'
 import { useTranslation } from 'gatsby-plugin-react-i18next'

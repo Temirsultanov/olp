@@ -53,6 +53,22 @@ export const Promo = ({ className, openConsultationRequestModal, setOpenedServic
 		certificationServices: t('certificationServices')
 	}
 
+	const handleScroll = (event: React.MouseEvent, id: string) => {
+		setOpenedService(id)
+
+		const elem = document.querySelector('#' + id)
+		if (elem === null) return
+		setTimeout(() => {
+			const distance = elem.getBoundingClientRect().top - 100 + window.scrollY
+			window.scrollTo({
+				top: distance,
+				behavior: 'smooth'
+			})
+		}, 300)
+
+		event.preventDefault()
+	}
+
 	return (
 		<>
 			<section className={'promo' + className}>
@@ -72,7 +88,7 @@ export const Promo = ({ className, openConsultationRequestModal, setOpenedServic
 				<ul className="promo__services">
 					<li>
 						<Link
-							onClick={() => setOpenedService('international-transportation')}
+							onClick={event => handleScroll(event, 'international-transportation')}
 							className="promo__serviceLink"
 							to="/#international-transportation">
 							<div className="promo__serviceImageWrapper">
@@ -89,7 +105,7 @@ export const Promo = ({ className, openConsultationRequestModal, setOpenedServic
 					</li>
 					<li>
 						<Link
-							onClick={() => setOpenedService('custom-clearance')}
+							onClick={event => handleScroll(event, 'custom-clearance')}
 							className="promo__serviceLink"
 							to="/#custom-clearance">
 							<div className="promo__serviceImageWrapper">
@@ -106,7 +122,7 @@ export const Promo = ({ className, openConsultationRequestModal, setOpenedServic
 					</li>
 					<li>
 						<Link
-							onClick={() => setOpenedService('sanctions-circumvention')}
+							onClick={event => handleScroll(event, 'sanctions-circumvention')}
 							className="promo__serviceLink"
 							to="/#sanctions-circumvention">
 							<div className="promo__serviceImageWrapper">
@@ -123,7 +139,7 @@ export const Promo = ({ className, openConsultationRequestModal, setOpenedServic
 					</li>
 					<li>
 						<Link
-							onClick={() => setOpenedService('certification-services')}
+							onClick={event => handleScroll(event, 'certification-services')}
 							className="promo__serviceLink"
 							to="/#certification-services">
 							<div className="promo__serviceImageWrapper">
