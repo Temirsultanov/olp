@@ -41,7 +41,8 @@
 		}
 	}
 
-	&__policy {
+	&__policy a {
+		display: block;
 		color: $white;
 
 		&:hover {
@@ -60,9 +61,14 @@
 			width: vw(130px);
 		}
 
+		&__requisites {
+			flex: 1;
+		}
+
 		&__copyright {
 			align-self: flex-end;
 			text-align: center;
+			flex: 1;
 		}
 
 		& > div:first-of-type {
@@ -92,9 +98,16 @@
 		}
 
 		&__policy {
-			margin-right: vw(-10px);
-			margin-bottom: vw(-10px);
-			padding: vw(10px);
+			flex: 1;
+			display: flex;
+			flex-direction: column;
+			align-items: flex-end;
+
+			& a {
+				margin-right: vw(-10px);
+				margin-bottom: vw(-10px);
+				padding: vw(10px);
+			}
 		}
 	}
 }
@@ -141,7 +154,7 @@
 			order: -1;
 		}
 
-		&__policy {
+		&__policy a {
 			margin-top: vw(10px, $mvw);
 			margin-left: vw(-10px, $mvw);
 			margin-bottom: vw(10px, $mvw);

@@ -58,9 +58,11 @@ export const Footer = ({ className }: IProps) => {
 						<span>{content.requisites}</span>
 					</p>
 					<p className="footer__copyright text-s">{content.copyright}</p>
-					<a target="_blank" className="footer__policy accent-s outline underline" href="/privacy">
-						{content.privacy}
-					</a>
+					<div className="footer__policy">
+						<a target="_blank" className="accent-s outline underline" href="/privacy">
+							{content.privacy}
+						</a>
+					</div>
 				</div>
 			</footer>
 			<WriteUsModal
