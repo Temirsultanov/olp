@@ -24,3 +24,8 @@ export function requestCall(formData: FormData) {
 	const URL = 'https://api.olp.su/call'
 	postFormData(URL, formData)
 }
+
+export function writeToSupport(formData: FormData) {
+	const URL = 'https://api.olp.su/support'
+	postFormData(URL, formData)
+}

@@ -2,6 +2,7 @@ import React, { useCallback, useState, useRef } from 'react'
 import { useTranslation } from 'gatsby-plugin-react-i18next'
 import { ModalTemplate, MODAL_CLOSING_TIME } from '../../ui/ModalTemplate'
 import { Input } from '../../ui/Input'
+import { Textarea } from '../../ui/Input/Textarea'
 import { Button } from '../../ui/Button'
 import './style.scss'
 
@@ -11,15 +12,17 @@ interface IProps {
 	submit: Function
 }
 
-export const ConsultationRequestModal = ({ opened, close, submit }: IProps) => {
-	const { t } = useTranslation('index', { keyPrefix: 'consultationRequestModal' })
+export const WriteUsModal = ({ opened, close, submit }: IProps) => {
+	const { t } = useTranslation('index', { keyPrefix: 'writeUsModal' })
 	const content = {
 		title: t('title'),
 		description: t('description'),
 		nameInputLabel: t('nameInputLabel'),
 		nameInputPlaceholder: t('nameInputPlaceholder'),
-		phoneInputLabel: t('phoneInputLabel'),
-		phoneInputPlaceholder: t('phoneInputPlaceholder'),
+		emailInputLabel: t('emailInputLabel'),
+		emailInputPlaceholder: t('emailInputPlaceholder'),
+		descriptionInputLabel: t('descriptionInputLabel'),
+		descriptionInputPlaceholder: t('descriptionInputPlaceholder'),
 		privacyBegin: t('privacyBegin'),
 		privacyLink: t('privacyLink'),
 		privacyEnd: t('privacyEnd')
@@ -51,37 +54,45 @@ export const ConsultationRequestModal = ({ opened, close, submit }: IProps) => {
 
 	return (
 		<>
-			<ModalTemplate className="consultationRequestModal" close={closeWrapper} opened={opened}>
-				<h2 className="consultationRequestModal__title accent-xl">{content.title}</h2>
-				<p className="consultationRequestModal__description text-m">{content.description}</p>
+			<ModalTemplate className="writeUsModal" close={closeWrapper} opened={opened}>
+				<h2 className="writeUsModal__title accent-xl">{content.title}</h2>
+				<p className="writeUsModal__description text-m">{content.description}</p>
 				<form
 					ref={formElem}
 					onInvalid={() => setInvalid(true)}
 					onSubmit={submitHandler}
 					method="POST"
 					action=""
-					className={'consultationRequestModal__form' + (invalid ? ' form-invalid' : '')}
-					name="callRequest">
+					className={'writeUsModal__form' + (invalid ? ' form-invalid' : '')}
+					name="writeUs">
 					<Input
 						label={content.nameInputLabel}
 						required={true}
-						id="consultationRequestModal-name"
+						id="writeUsModal-name"
 						name="name"
 						placeholder={content.nameInputPlaceholder}
 					/>
 					<Input
-						className="consultationRequestModal__phoneInput"
-						label={content.phoneInputLabel}
+						className="writeUsModal__emailInput"
+						label={content.emailInputLabel}
 						required={true}
-						id="consultationRequestModal-phone"
-						name="phone"
-						type="tel"
-						placeholder={content.phoneInputPlaceholder}
+						id="writeUsModal-phone"
+						name="email"
+						type="email"
+						placeholder={content.emailInputPlaceholder}
 					/>
-					<Button type="submit" className="consultationRequestModal__button">
+					<Textarea
+						className="writeUsModal__descriptionInput"
+						label={content.descriptionInputLabel}
+						required={true}
+						id="writeUsModal-description"
+						name="description"
+						placeholder={content.descriptionInputPlaceholder}
+					/>
+					<Button type="submit" className="writeUsModal__button">
 						{content.title}
 					</Button>
-					<p className="text-s consultationRequestModal__privacy">
+					<p className="text-s writeUsModal__privacy">
 						{content.privacyBegin}
 						<a target="_blank" href="/privacy" className="outline underline">
 							{content.privacyLink}

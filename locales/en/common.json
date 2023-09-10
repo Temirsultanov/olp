@@ -7,13 +7,13 @@
 			"reviews": "Reviews",
 			"contacts": "Contacts"
 		},
-		"callRequest": "Request a call"
+		"callRequest": "Request a call back"
 	},
 	"changeLanguageModal": {
 		"title": "Change language"
 	},
 	"callRequestModal": {
-		"title": "Request a call",
+		"title": "Request a call back",
 		"description": "Request a call back and our manager will contact you to answer all your questions.",
 		"nameInputLabel": "Name",
 		"nameInputPlaceholder": "Your name",
@@ -34,6 +34,19 @@
 		"companyName": "ООО «ОПТИМАЛ ЛОДЖИСТИК ПРАЙС»",
 		"copyright": "2023 © Optimal Logistic Price",
 		"privacy": "Privacy Policy"
+	},
+	"writeUsModal": {
+		"title": "Write to support",
+		"description": "Write to support and our manager will\u00A0contact\u00A0you.",
+		"nameInputLabel": "Name",
+		"nameInputPlaceholder": "Your name",
+		"emailInputLabel": "Email",
+		"emailInputPlaceholder": "Your mailbox",
+		"descriptionInputLabel": "Describe the problem",
+		"descriptionInputPlaceholder": "Description",
+		"privacyBegin": "By clicking the button, you agree to\u00A0the",
+		"privacyLink": " privacy policy",
+		"privacyEnd": "."
 	},
 	"contacts": {
 		"phone": {

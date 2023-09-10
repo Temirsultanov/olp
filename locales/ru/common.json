@@ -35,6 +35,19 @@
 		"copyright": "2023 © Optimal Logistic Price",
 		"privacy": "Политика конфиденциальности"
 	},
+	"writeUsModal": {
+		"title": "Написать в поддержку",
+		"description": "Напишите в поддержку, и\u00A0наш\u00A0менеджер\u00A0свяжется с вами.",
+		"nameInputLabel": "Имя",
+		"nameInputPlaceholder": "Ваше имя",
+		"emailInputLabel": "Почта",
+		"emailInputPlaceholder": "Ваш почтовый ящик",
+		"descriptionInputLabel": "Опишите проблему",
+		"descriptionInputPlaceholder": "Описание",
+		"privacyBegin": "Нажимая кнопку, вы соглашаетесь с\u00A0",
+		"privacyLink": "политикой конфиденциальности",
+		"privacyEnd": "."
+	},
 	"contacts": {
 		"phone": {
 			"text": "+7 (495)-136-80-65",

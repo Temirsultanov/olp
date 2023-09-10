@@ -47,6 +47,10 @@
 	}
 }
 
+textarea.input__item {
+	resize: none;
+}
+
 @media (min-width: $desktopStart) {
 	.input {
 		&__item {
