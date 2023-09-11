@@ -1,3 +1,5 @@
+const URL_ROOT = 'http://127.0.0.1:8001/'
+
 function postFormData(url: string, formData: FormData) {
 	fetch(url, {
 		headers: {
@@ -11,21 +13,21 @@ function postFormData(url: string, formData: FormData) {
 }
 
 export function requestCost(formData: FormData) {
-	const URL = 'https://api.olp.su/cost'
+	const URL = URL_ROOT + 'cost'
 	postFormData(URL, formData)
 }
 
 export function requestConsultation(formData: FormData) {
-	const URL = 'https://api.olp.su/consultation'
+	const URL = URL_ROOT + 'consultation'
 	postFormData(URL, formData)
 }
 
 export function requestCall(formData: FormData) {
-	const URL = 'https://api.olp.su/call'
+	const URL = URL_ROOT + 'call'
 	postFormData(URL, formData)
 }
 
 export function writeToSupport(formData: FormData) {
-	const URL = 'https://api.olp.su/support'
+	const URL = URL_ROOT + 'support'
 	postFormData(URL, formData)
 }

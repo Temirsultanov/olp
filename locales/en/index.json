@@ -1,5 +1,7 @@
 {
-	"title": "OLP",
+	"title": "OLP — Efficient Delivery and Logistics Solutions",
+	"description": "OLP is your reliable partner in the field of logistics and cargo transportation. We provide comprehensive solutions for efficient delivery and cargo management.",
+	"keywords": "Logistics, Cargo delivery, Logistics solutions, Warehousing and storage, International transportation, Cargo transportation, Logistics partner, Logistics and transport, Professional logistics services, Efficient logistics, Foreign trade activities, Legal evasion of sanctions, Customs clearance, Certification services",
 	"promo": {
 		"title1": "Transport with us,",
 		"title2": "to become",
@@ -29,7 +31,7 @@
 			{
 				"id": 3,
 				"title": "History of\u00A0the\u00A0company",
-				"description": "OLP LLC is a specialized company established in 2015 to provide high-quality services in the field of international cargo transportation, customs clearance and certification. We are proud of our reliable and professional contractors. Together with our partners, we successfully solve and implement many tasks and projects for the delivery and customs clearance of goods to Russia from different countries and using various modes of transport."
+				"description": "OLP LLC is a specialized company established in 2015 to provide high-quality services in the field of international cargo transportation, customs clearance and certification. We are proud of our reliable and professional contractors. With their help, we successfully solve and implement many tasks and projects from different countries."
 			}
 		]
 	},
@@ -46,32 +48,32 @@
 			{
 				"id": "international-transportation",
 				"title": "International cargo transportation",
-				"description": "OLP provides customs clearance services for imports and exports throughout the Russian Federation. The extensive experience of our employees and well-established connections allow us to provide a range of services in a short time."
+				"description": "We provide a service for the delivery of goods by all possible means of transport, from anywhere in the world to Russia. Thanks to the many years of experience of our employees and the presence of international partners, we comply with the terms and prices of commercial proposals."
 			},
 			{
 				"id": "custom-clearance",
 				"title": "Customs clearance",
-				"description": "OLP provides customs clearance services for imports and exports throughout the Russian Federation. The extensive experience of our employees and well-established connections allow us to provide a range of services in a short time."
+				"description": "We are ready to offer our clients optimal solutions to minimize customs duties and taxes, as well as reduce the time required to complete customs procedures."
 			},
 			{
 				"id": "certification-services",
 				"title": "Certification services",
-				"description": "OLP provides customs clearance services for imports and exports throughout the Russian Federation. The extensive experience of our employees and well-established connections allow us to provide a range of services in a short time."
+				"description": "To save you from low-quality goods and fines for incorrect execution of certificates, we have specialists in this field who will help you with the certification of your products within the framework of the legislation of the Russian Federation."
 			},
 			{
 				"id": "sanctions-circumvention",
 				"title": "Legal circumvention of sanctions",
-				"description": "OLP provides customs clearance services for imports and exports throughout the Russian Federation. The extensive experience of our employees and well-established connections allow us to provide a range of services in a short time."
+				"description": "We will help organize international cargo transportation regardless of sanctions."
 			},
 			{
 				"id": "financial-logistics",
 				"title": "Financial logistics",
-				"description": "OLP provides customs clearance services for imports and exports throughout the Russian Federation. The extensive experience of our employees and well-established connections allow us to provide a range of services in a short time."
+				"description": "We develop an individual action plan based on the client’s needs and goals to minimize risks and increase financial stability. This set of activities and processes is aimed at the effective management of financial flows and resources in an organization when working with foreign trade activities."
 			},
 			{
 				"id": "import-export",
 				"title": "Import/Export of Personal Items",
-				"description": "OLP provides customs clearance services for imports and exports throughout the Russian Federation. The extensive experience of our employees and well-established connections allow us to provide a range of services in a short time."
+				"description": "Our team deals with all aspects of the process of delivering personal belongings between different countries, including processing the necessary documents, packaging and labeling of cargo, choosing the optimal route and vehicle."
 			}
 		]
 	},

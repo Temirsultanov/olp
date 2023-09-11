@@ -1,4 +1,4 @@
-import React, { useState, useCallback, useRef, useEffect } from 'react'
+import React, { useState, useCallback, useRef, useEffect, useTransition } from 'react'
 import { graphql } from 'gatsby'
 import type { HeadFC, PageProps } from 'gatsby'
 import { useTranslation } from 'gatsby-plugin-react-i18next'
@@ -32,44 +32,44 @@ const IndexPage: React.FC<PageProps> = () => {
 	}, [])
 
 	return (
-		<Layout>
+		<>
+			<meta name="description" content={t('description') || ''} />
+			<meta name="keywords" content={t('keywords') || ''} />
 			<title>{t('title')}</title>
-			<main id="index" className="index">
-				<Promo
-					setOpenedService={setOpenedService}
-					className=" index__promo"
-					openConsultationRequestModal={() => setConsultationRequestModalOpened(true)}
+			<Layout>
+				<main id="index" className="index">
+					<Promo
+						setOpenedService={setOpenedService}
+						className=" index__promo"
+						openConsultationRequestModal={() => setConsultationRequestModalOpened(true)}
+					/>
+					<AboutUs className=" index__aboutUs" />
+					<Guarantee
+						className=" index__guarantee"
+						openConsultationRequestModal={() => setConsultationRequestModalOpened(true)}
+					/>
+					<OurServices
+						openedService={openedService}
+						setOpenedService={setOpenedService}
+						className=" index__ourServices"
+					/>
+					<OurTeam className=" index__ourTeam" />
+					<OurReviews className=" index__ourReviews" />
+					<FlexibleApproach className=" index__flexibleApproach" />
+					<Contacts className=" index__contacts" />
+				</main>
+				<ConsultationRequestModal
+					opened={consultationRequestModalOpened}
+					close={() => setConsultationRequestModalOpened(false)}
+					submit={submitRequestModalHandler}
 				/>
-				<AboutUs className=" index__aboutUs" />
-				<Guarantee
-					className=" index__guarantee"
-					openConsultationRequestModal={() => setConsultationRequestModalOpened(true)}
-				/>
-				<OurServices
-					openedService={openedService}
-					setOpenedService={setOpenedService}
-					className=" index__ourServices"
-				/>
-				<OurTeam className=" index__ourTeam" />
-				<OurReviews className=" index__ourReviews" />
-				<FlexibleApproach className=" index__flexibleApproach" />
-				<Contacts className=" index__contacts" />
-			</main>
-			<ConsultationRequestModal
-				opened={consultationRequestModalOpened}
-				close={() => setConsultationRequestModalOpened(false)}
-				submit={submitRequestModalHandler}
-			/>
-			<SuccessModal opened={successModalOpened} close={() => setSuccessModalOpened(false)} />
-		</Layout>
+				<SuccessModal opened={successModalOpened} close={() => setSuccessModalOpened(false)} />
+			</Layout>
+		</>
 	)
 }
 
 export default IndexPage
-
-export const Head: HeadFC = () => {
-	return <title>OLP</title>
-}
 
 export const query = graphql`
 	query {
