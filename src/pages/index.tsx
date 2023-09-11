@@ -33,8 +33,6 @@ const IndexPage: React.FC<PageProps> = () => {
 
 	return (
 		<>
-			<meta name="description" content={t('description') || ''} />
-			<meta name="keywords" content={t('keywords') || ''} />
 			<title>{t('title')}</title>
 			<Layout>
 				<main id="index" className="index">
