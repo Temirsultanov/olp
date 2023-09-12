@@ -18,6 +18,7 @@ import { Contacts } from '../modules/Contacts'
 import { requestConsultation } from '../shared/api'
 import '../shared/styles/common.scss'
 import '../shared/styles/index.scss'
+import { useSiteMetadata } from '../shared/hooks/useSiteMetaData'
 
 const IndexPage: React.FC<PageProps> = () => {
 	const { t } = useTranslation('index')
@@ -68,6 +69,16 @@ const IndexPage: React.FC<PageProps> = () => {
 }
 
 export default IndexPage
+export const Head: HeadFC = () => {
+	const siteMetadata = useSiteMetadata()
+	return (
+		<>
+			<meta name="description" content={siteMetadata.description} />
+			<meta name="keywords" content={siteMetadata.keywords} />
+			<title>{siteMetadata.title}</title>
+		</>
+	)
+}
 
 export const query = graphql`
 	query {

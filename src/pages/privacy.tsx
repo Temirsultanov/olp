@@ -4,7 +4,7 @@ import { graphql } from 'gatsby'
 import type { HeadFC, PageProps } from 'gatsby'
 
 import { Layout } from '../modules/Layout'
-
+import { useSiteMetadata } from '../shared/hooks/useSiteMetaData'
 import '../shared/styles/common.scss'
 import '../shared/styles/privacy.scss'
 
@@ -402,7 +402,16 @@ const IndexPage: React.FC<PageProps> = () => {
 
 export default IndexPage
 
-export const Head: HeadFC = () => <title>Privacy Policy</title>
+export const Head: HeadFC = () => {
+	const siteMetadata = useSiteMetadata()
+	return (
+		<>
+			<meta name="description" content={siteMetadata.description} />
+			<meta name="keywords" content={siteMetadata.keywords} />
+			<title>{siteMetadata.title}</title>
+		</>
+	)
+}
 
 export const query = graphql`
 	query ($language: String!) {
