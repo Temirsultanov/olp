@@ -8,6 +8,7 @@ import ShipIcon from '../../images/icons/ship.svg'
 import TrainIcon from '../../images/icons/train.svg'
 import PlaneIcon from '../../images/icons/plane.svg'
 
+import { CircleAnimation } from './CircleAnimation'
 import './style.scss'
 
 interface ITransportProps {
@@ -80,7 +81,7 @@ export const Promo = ({ className, openConsultationRequestModal, setOpenedServic
 						<span className="promo__title-black">{content.title3}</span>
 					</h1>
 					<p className="promo__description text-l">{content.description}</p>
-					<div className="promo__pattern"></div>
+					<CircleAnimation className="promo__pattern" />
 					<Button clickHandler={() => openConsultationRequestModal()} className="promo__button">
 						{content.requestConsultation}
 					</Button>
