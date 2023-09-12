@@ -403,12 +403,12 @@ const IndexPage: React.FC<PageProps> = () => {
 export default IndexPage
 
 export const Head: HeadFC = () => {
-	const siteMetadata = useSiteMetadata()
+	const { title, description, keywords } = useSiteMetadata()
 	return (
 		<>
-			<meta name="description" content={siteMetadata.description} />
-			<meta name="keywords" content={siteMetadata.keywords} />
-			<title>{siteMetadata.title}</title>
+			<meta name="description" content={description} />
+			<meta name="keywords" content={keywords} />
+			<title>{title}</title>
 		</>
 	)
 }
