@@ -59,6 +59,7 @@ export const Form = ({ className }: IProps) => {
 			action=""
 			className={'contactsForm ' + className + (invalid ? ' form-invalid' : '')}
 			onInvalid={() => setInvalid(true)}
+			encType="multipart/form-data"
 			onSubmit={submitHandler}>
 			<fieldset name="contacts" disabled={submitted}>
 				<legend className="accent-xl">{content.contactData}</legend>
@@ -79,7 +80,7 @@ export const Form = ({ className }: IProps) => {
 					/>
 					<Input
 						label={content.emailInputLabel}
-						name="name"
+						name="email"
 						id="contactsForm-email"
 						placeholder={content.emailInputPlaceholder}
 						required={true}

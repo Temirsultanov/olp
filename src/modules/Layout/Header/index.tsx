@@ -2,6 +2,7 @@ import React, { useState, useCallback } from 'react'
 import { useTranslation, useI18next, Link } from 'gatsby-plugin-react-i18next'
 
 import * as Logo from '../../../ui/Logo'
+import TelegramIcon from '../../../images/icons/tg.svg'
 import WhatsappIcon from '../../../images/icons/wa.svg'
 import EmailIcon from '../../../images/icons/email.svg'
 import PhoneIcon from '../../../images/icons/phone.svg'
@@ -38,6 +39,9 @@ const MobileMenu = ({
 		<div className={'mobileMenu ' + (mobileMenuOpened ? 'mobileMenu-opened' : '')}>
 			<Menu clickHandler={() => setMobileMenuOpened(false)} />
 			<div className="mobileMenu__socials">
+				<a target="_blank" className="header__tgLink outline" href={CONTACTS.telegram.link}>
+					<TelegramIcon />
+				</a>
 				<a target="_blank" className="header__waLink outline" href={CONTACTS.whatsapp.link}>
 					<WhatsappIcon />
 				</a>
@@ -107,6 +111,9 @@ export const Header = ({ className }: IProps) => {
 				<div className="header__socialsAndLanguage">
 					<a target="_blank" className="header__phoneLink underline outline accent-s" href={CONTACTS.phone.link}>
 						{CONTACTS.phone.text}
+					</a>
+					<a target="_blank" className="header__tgLink outline" href={CONTACTS.telegram.link}>
+						<TelegramIcon />
 					</a>
 					<a target="_blank" className="header__waLink outline" href={CONTACTS.whatsapp.link}>
 						<WhatsappIcon />

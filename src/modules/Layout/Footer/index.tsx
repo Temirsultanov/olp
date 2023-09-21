@@ -4,6 +4,7 @@ import { useTranslation } from 'gatsby-plugin-react-i18next'
 import * as Logo from '../../../ui/Logo'
 import WhatsappIcon from '../../../images/icons/wa.svg'
 import EmailIcon from '../../../images/icons/email.svg'
+import TelegramIcon from '../../../images/icons/tg.svg'
 
 import { SecondaryButton } from '../../../ui/SecondaryButton'
 import { WriteUsModal } from '../../WriteUsModal'
@@ -43,6 +44,9 @@ export const Footer = ({ className }: IProps) => {
 				<div>
 					<Logo.White className="footer__logo" />
 					<div className="footer__socials">
+						<a target="_blank" className="footer__tgLink outline" href={CONTACTS.telegram.link}>
+							<TelegramIcon />
+						</a>
 						<a target="_blank" className="footer__waLink outline" href={CONTACTS.whatsapp.link}>
 							<WhatsappIcon />
 						</a>

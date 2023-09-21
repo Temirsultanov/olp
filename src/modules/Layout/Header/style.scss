@@ -22,6 +22,7 @@
 		display: none;
 	}
 
+	&__tgLink,
 	&__waLink,
 	&__emailLink,
 	&__changeLang {
@@ -108,17 +109,20 @@
 		&__menu {
 			margin-top: vw(2px);
 		}
+		&__tgLink,
 		&__phoneLink,
 		&__waLink,
 		&__emailLink,
 		&__changeLang {
 			padding: vw(10px);
 		}
+		&__tgLink,
 		&__waLink,
 		&__emailLink {
 			width: vw(40px);
 			height: vw(40px);
 		}
+		&__tgLink,
 		&__waLink,
 		&__emailLink,
 		&__changeLang {
@@ -130,6 +134,9 @@
 		&__phoneLink {
 			margin-top: 2px;
 			margin-right: vw(6px);
+		}
+		&__tgLink {
+			margin-right: vw(-5px);
 		}
 		&__waLink {
 			margin-right: vw(-5px);
@@ -162,6 +169,7 @@
 		&__socialsAndLanguage {
 			margin-left: auto;
 
+			& .header__tgLink,
 			& .header__phoneLink,
 			& .header__changeLang,
 			& .header__waLink,
@@ -170,6 +178,7 @@
 			}
 		}
 
+		&__tgLink,
 		&__phoneLink,
 		&__waLink,
 		&__emailLink,
@@ -177,12 +186,14 @@
 			padding: vw(10px, $mvw);
 		}
 
+		&__tgLink,
 		&__waLink,
 		&__emailLink {
 			width: vw(40px, $mvw);
 			height: vw(40px, $mvw);
 		}
 
+		&__tgLink,
 		&__waLink,
 		&__emailLink,
 		&__changeLang {

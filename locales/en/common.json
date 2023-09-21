@@ -50,8 +50,12 @@
 	},
 	"contacts": {
 		"phone": {
-			"text": "+7 (495)-136-80-65",
-			"link": "tel:+74951368065"
+			"text": "+7 (929) 555-0-888",
+			"link": "tel:+79295550888"
+		},
+		"telegram": {
+			"text": "@Optimal_Logistic_Price",
+			"link": "https://t.me/optimal_logistic_price"
 		},
 		"email": {
 			"text": "info@olp.su",

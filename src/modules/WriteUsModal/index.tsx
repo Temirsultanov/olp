@@ -13,7 +13,7 @@ interface IProps {
 }
 
 export const WriteUsModal = ({ opened, close, submit }: IProps) => {
-	const { t } = useTranslation('index', { keyPrefix: 'writeUsModal' })
+	const { t } = useTranslation('common', { keyPrefix: 'writeUsModal' })
 	const content = {
 		title: t('title'),
 		description: t('description'),
