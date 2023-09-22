@@ -1,14 +1,16 @@
-const URL_ROOT = 'http://127.0.0.1:3000/'
+const API_URL_ROOT = 'http://olp-api.na4u.ru/'
 
 function postData(url: string, data: object) {
 	fetch(url, {
 		method: 'POST',
 		body: JSON.stringify(data)
+	}).then((response) => {
+		console.log(response);
 	}).catch(e => console.log(e))
 }
 
 export function requestCost(formData: FormData) {
-	const URL = URL_ROOT + 'cost'
+	const URL = API_URL_ROOT + 'cost'
 	const file = formData.get('file') as File
 	const fileReader = new FileReader()
 	fileReader.readAsDataURL(file)
@@ -27,7 +29,7 @@ export function requestCost(formData: FormData) {
 }
 
 export function requestConsultation(formData: FormData) {
-	const URL = URL_ROOT + 'consultation'
+	const URL = API_URL_ROOT + 'consultation'
 	const data = {
 		name: formData.get('name'),
 		phone: formData.get('phone')
@@ -37,7 +39,7 @@ export function requestConsultation(formData: FormData) {
 }
 
 export function requestCall(formData: FormData) {
-	const URL = URL_ROOT + 'call'
+	const URL = API_URL_ROOT + 'call'
 	const data = {
 		name: formData.get('name'),
 		phone: formData.get('phone')
@@ -47,7 +49,7 @@ export function requestCall(formData: FormData) {
 }
 
 export function writeToSupport(formData: FormData) {
-	const URL = URL_ROOT + 'support'
+	const URL = API_URL_ROOT + 'support'
 	const data = {
 		name: formData.get('name'),
 		email: formData.get('email'),
