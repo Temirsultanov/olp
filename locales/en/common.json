@@ -50,8 +50,8 @@
 	},
 	"contacts": {
 		"phone": {
-			"text": "+7 (929) 555-0-888",
-			"link": "tel:+79295550888"
+			"text": "+7 (495) 136-80-65",
+			"link": "tel:+74951368065"
 		},
 		"telegram": {
 			"text": "@Optimal_Logistic_Price",
@@ -66,8 +66,8 @@
 			"link": "https://yandex.ru/maps/-/CDQhjAy3"
 		},
 		"whatsapp": {
-			"text": "+7 (495)-136-80-65",
-			"link": "https://wa.me/+74951368065"
+			"text": "+7 (929) 555-0-888",
+			"link": "https://wa.me/+79295550888"
 		}
 	}
 }
