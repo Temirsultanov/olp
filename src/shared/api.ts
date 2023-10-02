@@ -1,35 +1,29 @@
-const API_URL_ROOT = 'http://olp-api.na4u.ru/'
+const API_URL_ROOT = 'http://api.olp.su/'
 
 function postData(url: string, data: object) {
 	fetch(url, {
 		method: 'POST',
-		body: JSON.stringify(data)
-	}).then((response) => {
-		console.log(response);
+		body: JSON.stringify(data),
+		headers: {
+			"Content-Type": "application/json"
+		}
+	}).catch(e => console.log(e))
+}
+
+function postFormData(url: string, formData: FormData) {
+	fetch(url, {
+		method: 'POST',
+		body: formData,
 	}).catch(e => console.log(e))
 }
 
 export function requestCost(formData: FormData) {
-	const URL = API_URL_ROOT + 'cost'
-	const file = formData.get('file') as File
-	const fileReader = new FileReader()
-	fileReader.readAsDataURL(file)
-
-	fileReader.onload = () => {
-		const data = {
-			name: formData.get('name'),
-			surname: formData.get('surname'),
-			email: formData.get('email'),
-			service: formData.get('service'),
-			file: fileReader.result
-		}
-
-		postData(URL, data)
-	}
+	const URL = API_URL_ROOT + 'request-cost'
+	postFormData(URL, formData)
 }
 
 export function requestConsultation(formData: FormData) {
-	const URL = API_URL_ROOT + 'consultation'
+	const URL = API_URL_ROOT + 'request'
 	const data = {
 		name: formData.get('name'),
 		phone: formData.get('phone')
@@ -39,7 +33,7 @@ export function requestConsultation(formData: FormData) {
 }
 
 export function requestCall(formData: FormData) {
-	const URL = API_URL_ROOT + 'call'
+	const URL = API_URL_ROOT + 'request'
 	const data = {
 		name: formData.get('name'),
 		phone: formData.get('phone')
