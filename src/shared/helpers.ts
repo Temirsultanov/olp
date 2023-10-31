@@ -17,3 +17,10 @@ export function getPhotosFromGraphQLResult(allFile: { edges: Array<Edge> }) {
 
 	return photos
 }
+
+export const ym = (eventName: string) => {
+	const TRACKING_ID = 95199893
+	if (window && 'ym' in window && typeof window.ym === 'function') {
+		window.ym(TRACKING_ID, 'reachGoal', eventName)
+	}
+}

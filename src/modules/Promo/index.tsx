@@ -9,6 +9,7 @@ import TrainIcon from '../../images/icons/train.svg'
 import PlaneIcon from '../../images/icons/plane.svg'
 
 import { CircleAnimation } from './CircleAnimation'
+import { ym } from '../../shared/helpers'
 import './style.scss'
 
 interface ITransportProps {
@@ -70,6 +71,11 @@ export const Promo = ({ className, openConsultationRequestModal, setOpenedServic
 		event.preventDefault()
 	}
 
+	const clickHandler = () => {
+		ym('click_consult_main')
+		openConsultationRequestModal()
+	}
+
 	return (
 		<>
 			<section className={'promo' + className}>
@@ -82,14 +88,17 @@ export const Promo = ({ className, openConsultationRequestModal, setOpenedServic
 					</h1>
 					<p className="promo__description text-l">{content.description}</p>
 					<CircleAnimation className="promo__pattern" />
-					<Button clickHandler={() => openConsultationRequestModal()} className="promo__button">
+					<Button clickHandler={clickHandler} className="promo__button">
 						{content.requestConsultation}
 					</Button>
 				</div>
 				<ul className="promo__services">
 					<li>
 						<Link
-							onClick={event => handleScroll(event, 'international-transportation')}
+							onClick={event => {
+								ym('click_main_international_shipping')
+								handleScroll(event, 'international-transportation')
+							}}
 							className="promo__serviceLink"
 							to="/#international-transportation">
 							<div className="promo__serviceImageWrapper">
@@ -106,7 +115,10 @@ export const Promo = ({ className, openConsultationRequestModal, setOpenedServic
 					</li>
 					<li>
 						<Link
-							onClick={event => handleScroll(event, 'custom-clearance')}
+							onClick={event => {
+								ym('click_main_customs_clearance')
+								handleScroll(event, 'custom-clearance')
+							}}
 							className="promo__serviceLink"
 							to="/#custom-clearance">
 							<div className="promo__serviceImageWrapper">
@@ -123,7 +135,10 @@ export const Promo = ({ className, openConsultationRequestModal, setOpenedServic
 					</li>
 					<li>
 						<Link
-							onClick={event => handleScroll(event, 'sanctions-circumvention')}
+							onClick={event => {
+								ym('click_main_legal_sanctions')
+								handleScroll(event, 'sanctions-circumvention')
+							}}
 							className="promo__serviceLink"
 							to="/#sanctions-circumvention">
 							<div className="promo__serviceImageWrapper">
@@ -140,7 +155,10 @@ export const Promo = ({ className, openConsultationRequestModal, setOpenedServic
 					</li>
 					<li>
 						<Link
-							onClick={event => handleScroll(event, 'certification-services')}
+							onClick={event => {
+								ym('click_main_certification_services')
+								handleScroll(event, 'certification-services')
+							}}
 							className="promo__serviceLink"
 							to="/#certification-services">
 							<div className="promo__serviceImageWrapper">

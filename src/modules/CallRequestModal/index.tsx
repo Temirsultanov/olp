@@ -1,8 +1,11 @@
 import React, { useCallback, useState, useRef } from 'react'
 import { useTranslation } from 'gatsby-plugin-react-i18next'
+
 import { ModalTemplate, MODAL_CLOSING_TIME } from '../../ui/ModalTemplate'
 import { Input } from '../../ui/Input'
 import { Button } from '../../ui/Button'
+import { ym } from '../../shared/helpers'
+
 import './style.scss'
 
 interface IProps {
@@ -32,6 +35,7 @@ export const CallRequestModal = ({ opened, close, submit }: IProps) => {
 		event.preventDefault()
 		resetForm()
 		submit(new FormData(event.currentTarget))
+		ym('submit_header_call')
 	}, [])
 
 	const resetForm = () => {

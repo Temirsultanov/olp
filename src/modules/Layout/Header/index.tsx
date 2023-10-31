@@ -14,10 +14,12 @@ import { BurgerButton } from '../../../ui/BurgerButton'
 import { CallRequestModal } from '../../CallRequestModal'
 import { SuccessModal } from '../../SuccessModal'
 import { ChangeLanguageModal } from '../../ChangeLanguageModal'
+
 import { Contacts as ContactsType } from '../../../shared/types'
+import { requestCall } from '../../../shared/api'
+import { ym } from '../../../shared/helpers'
 
 import './style.scss'
-import { requestCall } from '../../../shared/api'
 
 interface IMobileMenuProps {
 	currentLanguage: string
@@ -39,17 +41,33 @@ const MobileMenu = ({
 		<div className={'mobileMenu ' + (mobileMenuOpened ? 'mobileMenu-opened' : '')}>
 			<Menu clickHandler={() => setMobileMenuOpened(false)} />
 			<div className="mobileMenu__socials">
-				<a target="_blank" className="header__tgLink outline" href={CONTACTS.telegram.link}>
+				<a
+					onClick={() => ym('click_header_telegram')}
+					target="_blank"
+					className="header__tgLink outline"
+					href={CONTACTS.telegram.link}>
 					<TelegramIcon />
 				</a>
-				<a target="_blank" className="header__waLink outline" href={CONTACTS.whatsapp.link}>
+				<a
+					onClick={() => ym('click_header_whatsapp')}
+					target="_blank"
+					className="header__waLink outline"
+					href={CONTACTS.whatsapp.link}>
 					<WhatsappIcon />
 				</a>
-				<a target="_blank" className="header__emailLink outline" href={CONTACTS.email.link}>
+				<a
+					onClick={() => ym('click_header_email')}
+					target="_blank"
+					className="header__emailLink outline"
+					href={CONTACTS.email.link}>
 					<EmailIcon />
 				</a>
 			</div>
-			<a target="_blank" className="header__phoneLink underline outline accent-s" href={CONTACTS.phone.link}>
+			<a
+				onClick={() => ym('click_header_phone')}
+				target="_blank"
+				className="header__phoneLink underline outline accent-s"
+				href={CONTACTS.phone.link}>
 				{CONTACTS.phone.text}
 			</a>
 			<button className="header__changeLang outline" onClick={() => setChangeLanguageModalOpened(true)}>
@@ -109,22 +127,41 @@ export const Header = ({ className }: IProps) => {
 					</nav>
 				</div>
 				<div className="header__socialsAndLanguage">
-					<a target="_blank" className="header__phoneLink underline outline accent-s" href={CONTACTS.phone.link}>
+					<a
+						onClick={() => ym('click_header_phone')}
+						target="_blank"
+						className="header__phoneLink underline outline accent-s"
+						href={CONTACTS.phone.link}>
 						{CONTACTS.phone.text}
 					</a>
-					<a target="_blank" className="header__tgLink outline" href={CONTACTS.telegram.link}>
+					<a
+						onClick={() => ym('click_header_telegram')}
+						target="_blank"
+						className="header__tgLink outline"
+						href={CONTACTS.telegram.link}>
 						<TelegramIcon />
 					</a>
-					<a target="_blank" className="header__waLink outline" href={CONTACTS.whatsapp.link}>
+					<a
+						onClick={() => ym('click_header_whatsapp')}
+						target="_blank"
+						className="header__waLink outline"
+						href={CONTACTS.whatsapp.link}>
 						<WhatsappIcon />
 					</a>
-					<a target="_blank" className="header__emailLink outline" href={CONTACTS.email.link}>
+					<a
+						onClick={() => ym('click_header_email')}
+						target="_blank"
+						className="header__emailLink outline"
+						href={CONTACTS.email.link}>
 						<EmailIcon />
 					</a>
 					<SecondaryButton
 						className="header__orderCall"
 						Icon={PhoneIcon}
-						clickHandler={() => setCallRequestModalOpened(true)}>
+						clickHandler={() => {
+							ym('click_header_request_a_call')
+							setCallRequestModalOpened(true)
+						}}>
 						{content.callRequest}
 					</SecondaryButton>
 					<button className="header__changeLang outline" onClick={() => setChangeLanguageModalOpened(true)}>

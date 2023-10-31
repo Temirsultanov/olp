@@ -1,5 +1,7 @@
 import React, { useCallback, useState, useRef } from 'react'
 import { useTranslation } from 'gatsby-plugin-react-i18next'
+
+import { ym } from '../../shared/helpers'
 import { ModalTemplate, MODAL_CLOSING_TIME } from '../../ui/ModalTemplate'
 import { Input } from '../../ui/Input'
 import { Button } from '../../ui/Button'
@@ -32,6 +34,7 @@ export const ConsultationRequestModal = ({ opened, close, submit }: IProps) => {
 		event.preventDefault()
 		resetForm()
 		submit(new FormData(event.currentTarget))
+		ym('submit_main_consult')
 	}, [])
 
 	const resetForm = () => {

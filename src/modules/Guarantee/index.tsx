@@ -2,6 +2,7 @@ import React from 'react'
 import { StaticImage } from 'gatsby-plugin-image'
 import { useTranslation } from 'gatsby-plugin-react-i18next'
 
+import { ym } from '../../shared/helpers'
 import { Button } from '../../ui/Button'
 import Pin from '../../images/icons/pin.svg'
 import PathDesktop from '../../images/icons/path.svg'
@@ -32,7 +33,12 @@ export const Guarantee = ({ className, openConsultationRequestModal }: IProps) =
 				<span className="guarantee__title-black">{content.title3}</span>
 			</h2>
 			<PathMobile className="guarantee__path guarantee__path-mobile" />
-			<Button clickHandler={() => openConsultationRequestModal()} className="guarantee__button">
+			<Button
+				clickHandler={() => {
+					ym('click_consult_middle')
+					openConsultationRequestModal()
+				}}
+				className="guarantee__button">
 				{content.consultationRequest}
 			</Button>
 			<Pin className="guarantee__pin" />

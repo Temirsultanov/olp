@@ -7,7 +7,7 @@ import { SelectInput } from '../../../ui/Input/Select'
 import { FileInput } from '../../../ui/Input/FileInput'
 
 import { Service as ServiceType } from '../../../shared/types'
-import { isMobile } from '../../../shared/helpers'
+import { isMobile, ym } from '../../../shared/helpers'
 import { requestCost } from '../../../shared/api'
 import './style.scss'
 
@@ -42,6 +42,7 @@ export const Form = ({ className }: IProps) => {
 	const [submitted, setSubmitted] = useState(false)
 	const [invalid, setInvalid] = useState(false)
 	const [buttonText, setButtonText] = useState(content.priceRequest)
+
 	if (typeof window !== 'undefined') {
 		content.fileInputLabel = isMobile(window.innerWidth) ? content.fileInputLabelMobile : content.fileInputLabel
 	}
@@ -51,6 +52,7 @@ export const Form = ({ className }: IProps) => {
 		requestCost(new FormData(event.currentTarget))
 		setSubmitted(true)
 		setButtonText(content.successSubmit)
+		ym('submit_leadform_request_price')
 	}
 
 	return (

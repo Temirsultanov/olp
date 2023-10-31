@@ -6,14 +6,16 @@ import PhoneIcon from '../../images/icons/phone.svg'
 import MapIcon from '../../images/icons/map.svg'
 
 import { Form } from './Form'
-import './style.scss'
 import { Contacts as ContactsType } from '../../shared/types'
+import { ym } from '../../shared/helpers'
+
+import './style.scss'
 
 interface IProps {
 	className?: string
 }
 
-type Icon = ['email' | 'phone' | 'address', React.FunctionComponent<React.SVGAttributes<SVGElement>>]
+type Icon = ['email' | 'phone' | 'address', React.FunctionComponent<React.SVGAttributes<SVGElement>>, string]
 
 export const Contacts = ({ className }: IProps) => {
 	const { t } = useTranslation('index', { keyPrefix: 'contacts' })
@@ -27,16 +29,20 @@ export const Contacts = ({ className }: IProps) => {
 	const CONTACTS: ContactsType = translateContacts('contacts', { returnObjects: true })
 
 	const icons: Icon[] = [
-		['email', EmailIcon],
-		['phone', PhoneIcon],
-		['address', MapIcon]
+		['email', EmailIcon, 'click_leadform_email'],
+		['phone', PhoneIcon, 'click_leadform_phone'],
+		['address', MapIcon, 'click_leadform_address']
 	]
 
 	const renderedContacts = icons.map(entry => {
-		const [contactName, Icon] = entry
+		const [contactName, Icon, ymEventName] = entry
 		return (
 			<li key={contactName}>
-				<a target="_blank" href={CONTACTS[contactName].link} className="underline outline">
+				<a
+					onClick={() => ym(ymEventName)}
+					target="_blank"
+					href={CONTACTS[contactName].link}
+					className="underline outline">
 					<Icon />
 					<p className="accent-m">{CONTACTS[contactName].text}</p>
 				</a>

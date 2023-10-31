@@ -59,6 +59,15 @@ const config: GatsbyConfig = {
 				defaultLanguage: 'ru',
 				generateDefaultLanguagePage: 'ru'
 			}
+		},
+		{
+			resolve: `gatsby-plugin-yandex-metrica`,
+			options: {
+				trackingId: '95199893',
+				clickmap: true,
+				trackLinks: true,
+				accurateTrackBounce: true
+			}
 		}
 	]
 }
