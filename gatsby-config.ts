@@ -61,7 +61,7 @@ const config: GatsbyConfig = {
 			}
 		},
 		{
-			resolve: `gatsby-plugin-yandex-metrica`,
+			resolve: `gatsby-plugin-yandex-metrika`,
 			options: {
 				trackingId: '95199893',
 				clickmap: true,
