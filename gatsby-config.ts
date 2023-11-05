@@ -68,6 +68,21 @@ const config: GatsbyConfig = {
 				trackLinks: true,
 				accurateTrackBounce: true
 			}
+		},
+		{
+			resolve: `gatsby-plugin-google-gtag`,
+			options: {
+				trackingIds: ['G-0RMMZQ2V7G'],
+				pluginConfig: {
+					head: true
+				}
+			}
+		},
+		{
+			resolve: 'gatsby-plugin-google-tagmanager',
+			options: {
+				id: 'GTM-PM4ZMFVV'
+			}
 		}
 	]
 }

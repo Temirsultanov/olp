@@ -1,0 +1,16 @@
+node_modules
+npm-debug.log
+docker
+README.md
+LICENSE
+build
+.dockerignore
+.git
+.gitignore
+.vscode
+.env*
+.eslint*
+.prettier*
+.gitlab-ci.yml
+.cache
+public
