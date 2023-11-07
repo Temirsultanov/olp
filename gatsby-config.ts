@@ -66,7 +66,9 @@ const config: GatsbyConfig = {
 				trackingId: '95199893',
 				clickmap: true,
 				trackLinks: true,
-				accurateTrackBounce: true
+				accurateTrackBounce: true,
+				webvisor: true,
+				ecommerce: 'dataLayer'
 			}
 		},
 		{

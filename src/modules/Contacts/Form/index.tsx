@@ -10,6 +10,7 @@ import { Service as ServiceType } from '../../../shared/types'
 import { isMobile, ym } from '../../../shared/helpers'
 import { requestCost } from '../../../shared/api'
 import './style.scss'
+import { EmailInput } from '../../../ui/Input/EmailInput'
 
 interface IProps {
 	className?: string
@@ -80,13 +81,12 @@ export const Form = ({ className }: IProps) => {
 						placeholder={content.surnameInputPlaceholder}
 						required={true}
 					/>
-					<Input
+					<EmailInput
 						label={content.emailInputLabel}
 						name="email"
 						id="contactsForm-email"
 						placeholder={content.emailInputPlaceholder}
 						required={true}
-						type="email"
 					/>
 				</div>
 			</fieldset>

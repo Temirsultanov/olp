@@ -166,6 +166,7 @@
 			"surnameInputPlaceholder": "Your surname",
 			"emailInputLabel": "Email",
 			"emailInputPlaceholder": "Your mailbox",
+			"emailIsInvalid": "name@abc.com",
 			"additionalInformation": "[02] Additional Information",
 			"selectInputLabel": "Select a service",
 			"selectInputPlaceholder": "Select",

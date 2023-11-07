@@ -166,6 +166,7 @@
 			"surnameInputPlaceholder": "Ваша фамилия",
 			"emailInputLabel": "Почта",
 			"emailInputPlaceholder": "Ваш почтовый ящик",
+			"emailIsInvalid": "name@abc.com",
 			"additionalInformation": "[02] Дополнительная информация",
 			"selectInputLabel": "Выберите услугу",
 			"selectInputPlaceholder": "Выбрать",

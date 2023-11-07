@@ -5,6 +5,7 @@ import { Input } from '../../ui/Input'
 import { Textarea } from '../../ui/Input/Textarea'
 import { Button } from '../../ui/Button'
 import './style.scss'
+import { EmailInput } from '../../ui/Input/EmailInput'
 
 interface IProps {
 	opened: boolean
@@ -72,13 +73,12 @@ export const WriteUsModal = ({ opened, close, submit }: IProps) => {
 						name="name"
 						placeholder={content.nameInputPlaceholder}
 					/>
-					<Input
+					<EmailInput
 						className="writeUsModal__emailInput"
 						label={content.emailInputLabel}
 						required={true}
 						id="writeUsModal-phone"
 						name="email"
-						type="email"
 						placeholder={content.emailInputPlaceholder}
 					/>
 					<Textarea
